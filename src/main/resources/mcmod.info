@@ -2,13 +2,13 @@
 {
   "modid": "customnpcs",
   "name": "CustomNpcs",
-  "version": "1.6.4b",
-  "description": "The Custom Npcs mod lets you create your own npcs and lets you customize them how you want",
-  "credits": "A lot of people, see the list at the forum and NationsGlory.fr",
+  "version": "${version}",
+  "description": "The Custom Npcs mod lets you create your own npcs and lets you customize them how you want. 1.6.4 continuation maintained by postyizhan, based on the original by Noppes.",
+  "credits": "Original by Noppes and contributors (incl. DarkSignal). 1.6.4 continuation maintained by postyizhan.",
   "logoFile": "customnpcs:textures/gui/logo.png",
-  "url": "http://tinyurl.com/customnpcs",
+  "url": "https://github.com/postyizhan/CustomNPCs-164",
   "updateUrl": "",
-  "authorList": ["Noppes","DarkSignal"],
+  "authorList": ["Noppes","DarkSignal","postyizhan"],
   "parent":"",
   "screenshots": [],
   "dependencies": []

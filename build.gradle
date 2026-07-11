@@ -12,7 +12,11 @@ tasks.withType(JavaCompile) {
     options.compilerArgs += ['-source', '1.6', '-target', '1.6']
 }
 
-version = "1.6.4b"
+// 版本号由 git 短提交 id 派生,保留 1.6.4 前缀标识目标 MC 版本
+def gitHash = providers.exec {
+    commandLine 'git', 'rev-parse', '--short', 'HEAD'
+}.standardOutput.asText.get().trim()
+version = "1.6.4-${gitHash}"
 group = "noppes.npcs"
 base.archivesName = "CustomNPCs"
 
@@ -52,16 +56,11 @@ dependencies {
 }
 
 processResources {
-    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
-
-    inputs.property "version", project.version
-
-    from(sourceSets.main.resources.srcDirs) {
-        include 'mcmod.info'
-        expand 'version': project.version
-    }
-    from(sourceSets.main.resources.srcDirs) {
-        exclude 'mcmod.info'
+    // 仅对 mcmod.info 就地展开 ${version} 占位符,避免重复副本
+    def replaceProperties = [version: project.version]
+    inputs.properties(replaceProperties)
+    filesMatching('mcmod.info') {
+        expand(replaceProperties)
     }
 }
 
