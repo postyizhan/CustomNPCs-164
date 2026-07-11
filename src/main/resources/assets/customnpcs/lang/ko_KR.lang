@@ -1,0 +1,317 @@
+tile.npcRedstoneBlock.name=레드스톤 블럭
+tile.npcCarpentyBench.name=목공예
+tile.npcBloodBlock.name=피 블럭
+
+gui.deleteConfirm=정말로 이 NPC를 지우시겠습니까?
+
+menu.inventory=인벤토리
+menu.quests=퀘스트
+menu.display=디스플레이
+menu.stats=스탯
+menu.advanced=부가기능
+menu.global=Global
+menu.delete=삭제
+
+bank.slot=슬롯
+bank.unlock=Unlock
+bank.upgrade=업그레이드
+bank.upgradeCosts=업그레이드에 필요한 돈
+bank.unlockCosts=잠금 해제에 필요한 돈
+
+follower.waiting=Waiting
+follower.following=Following
+follower.hire=Hire
+follower.health=체력
+follower.daysleft=Days left
+follower.lastday=Last day
+follower.day=Day
+follower.days=Days
+follower.hireText=Thank you for hiring me for
+follower.farewellText=당신과 함께 있어서 즐거웠어.
+
+transporter.travel=Travel
+transporter.unlock1=Transport to
+transporter.unlock2=가 잠금이 해제되었습니다.
+
+quest.complete=완료
+quest.turnin=You can now turn in quest
+quest.start=새로운 퀘스트를 시작하였습니다.
+
+item.npcWand.name=Npc 완드
+item.npcCloner.name=Npc 복제기
+item.npcSpawner.name=Mob 스포너
+
+item.npcBanjo.name=밴조
+item.npcViolin.name=바이올린
+item.npcViolinBow.name=바이올린 활
+item.npcHarp.name=하프
+item.npcGuitar.name=기타
+
+item.npcCoinWooden.name=나무 코인
+item.npcCoinStone.name=돌 코인
+item.npcCoinBronze.name=브론즈 코인
+item.npcCoinIron.name=철 코인
+item.npcCoinGold.name=금 코인
+item.npcCoinDiamond.name=다이아몬드 코인
+item.npcCoinEmerald.name=에메랄드 코인
+
+item.npcWoodenGun.name=나무 총
+item.npcStoneGun.name=돌 총
+item.npcIronGun.name=은 총
+item.npcGoldGun.name=금 총
+item.npcDiamondGun.name=다이아몬드 총
+item.npcBronzeGun.name=브론즈 총
+item.npcEmeraldGun.name=에메랄드 총
+item.npcMachineGun.name=머신건
+
+item.npcWoodenBullet.name=나무 총알
+item.npcStoneBullet.name=돌 총알
+item.npcIronBullet.name=철 총알
+item.npcGoldenBullet.name=금 총알
+item.npcDiamondBullet.name=다이아몬드 총알
+item.npcBronzeBullet.name=브론즈 총알
+item.npcEmeraldBullet.name=에메랄드 총알
+item.npcBlackBullet.name=Black 총알
+
+item.npcWoodenTrident.name=나무 삼지창
+item.npcStoneTrident.name=돌 삼지창
+item.npcIronTrident.name=철 삼지창
+item.npcGoldTrident.name=금 삼지창
+item.npcDiamondTrident.name=다이아몬드 삼지창
+item.npcBronzeTrident.name=브론즈 삼지창
+item.npcEmeraldTrident.name=에메랄드 삼지창
+item.npcCursedTrident.name=저주받은 삼지창
+
+item.npcNatureSpell.name=Nature Spell
+item.npcArcaneSpell.name=Arcane Spell
+item.npcLightningSpell.name=Lightning Spell
+item.npcIceSpell.name=얼음 Spell
+item.npcFireSpell.name=불 Spell
+item.npcDarkSpell.name=어둠 Spell
+item.npcHolySpell.name=Holy Spell
+
+item.npcKunai.name=수리검
+item.npcReverseKunai.name=리버스 수리검
+item.npcShuriken.name=표창
+item.npcGiantShuriken.name=거대한 표창
+item.npcKatana.name=카타나
+item.npcKukri.name=쿠크리
+
+item.npcGolfClub.name=골프 클럽
+item.npcMagicWand.name=마술봉
+item.npcChickenSword.name=Chicken Sword
+item.npcHandCuffs.name=수갑
+item.npcHammer.name=망치
+item.npcBaseballBat.name=야구방망이
+item.npcLeadPipe.name=연관
+item.npcCleaver.name=큰 식칼
+item.npcSaber.name=사브르
+item.npcHockeyStick.name=하키 스틱
+item.npcSledgeHammer.name=큰 해머
+item.npcBrokenBottle.name=부서진 병
+item.npcCombatKnive.name=컴뱃 나이프
+item.npcLighter.name=라이터
+item.npcBatton.name=Batton
+item.npcGunChainsaw.name=GunChainsaw
+item.npcRapier.name=양날칼
+item.npcCrowbar.name=Crowbar
+item.npcPipeWrench.name=파이프 렌치
+item.npcWrench.name=렌치
+item.npcSwissArmyKnife.name=Swiss Army Knife
+
+item.npcWoodenShield.name=둥근 나무 방패
+item.npcStoneShield.name=둥근 돌 방패
+item.npcIronShield.name=둥근 철 방패
+item.npcGoldenShield.name=둥근 금 방패
+item.npcDiaShield.name=둥근 다이아몬드 방패
+item.npcBronzeShield.name=둥근 브론즈 방패
+item.npcEmeraldShield.name=둥근 에메랄드 방패
+item.npcFullWoodenShield.name=나무 방패
+item.npcFullStoneShield.name=돌 방패
+item.npcFullIronShield.name=철 방패
+item.npcFullGoldenShield.name=금 방패
+item.npcFullDiaShield.name=다이아몬드 방패
+item.npcFullBronzeShield.name=브론즈 방패
+item.npcFullEmeraldShield.name=에메랄드 방패
+
+item.npcTowerShield.name=강철 Tower 방패
+item.npcCryscentShield.name=강철 Cryscent 방패
+item.npcScutumShield.name=강철 Scutum 방패
+item.npcHeaterShield.name=강철 Heater 방패
+
+item.npcWoodenSpear.name=나무 스피어
+item.npcStoneSpear.name=돌 스피어
+item.npcIronSpear.name=철 스피어
+item.npcGoldenSpear.name=금 스피어
+item.npcDiamondSpear.name=다이아몬드 스피어
+item.npcBronzeSpear.name=브론즈 스피어
+item.npcEmeraldSpear.name=에메랄드 스피어
+
+item.npcWoodenBattleAxe.name=나무 배틀액스
+item.npcStoneBattleAxe.name=돌 배틀액스
+item.npcIronBattleAxe.name=철 배틀액스
+item.npcGoldenBattleAxe.name=금 배틀액스
+item.npcDiamondBattleAxe.name=다이아몬드 배틀액스
+item.npcBronzeBattleAxe.name=브론즈 배틀액스
+item.npcEmeraldBattleAxe.name=에메랄드 배틀액스
+
+item.npcWoodenMace.name=나무 메이스
+item.npcStoneMace.name=돌 메이스
+item.npcIronMace.name=철 메이스
+item.npcGoldenMace.name=금 메이스
+item.npcDiamondMace.name=다이아몬드 메이스
+item.npcBronzeMace.name=브론즈 메이스
+item.npcEmeraldMace.name=에메랄드 메이스
+
+item.npcWoodenDagger.name=나무 대거
+item.npcStoneDagger.name=돌 대거
+item.npcIronDagger.name=철 대거
+item.npcGoldenDagger.name=금 대거
+item.npcDiamondDagger.name=다이아몬드 대거
+item.npcBronzeDagger.name=브론즈 대거
+item.npcEmeraldDagger.name=에메랄드 대거
+item.npcWoodenReversedDagger.name=리버스 나무 대거
+item.npcStoneReversedDagger.name=리버스 돌 대거
+item.npcIronReversedDagger.name=리버스 철 대거
+item.npcGoldenReversedDagger.name=리버스 금 대거
+item.npcDiamondReversedDagger.name=리버스 다이아몬드 대거
+item.npcBronzeReversedDagger.name=리버스 브론즈 대거
+item.npcEmeraldReversedDagger.name=리버스 에메랄드 대거
+
+item.npcWoodenStaff.name=나무 스태프
+item.npcStoneStaff.name=돌 스태프
+item.npcIronStaff.name=철 스태프
+item.npcGoldenStaff.name=금 스태프
+item.npcDiamondStaff.name=다이아몬드 스태프
+item.npcBronzeStaff.name=브론즈 스태프
+item.npcEmeraldStaff.name=에메랄드 스태프
+item.npcElementalStaff.name=엘리멘탈 스태프
+
+item.npcWoodenScythe.name=나무 낫
+item.npcStoneScythe.name=돌 낫
+item.npcIronScythe.name=철 낫
+item.npcGoldenScythe.name=금 낫
+item.npcBronzeScythe.name=브론즈 낫
+item.npcDiamondScythe.name=다이아몬드 낫
+item.npcEmeraldScythe.name=에메랄드 낫
+
+item.npcWoodenGlaive.name=나무 양날검
+item.npcStoneGlaive.name=돌 양날검
+item.npcIronGlaive.name=철 양날검
+item.npcGoldenGlaive.name=금 양날검
+item.npcDiamondGlaive.name=다이아몬드 양날검
+item.npcBronzeGlaive.name=브론즈 양날검
+item.npcEmeraldGlaive.name=에메랄드 양날검
+
+item.npcCowleatherHead.name=소가죽 헬멧
+item.npcCowleatherChest.name=소가죽 갑옷
+item.npcCowleatherLegs.name=소가죽 레깅스
+item.npcCowleatherBoots.name=소가죽 신발
+
+item.npcNanorumHead.name=Nanorum 헬멧
+item.npcNanorumChest.name=Nanorum 갑옷
+item.npcNanorumLegs.name=Nanorum 레깅스
+item.npcNanorumBoots.name=Nanorum 신발
+
+item.npcTacticalHead.name=방탄 헬멧
+item.npcTacticalChest.name=방탄 조끼
+
+item.npcFullLeatherHead.name=촘촘한 가죽 헬멧
+item.npcFullLeatherChest.name=촘촘한 가죽 갑옷
+
+item.npcFullIronHead.name=촘촘한 철 헬멧
+item.npcFullIronChest.name=촘촘한 철 갑옷
+
+item.npcFullGoldHead.name=촘촘한 금 헬멧
+item.npcFullGoldChest.name=촘촘한 금 갑옷
+
+item.npcFullDiamondHead.name=촘촘한 다이아몬드 헬멧
+item.npcFullDiamondChest.name=촘촘한 다이아몬드 갑옷
+
+item.npcFullBronzeHead.name=촘촘한 브론즈 헬멧
+item.npcFullBronzeChest.name=촘촘한 브론즈 갑옷
+item.npcFullBronzeLeggings.name=촘촘한 브론즈 레깅스
+item.npcFullBronzeBoots.name=촘촘한 브론즈 신발
+
+item.npcFullWoodenHead.name=촘촘한 나무 헬멧
+item.npcFullWoodenChest.name=촘촘한 나무 갑옷
+item.npcFullWoodenLeggings.name=촘촘한 나무 레깅스
+item.npcFullWoodenBoots.name=촘촘한 나무 신발
+
+item.npcTuxedoChest.name=턱시도 상의
+item.npcTuxedoPants.name=턱시도 하의
+item.npcTuxedoBottom.name=턱시도 트렌치 코트
+
+item.npcWizardHead.name=마법사 모자
+item.npcWizardChest.name=마법사 상의
+item.npcWizardPants.name=마법사 레깅스
+
+item.npcAssassinHead.name=어쌔신 헬멧
+item.npcAssassinChest.name=어쌔신 갑옷
+item.npcAssassinLeggings.name=어쌔신 레깅스
+item.npcAssassinBoots.name=어쌔신 신발
+
+item.npcSoldierHead.name=병사 헬멧
+item.npcSoldierChest.name=병사 갑옷
+item.npcSoldierLegs.name=병사 레깅스
+item.npcSoldierBottom.name=병사 트렌치 코트
+
+item.npcX407Head.name=X407 프로토타입 헬멧
+item.npcX407Chest.name=X407 프로토타입 갑옷
+item.npcX407Legs.name=X407 프로토타입 레깅스
+item.npcX407Boots.name=X407 프로토타입 신발
+
+item.npcCommissarHead.name=Commissar 헬멧
+item.npcCommissarChest.name=Commissar 갑옷
+item.npcCommissarLegs.name=Commissar 레깅스
+item.npcCommissarBottom.name=Commissar 트렌치 코트
+
+item.npcInfantryHelmet.name=보병 헬멧
+item.npcOfficerChest.name=장교 갑옷
+
+item.npcCrown.name=광대
+item.npcCrown2.name=광대
+
+item.npcNinjaHead.name=닌자 모자
+item.npcNinjaChest.name=닌자 상의
+item.npcNinjaPants.name=닌자 레깅스
+
+item.npcFullEmeraldHead.name=촘촘한 에메랄드 헬멧
+item.npcFullEmeraldChest.name=촘촘한 에메랄드 갑옷
+item.npcFullEmeraldLeggings.name=촘촘한 에메랄드 레깅스
+item.npcFullEmeraldBoots.name=촘촘한 에메랄드 신발
+
+item.npcOrb.name=보주
+item.npcBrokenOrb.name=부서진 보주
+item.npcMana.name=마나
+
+item.npcNinjaClaw.name=닌자 갈퀴
+item.npcSteelClaw.name=강철 갈퀴
+item.npcBearClaw.name=Bear 갈퀴
+item.npcKatar.name=카타르
+
+item.npcLetter.name=편지
+item.npcPlans.name=Plans
+item.npcSatchel.name=책가방
+item.npcBag.name=가방
+item.npcCrystal.name=크리스탈
+item.npcSeveredEar.name=잘린 귀
+item.npcPhone.name=휴대폰
+item.npcBanditMask.name=강도 마스크
+item.npcBrokenArrow.name=부서진 화살
+item.npcEarthElement.name=흙 원소
+item.npcWaterElement.name=물 원소
+item.npcFireElement.name=불 원소
+item.npcAirElement.name=공기 원소
+item.npcCarKey.name=자동차 열쇠
+item.npcKey.name=열쇠
+item.npcPendant.name=팬던트
+item.npcBlueprint.name=청사진
+item.npcRing.name=반지
+
+item.npcSkull.name=해골
+item.npcBronzeIngot.name=브론즈 주괴
+item.npcSaphire.name=사파이어
+item.npcAmethyst.name=자수정
+item.npcRuby.name=루비
+

@@ -1,0 +1,545 @@
+﻿itemGroup.cnpcs=Custom Npcs Инструменты
+itemGroup.cnpcsw=Custom Npcs Оружие
+itemGroup.cnpcsa=Custom Npcs Броня
+itemGroup.cnpcsm=Custom Npcs Разное
+
+tile.npcRedstoneBlock.name=Редстоун Блок
+tile.npcCarpentyBench.name=Верстак Плотника
+tile.npcBloodBlock.name=Блок Крови
+
+gui.deleteConfirm=Вы точно хотите удалить этого NPC?
+gui.add=Добавить
+gui.remove=Удалить
+gui.save=Сохранить
+gui.name=Имя
+gui.color=Цвет
+gui.none=Нет
+gui.time=Время
+gui.title=Название
+gui.categories=Категории
+gui.close=Закрыть
+gui.disabled=Отключить
+gui.increase=Увеличить
+gui.decrease=Уменьшить
+gui.day=День
+gui.night=Ночь
+gui.constant=Постоянный
+gui.accelerate=Ускоренный
+gui.small=Маленький
+gui.medium=Средний
+gui.large=Большой
+gui.type=Тип
+gui.always=Всегда
+gui.untilclose=До закрытия
+gui.ignoreDamage=Игнорировать урон
+gui.retaliate=Мстить
+gui.panic=Паниковать
+gui.retreat=Отступать
+gui.nothing=Ничего
+gui.break=Ломать
+gui.open=Открывать
+gui.darkness=Ночью
+gui.sunlight=Днем
+gui.whenavailable=WhenReady
+gui.engagedistance=EngageDistance
+gui.currentFolder=Текущая папка
+gui.play=Играть
+gui.selectSound=Выбрать звуки
+gui.orbitdistance=Расстояние
+
+remote.title=Соседние НПС
+remote.reset=Пересоздать
+remote.tp=телепортироваться
+remote.resetall=Пересоздать всех
+remote.freeze=Заморозить
+
+spawner.entities=Животные
+spawner.clones=Клоны
+spawner.mobspawner=Спавнер
+
+display.model=Модель
+display.show=Показывать
+display.hide=Спрятать
+display.showAttacking=Показывать когда аттакован
+display.size=Размер
+display.texture=Текстура
+display.textureCape=Текстура Плаща
+display.textureOverlay=Наложение текстур
+display.player=Игрок
+display.selectTexture=Выбрать текстуру
+display.livingAnimation=Имеет живую анимацию
+display.tint=Цвет
+
+inv.minExp=Минимум Опыта
+inv.maxExp=Максимум Опыта
+inv.npcInventory=Инвентарь NPC
+inv.inventory=Инвентарь
+inv.dropChance=Шанс падения
+
+availability.options=Условия Диалога
+availability.always=Всегда
+availability.after=После
+availability.before=Перед
+availability.available=Доступно
+availability.whenactive=Когда Активен
+availability.whennotactive=Когда НЕ Активен
+availability.selectquest=Выбрать Задание
+availability.selectdialog=Выбрать Диалог
+availability.selectfaction=Выбрать фракцию
+availability.daytime=Время Суток
+availability.wholeday=Целый День
+availability.night=Во Время ночи
+availability.day=Во Время Дня
+availability.is=Is
+availability.isnot=Is not
+
+stats.health=Здоровье
+stats.aggro=Агро Радиус
+stats.meleeproperties=В близи
+stats.rangedproperties=Дальняя атака
+stats.projectileproperties=Пропорции
+stats.meleestrength=Сила
+stats.meleerange=Дальность
+stats.meleespeed=Скорость
+stats.accuracy=Точность(%)
+stats.rangedstrength=Сила
+stats.rangedrange=Дальность
+stats.firedelay=Задержка огня
+stats.delayvariance=Отклонение задержки
+stats.rangedspeed=Скорость
+stats.burstspeed=Скорость ДопАтаки
+stats.burstcount=Количество ДопАтаки
+stats.walkspeed=Скорость Ходьбы
+stats.chargespeed=Скорость Нападения
+stats.meleeeffect=Модификатор
+stats.respawn=Респаун
+stats.deadbody=Спрятать Труп
+stats.fireimmune=Иммунитет к Огню
+stats.candrown=Тонет в Воде
+stats.creaturetype=Тип Создания
+stats.normal=Обычный
+stats.undead=Нежить
+stats.arthropod=Арахнид
+stats.meleeproperties=Настройки Рукопашной
+stats.rangedproperties=Настройки Дальнобойной
+stats.burninsun=Горит На Солнце
+stats.noFallDamage=Нет Урона от Падения
+stats.amplify=Усиленный
+stats.melee=Рукопашная
+stats.nofalldamage=Нет урон от падения
+stats.regenhealth=Реген. здоровья
+
+stats.size=Размер
+stats.speed=Скорость
+stats.glows=Горит
+stats.hasgravity=Имеет гравицатию
+stats.explosive=Взырвается
+stats.rangedeffect=Эффект
+stats.trail=Тип
+stats.spin=Шипы
+stats.stick=Палки
+stats.regular=Не усилен
+stats.amplified=Усилен
+
+ai.standing=Стоит
+ai.wandering=Бродит
+ai.movingpath=Отмеченный Путь
+ai.looping=Петля
+ai.backtracking=Патруль
+
+ai.enemyresponse=Если найдет врага
+ai.door=Взаимодействие с дверью
+ai.avoidwater=Избегает воды
+ai.return=Вернутся на место
+ai.swim=Может плавать
+ai.shelter=Искать убежище
+ai.leapattarget=Прыжок на цель
+ai.sprint=Может бегать
+ai.clearlos=Должен видеть цели
+ai.indirect=Может стрелять
+ai.rangemelee=Использовать дальнюю атаку
+ai.tacticalvariant=Тактический вариант
+
+aitactics.rush=Торопиться
+aitactics.stagger=Уклонение
+aitactics.orbit=Окружать
+aitactics.ambush=Засада
+aitactics.stalk=Красться
+
+advanced.idlesound=Издаваемые звуки
+advanced.angersound=Звук агрессии
+advanced.hurtsound=Звук удара
+advanced.deathsound=Звук смерти
+advanced.stepsound=Звук ходьбы
+
+faction.hostiles=Враждебные Фракции
+faction.unfriendly=Враждебны
+faction.neutral=Нейтральны
+faction.friendly=Дружелюбны
+faction.points=Очки
+faction.ondeath=При смерти
+faction.hidden=Спрятан
+faction.default=Обычный
+faction.attackHostile=Атаковать Враждебные Фракции
+faction.defend=Защищать Членов Фракции
+faction.nostanding=У Вас нет отношений ни с одной Фракцией
+faction.options=Настройки Фракций
+faction.increasepoints=Отношение с %s увеличилось на %s очков
+faction.decreasepoints=Отношение с %s уменьшилось на %s очков
+
+menu.inventory=Инвентарь
+menu.quests=Задания
+menu.display=Вид
+menu.stats=Характеристики
+menu.factions=Фракции
+menu.ai=ИИ
+menu.advanced=Продвинутые
+menu.global=Глобальные
+menu.role=Роль
+
+global.banks=Банки
+global.factions=Фракции
+global.dialogs=Диалоги
+global.quests=Задания
+global.transport=Транспорт
+global.playerdata=Данные игрока
+global.recipes=Рецепты
+
+bank.slot=Слот
+bank.unlock=Открыть
+bank.upgrade=Улучшить
+bank.upgradeCosts=Стоимость Улучшения
+bank.unlockCosts=Стоимость Разблокировки
+
+follower.waiting=Ждать
+follower.following=Следовать
+follower.hire=Нанять
+follower.health=Здоровье
+follower.daysleft=Дней Осталось
+follower.lastday=Последний День
+follower.day=День
+follower.days=Дней
+follower.hireText=Спасибо,что нанял меня
+follower.farewellText=Срок Договора Истек.Прощай!
+
+transporter.travel=Отправиться
+transporter.unlock1=Отправление в
+transporter.unlock2=Теперь открыт
+
+dialog.dialog=Диалог
+dialog.dialogs=Диалоги
+dialog.options=Настройки Диалога
+dialog.dialogtext=Текст
+dialog.editoption=Изменить Настройки Диалога
+dialog.optiontype=Тип опции
+dialog.selectoption=Выбрать опции
+dialog.quitoption=Опция выхода
+dialog.option=Настройки диалога
+dialog.roleoption=Опция роли
+dialogcommandoption=Опция комманд
+
+quest.quest=Задание
+quest.quests=Задания
+quest.item=Задание на вещь
+quest.kill=Задание на убийство
+quest.dialog=Задание на диалог
+quest.completedtext=Текст завершения
+quest.questlogtext=Текст лога
+quest.complete=Завершить
+quest.turnin=Теперь вы можете сдать задание
+quest.start=Получено новое задание
+quest.reward=Награда
+quest.repeatable=Повтаряется
+quest.daily=Ежедневное
+quest.weekly=Еженедельное
+quest.instant=Закончить сразу
+quest.npc=Закончить поговорив с NPC
+
+item.npcWand.name=Настройщик NPC
+item.npcCloner.name=Клонер NPC
+item.npcSpawner.name=Спаунер NPC
+item.npcMovingPath.name=Путевод NPC
+
+item.npcBanjo.name=Банджо
+item.npcViolin.name=Скрипка
+item.npcViolinBow.name=Смычок Скрипки
+item.npcHarp.name=Арфа
+item.npcGuitar.name=Гитара
+
+item.npcCoinWooden.name=Деревянная Монета
+item.npcCoinStone.name=Каменная Монета
+item.npcCoinBronze.name=Бронзовая Монета
+item.npcCoinIron.name=Железная Монета
+item.npcCoinGold.name=Золотая Монета
+item.npcCoinDiamond.name=Алмазная Монета
+item.npcCoinEmerald.name=Изумрудная Монета
+
+item.npcWoodenGun.name=Деревянный Пистолет
+item.npcStoneGun.name=Каменный Пистолет
+item.npcIronGun.name=Железный Пистолет
+item.npcGoldGun.name=Золотой Пистолет
+item.npcDiamondGun.name=Алмазный Пистолет
+item.npcBronzeGun.name=Бронзовый Пистолет
+item.npcEmeraldGun.name=Изумрудный Пистолет
+item.npcMachineGun.name=Автомат
+
+item.npcWoodenBullet.name=Деревянная Пуля
+item.npcStoneBullet.name=Каменная Пуля
+item.npcIronBullet.name=Железная Пуля
+item.npcGoldenBullet.name=Золотая Пуля
+item.npcDiamondBullet.name=Алмазная Пуля
+item.npcBronzeBullet.name=Бронзовая Пуля
+item.npcEmeraldBullet.name=Изумрудная Пуля
+item.npcBlackBullet.name=Черная Пуля
+
+item.npcWoodenTrident.name=Деревянный Трезубец
+item.npcStoneTrident.name=Каменный Трезубец
+item.npcIronTrident.name=Железный Трезубец
+item.npcGoldTrident.name=Золотой Трезубец
+item.npcDiamondTrident.name=Алмазный Трезубец
+item.npcBronzeTrident.name=Бронзовый Трезубец
+item.npcEmeraldTrident.name=Изумрудный Трезубец
+item.npcCursedTrident.name=Проклятый Трезубец
+
+item.npcNatureSpell.name=Природное Заклинание
+item.npcArcaneSpell.name=Тайное Заклинание
+item.npcLightningSpell.name=Заклинание Молнии
+item.npcIceSpell.name=Заклинание Льда
+item.npcFireSpell.name=Заклинание Огня
+item.npcDarkSpell.name=Заклинание Тьмы
+item.npcHolySpell.name=Святое Заклинание
+
+item.npcKunai.name=Кунай
+item.npcReverseKunai.name=Короткий Кунай
+item.npcShuriken.name=Сюрикен
+item.npcGiantShuriken.name=Большой Сюрикен
+item.npcKatana.name=Катана
+item.npcKukri.name=Кукри
+
+item.npcGolfClub.name=Клюшка для Гольфа
+item.npcMagicWand.name=Волшебная Палочка
+item.npcChickenSword.name=Курица Меч
+item.npcHandCuffs.name=Наручники
+item.npcHammer.name=Молоток
+item.npcBaseballBat.name=Бита
+item.npcLeadPipe.name=Труба
+item.npcCleaver.name=Тесак
+item.npcSaber.name=Шашка
+item.npcHockeyStick.name=Хоккейная Клюшка
+item.npcSledgeHammer.name=Кувалда
+item.npcBrokenBottle.name=Розочка
+item.npcCombatKnive.name=Боевой Нож
+item.npcLighter.name=Зажигалка
+item.npcBatton.name=Черная Бита
+item.npcGunChainsaw.name=Бензопила
+item.npcRapier.name=Рапира
+item.npcCrowbar.name=Монтировка
+item.npcPipeWrench.name=Разводной Ключ
+item.npcWrench.name=Гаечный Ключ
+item.npcSwissArmyKnife.name=Армейский Нож
+
+item.npcWoodenShield.name=Круглый Деревянный Щит
+item.npcStoneShield.name=Круглый Каменный Щит
+item.npcIronShield.name=Круглый Железный Щит
+item.npcGoldenShield.name=Круглый Золотой Щит
+item.npcDiaShield.name=Круглый Алмазный Щит
+item.npcBronzeShield.name=Круглый Бронзовый Щит
+item.npcEmeraldShield.name=Круглый Изумрудный Щит
+item.npcFullWoodenShield.name=Деревянный Щит
+item.npcFullStoneShield.name=Каменный Щит
+item.npcFullIronShield.name=Железный Щит
+item.npcFullGoldenShield.name=Золотой Щит
+item.npcFullDiaShield.name=Алмазный Щит
+item.npcFullBronzeShield.name=Бронзовый Щит
+item.npcFullEmeraldShield.name=Изумрудный Щит
+
+item.npcTowerShield.name=Стальной Щит
+item.npcCryscentShield.name=Стальной Полукруглый Щит
+item.npcScutumShield.name=Стальной Спасательный Щит
+item.npcHeaterShield.name=Стальной Квадратный Щит
+
+item.npcWoodenSpear.name=Деревянное Копье
+item.npcStoneSpear.name=Каменное Копье
+item.npcIronSpear.name=Железное Копье
+item.npcGoldenSpear.name=Золотое Копье
+item.npcDiamondSpear.name=Алмазное Копье
+item.npcBronzeSpear.name=Бронзовое Копье
+item.npcEmeraldSpear.name=Изумрудное Копье
+
+item.npcWoodenBattleAxe.name=Деревянный Боевой Топор
+item.npcStoneBattleAxe.name=Каменный Боевой Топор
+item.npcIronBattleAxe.name=Железный Боевой Топор
+item.npcGoldenBattleAxe.name=Золотой Боевой Топор
+item.npcDiamondBattleAxe.name=Алмазный Боевой Топор
+item.npcBronzeBattleAxe.name=Бронзовый Боевой Топор
+item.npcEmeraldBattleAxe.name=Изумрудный Боевой Топор
+
+item.npcWoodenMace.name=Деревянная Булава
+item.npcStoneMace.name=Каменная Булава
+item.npcIronMace.name=Железная Булава
+item.npcGoldenMace.name=Золотая Булава
+item.npcDiamondMace.name=Алмазная Булава
+item.npcBronzeMace.name=Бронзовая Булава
+item.npcEmeraldMace.name=Изумрудная Булава
+
+item.npcWoodenDagger.name=Деревянный Нож
+item.npcStoneDagger.name=Каменный Нож
+item.npcIronDagger.name=Железный Нож
+item.npcGoldenDagger.name=Золотой Нож
+item.npcDiamondDagger.name=Алмазный Нож
+item.npcBronzeDagger.name=Бронзовый Нож
+item.npcEmeraldDagger.name=Изумрудный Нож
+item.npcWoodenReversedDagger.name=Деревянный Кинжал
+item.npcStoneReversedDagger.name=Каменный Кинжал
+item.npcIronReversedDagger.name=Железный Кинжал
+item.npcGoldenReversedDagger.name=Золотой Кинжал
+item.npcDiamondReversedDagger.name=Алмазный Кинжал
+item.npcBronzeReversedDagger.name=Бронзовый Кинжал
+item.npcEmeraldReversedDagger.name=Изумрудный Кинжал
+
+item.npcWoodenStaff.name=Деревянный Посох
+item.npcStoneStaff.name=Каменный Посох
+item.npcIronStaff.name=Железный Посох
+item.npcGoldenStaff.name=Золотой Посох
+item.npcDiamondStaff.name=Алмазный Посох
+item.npcBronzeStaff.name=Бронзовый Посох
+item.npcEmeraldStaff.name=Изумрудный Посох
+item.npcElementalStaff.name=Стихийный Посох
+
+item.npcWoodenScythe.name=Деревянная Коса
+item.npcStoneScythe.name=Каменная Коса
+item.npcIronScythe.name=Железная Коса
+item.npcGoldenScythe.name=Золотая Коса
+item.npcBronzeScythe.name=Бронзовая Коса
+item.npcDiamondScythe.name=Алмазная Коса
+item.npcEmeraldScythe.name=Изумрудная Коса
+
+item.npcWoodenGlaive.name=Деревянная Глефа
+item.npcStoneGlaive.name=Каменная Глефа
+item.npcIronGlaive.name=Железная Глефа
+item.npcGoldenGlaive.name=Золотая Глефа
+item.npcDiamondGlaive.name=Алмазная Глефа
+item.npcBronzeGlaive.name=Бронзовая Глефа
+item.npcEmeraldGlaive.name=Изумрудная Глефа
+
+item.npcCowleatherHead.name=Коровий Шлем
+item.npcCowleatherChest.name=Коровий Нагрудник
+item.npcCowleatherLegs.name=Коровьи Поножи
+item.npcCowleatherBoots.name=Коровьи Сапоги
+
+item.npcNanorumHead.name=Рыцарский Шлем
+item.npcNanorumChest.name=Рыцарский Нагрудник
+item.npcNanorumLegs.name=Рыцарские Поножи
+item.npcNanorumBoots.name=Рыцарские Сапоги
+
+item.npcTacticalHead.name=Тактический Шлем
+item.npcTacticalChest.name=Тактический Жилет
+
+item.npcFullLeatherHead.name=Укрепленный Кожаный Шлем
+item.npcFullLeatherChest.name=Укрепленный Кожаный Нагрудник
+
+item.npcFullIronHead.name=Латный Железный Шлем
+item.npcFullIronChest.name=Латный Железный Нагрудник
+
+item.npcFullGoldHead.name=Латный Золотой Шлем
+item.npcFullGoldChest.name=Латный Золотой Нагрудник
+
+item.npcFullDiamondHead.name=Латный Алмазный Шлем
+item.npcFullDiamondChest.name=Латный Алмазный Нагрудник
+
+item.npcFullBronzeHead.name=Латный Бронзовый Шлем
+item.npcFullBronzeChest.name=Латный Бронзовый Нагрудник
+item.npcFullBronzeLeggings.name=Бронзовые Поножи
+item.npcFullBronzeBoots.name=Бронзовые Сапоги
+
+item.npcFullWoodenHead.name=Латный Деревянный Шлем
+item.npcFullWoodenChest.name=Латный Деревянный Нагрудник
+item.npcFullWoodenLeggings.name=Деревянные Поножи
+item.npcFullWoodenBoots.name=Деревянные Сапоги
+
+item.npcTuxedoChest.name=Смокинг
+item.npcTuxedoPants.name=Штаны Смокинга
+item.npcTuxedoBottom.name=Плащ Смокинга
+
+item.npcWizardHead.name=Капюшон Волшебника
+item.npcWizardChest.name=Одеяние Волшебника
+item.npcWizardPants.name=Поножи Волшебника
+
+item.npcAssassinHead.name=Шлем Ассасина
+item.npcAssassinChest.name=Нагрудник Ассасина
+item.npcAssassinLeggings.name=Поножи Ассасина
+item.npcAssassinBoots.name=Сапоги Ассасина
+
+item.npcSoldierHead.name=Шлем Солдата
+item.npcSoldierChest.name=Нагрудник Солдата
+item.npcSoldierLegs.name=Поножи Солдата
+item.npcSoldierBottom.name=Плащ Солдата
+
+item.npcX407Head.name=Шлем Прототип X407
+item.npcX407Chest.name=Нагрудник Прототип X407
+item.npcX407Legs.name=Поножи Прототип X407
+item.npcX407Boots.name=Сапоги Прототип X407
+
+item.npcCommissarHead.name=Шлем Комиссара
+item.npcCommissarChest.name=Нагрудник Комиссара
+item.npcCommissarLegs.name=Поножи Комиссара
+item.npcCommissarBottom.name=Сапоги Комиссара
+
+item.npcInfantryHelmet.name=Пехотный Шлем
+item.npcOfficerHelmet.name=Офицерский Нагрудник
+
+item.npcCrown.name=Корона
+item.npcCrown2.name=Корона
+
+item.npcNinjaHead.name=Шлем Ниндзя
+item.npcNinjaChest.name=Одеяние Ниндзя
+item.npcNinjaPants.name=Штаны Ниндзя
+
+item.npcFullEmeraldHead.name=Латный Изумрудный Шлем
+item.npcFullEmeraldChest.name=Латный Изумрудный Нагрудник
+item.npcFullEmeraldLeggings.name=Латные Изумрудные Поножи
+item.npcFullEmeraldBoots.name=Латные Изумрудные Сапоги
+
+item.npcOrb.name=Сфера
+item.npcBrokenOrb.name=Сломанная Сфера
+item.npcMana.name=Мана
+
+item.npcNinjaClaw.name=Коготь Ниндзя
+item.npcSteelClaw.name=Стальной Коготь
+item.npcBearClaw.name=Коготь Медведя
+item.npcKatar.name=Катар
+
+item.npcLetter.name=Письмо
+item.npcPlans.name=Планы
+item.npcSatchel.name=Мешочек
+item.npcBag.name=Рюкзак
+item.npcCrystal.name=Кристал
+item.npcSeveredEar.name=Оторованное Ухо
+item.npcPhone.name=Телефон
+item.npcBanditMask.name=Маска Бандита
+item.npcBrokenArrow.name=Сломанная Стрела
+item.npcEarthElement.name=Элемент Земли
+item.npcWaterElement.name=Элемент Воды
+item.npcFireElement.name=Элемент Огня
+item.npcAirElement.name=Элемент Воздуха
+item.npcCarKey.name=Ключи От Машины
+item.npcKey.name=Ключ
+item.npcKey2.name=Ключ
+item.npcPendant.name=Кулон
+item.npcBlueprint.name=Чертеж
+item.npcRing.name=Кольцо
+
+item.npcSkull.name=Череп
+item.npcBronzeIngot.name=Слиток Бронзы
+item.npcSaphire.name=Сапфир
+item.npcAmethyst.name=Аметист
+item.npcRuby.name=Рубин
+
+item.npcMacuahuitl.name=Дубинка;
+item.npcBoStaff.name=Посох Бо;
+item.npcSaiBlade.name=Саи;
+item.npcCrossbow.name=Арбалет
+item.npcCrossBolt.name=Болт арбалета
+item.npcSlingshot.name=Рогатка
+item.npcMusket.name=Мушкет
+item.npcExcalibur.name=Экскалибур

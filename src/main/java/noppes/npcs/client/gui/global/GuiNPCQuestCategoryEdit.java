@@ -1,0 +1,78 @@
+// Decompiled by Jad v1.5.8g. Copyright 2001 Pavel Kouznetsov.
+// Jad home page: http://www.kpdus.com/jad.html
+// Decompiler options: packimports(3) braces deadcode 
+
+package noppes.npcs.client.gui.global;
+
+import net.minecraft.client.gui.GuiButton;
+import net.minecraft.client.gui.GuiScreen;
+import noppes.npcs.EntityNPCInterface;
+import noppes.npcs.client.NoppesUtil;
+import noppes.npcs.client.gui.util.GuiNPCInterface;
+import noppes.npcs.client.gui.util.GuiNpcButton;
+import noppes.npcs.client.gui.util.GuiNpcLabel;
+import noppes.npcs.client.gui.util.GuiNpcTextField;
+import noppes.npcs.constants.EnumPacketType;
+
+// Referenced classes of package net.minecraft.src:
+//            GuiScreen, GuiButton, StatCollector, GuiOptions, 
+//            StatList, StatFileWriter, World, GuiMainMenu, 
+//            GuiAchievements, GuiStats, MathHelper
+
+public class GuiNPCQuestCategoryEdit extends GuiNPCInterface
+{
+	private GuiScreen parent;
+	private String name;
+	private int id;
+    public GuiNPCQuestCategoryEdit(EntityNPCInterface npc,GuiScreen parent, String name, int id)
+    {
+    	super(npc);
+    	this.parent = parent;
+    	this.name = name;
+    	this.id = id;
+    	title = "Quest Category";
+    }
+
+    public void initGui()
+    {
+        super.initGui();
+    	this.addTextField(1, new GuiNpcTextField(1,this, this.fontRenderer, width / 2 - 40, 100, 140, 20, name));
+        addLabel(new GuiNpcLabel(1,"Title:", width / 2 - 100+4, 105, 0xffffff));
+        
+    	this.addButton(2,new GuiNpcButton(2, width / 2 - 100, 210,98, 20, "gui.back"));
+    	this.addButton(3,new GuiNpcButton(3, width / 2 +2, 210,98, 20, "Save"));
+    }
+
+
+    public void drawScreen(int i, int j, float f)
+    {
+        super.drawScreen(i, j, f);
+    }
+
+	protected void actionPerformed(GuiButton guibutton)
+    {
+        if(guibutton.id == 2)
+        {
+        	NoppesUtil.openGUI(player, parent);
+    		NoppesUtil.sendData(EnumPacketType.QuestCategoriesGet);
+        }
+        if(guibutton.id == 3)
+        {
+        	save();
+        	NoppesUtil.openGUI(player, parent);
+    		NoppesUtil.sendData(EnumPacketType.QuestCategoriesGet);
+        }
+    }
+	public void save() {
+		String name = getTextField(1).getText();
+		if(name.trim().isEmpty())
+			return;
+    	NoppesUtil.sendData(EnumPacketType.QuestCategorySave,name,id);
+	}
+	@Override
+    public void drawDefaultBackground()
+    {
+		drawBackground(0);
+    }
+
+}

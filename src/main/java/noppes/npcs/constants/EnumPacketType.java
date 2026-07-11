@@ -1,0 +1,58 @@
+package noppes.npcs.constants;
+
+public enum EnumPacketType {
+	SaveNpc("customnpcs.npc.edit", true), 
+	Delete("customnpcs.npc.delete", true),
+	Particle, 
+	SpawnNpc("customnpcs.npc.create",false), 
+	Gui, 
+	SaveRole, 
+	ScrollList, 
+	Transport, 
+	Bank, 
+	BanksGet, 
+	BankGet, 
+	BankSave, 
+	BankRemove, 
+	MobSpawner("customnpcs.spawner.create", false), 
+	Dialog, 
+	DialogCategorySave, 
+	DialogCategoryRemove, DialogRemove, DialogsGet, DialogCategoriesGet, ScrollData, TransportCategoriesGet, TransportsGet, TransportCategoryRemove, TransportRemove, TransportCategorySave, 
+	TransportSave("",true), 
+	TransportGetLocation("",true), 
+	TransportCategorySelected, ScrollSelected, FactionRemove, FactionSave, FactionsGet, FactionGet, DialogSave, DialogEdit, DialogNpcGet, 
+	DialogNpcSet("customnpcs.npc.edit", false), 
+	DialogNpcRemove("customnpcs.npc.edit", true),
+	DialogsGetFromDialog, RedstoneBlockSave, QuestsGetFromQuest, QuestCategoriesGet, QuestsGet, QuestEdit, QuestSave, QuestCategorySave, QuestRemove, QuestCategoryRemove, QuestRewardSave, RecipesGet, RecipeSave, RecipeGet, RecipeAdd, RecipeRemove, QuestOpenGui, QuestCompletion, Chat, Staff, PlayerDataGet, PlayerDataRemove, 
+	SpawnMob("customnpcs.spawner.mob", false), 
+	FactionSet("",true),
+	RemoteNpcsGet, UpdateNpc, 
+	RemoteMainMenu("customnpcs.npc.edit", false), 
+	RemoteDelete("customnpcs.npc.delete", false), 
+	SyncRecipes, RemoteFreeze, RemoteReset, 
+	ChangeModel("customnpcs.npc.edit", true), 
+	MainmenuDisplayGet("",true),
+	MainmenuDisplaySave("",true), 
+	MainmenuStatsGet("",true),
+	MainmenuStatsSave("",true), 
+	MainmenuAIGet("",true),
+	MainmenuAISave("",true), GuiData, EditingNpc, 
+	MainmenuInvSave("",true),
+	MainmenuInvGet("",true),
+	MainmenuAdvancedGet("",true),
+	MainmenuAdvancedSave("",true), RemoteTpToNpc, DialogGet, DialogCategoryGet, QuestGet, PlayMusic, QuestCategoryGet, PlaySound, WaypointSave, SaveTileEntity, GuiError, GuiClose, Message, MerchantAdd, MerchantUpdate, GetTileEntity, OpenBook, CHATBUBBLE;
+
+	public String permission;
+	public boolean needsNpc = false;
+
+	EnumPacketType() {}
+
+	EnumPacketType(String permission, boolean npc) {
+		this.permission = permission;
+		needsNpc = npc;
+	}
+
+	public boolean hasPermission() {
+		return permission != null && !permission.isEmpty();
+	}
+}
