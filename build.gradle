@@ -29,6 +29,10 @@ repositories {
 minecraft {
     mappings channel: 'snapshot', version: '20130918-1.6.3'
 
+    // 放开原版被 CustomNPCs 直接访问的私有/受保护成员
+    // 文件位于 src/main/resources/META-INF/accesstransformer.cfg
+    useDefaultAccessTransformer()
+
     runs {
         register('client') {
             workingDir = file('runs/main/client/')
