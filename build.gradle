@@ -1,0 +1,70 @@
+plugins {
+    id 'java'
+    id 'net.minecraftforge.gradle' version "7.0.28"
+    id("net.minecraftforge.renamer") version "1.1.2"
+}
+
+java.toolchain.languageVersion = JavaLanguageVersion.of(8)
+
+tasks.withType(JavaCompile) {
+    options.fork = true
+    options.encoding = 'UTF-8'
+    options.compilerArgs += ['-source', '1.6', '-target', '1.6']
+}
+
+version = "1.6.4b"
+group = "noppes.npcs"
+base.archivesName = "CustomNPCs"
+
+repositories {
+    mavenCentral()
+    minecraft.mavenizer(it)
+    maven fg.forgeMaven
+    maven fg.minecraftLibsMaven
+    flatDir(
+            dir : 'libs'
+    )
+}
+
+minecraft {
+    mappings channel: 'snapshot', version: '20130918-1.6.3'
+
+    runs {
+        register('client') {
+            workingDir = file('runs/main/client/')
+            environment.put("tweakClass", "cpw.mods.fml.common.launcher.FMLTweaker")
+            jvmArgs "-Dfml.ignoreInvalidMinecraftCertificates=true"
+        }
+        register('server') {
+            workingDir = file('runs/main/server/')
+            environment.put("tweakClass", "cpw.mods.fml.common.launcher.FMLTweaker")
+            jvmArgs "-Dfml.ignoreInvalidMinecraftCertificates=true"
+        }
+    }
+}
+
+dependencies {
+    implementation minecraft.dependency("net.minecraftforge:forge:${minecraft_version}-${forge_version}")
+}
+
+processResources {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+
+    inputs.property "version", project.version
+
+    from(sourceSets.main.resources.srcDirs) {
+        include 'mcmod.info'
+        expand 'version': project.version
+    }
+    from(sourceSets.main.resources.srcDirs) {
+        exclude 'mcmod.info'
+    }
+}
+
+renamer.mappings.from minecraft.dependency.toSrgFile
+
+renamer.classes(tasks.named('jar', Jar)) {
+    map.from minecraft.dependency.toSrgFile
+
+    archiveClassifier = 'srg'
+}
