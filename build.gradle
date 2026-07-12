@@ -9,7 +9,8 @@ java.toolchain.languageVersion = JavaLanguageVersion.of(8)
 tasks.withType(JavaCompile) {
     options.fork = true
     options.encoding = 'UTF-8'
-    options.compilerArgs += ['-source', '1.6', '-target', '1.6']
+    // 2026-07 起编译目标由 Java 6 升级为 Java 8,玩家运行时需 Java 8+
+    options.compilerArgs += ['-source', '1.8', '-target', '1.8']
 }
 
 // 版本号由 git 短提交 id 派生,保留 1.6.4 前缀标识目标 MC 版本

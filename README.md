@@ -19,6 +19,11 @@ CustomNPCs 是 [Noppes](https://www.kodevelopment.nl/) 的原创作品。本 1.6
 >
 > This mod is **free and non-commercial**. You may NOT sell it, or include it in any paid modpack, paid server package, or other paid resource. Redistribution must keep it free and credit Noppes.
 
+## 运行要求
+
+- Minecraft 1.6.4 + Forge 9.11.1.960
+- **Java 8 或更高运行时**:自 2026-07 起构建产物为 Java 8 字节码,老旧的 Java 6/7 JRE 无法加载(会报 `UnsupportedClassVersionError`)。主流启动器(PCL、HMCL、Prism 等)均可为 1.6.4 指定 Java 8。
+
 ## 构建
 
 原作者未提供构建环境,本仓库的 Forge Gradle 构建环境由 postyizhan 自行搭建(ForgeGradle 7 + MC 1.6.4 / Forge 9.11.1.960,Java 8 工具链)。
