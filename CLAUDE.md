@@ -24,7 +24,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
   ./gradlew runServer
   ```
 - **dev 运行环境准备(首次必做)**:
-  1. `./gradlew downloadGameAssets` — 下载 1.6.4 legacy 布局游戏资产(语言文件/音效/字体)到 `runs/main/client/assets/`。运行入口 slime-launcher 不传 `--assetsDir`,1.6.4 客户端默认读工作目录下的 `assets/`。缺少则游戏无法切换语言(只有英文)且没有任何声音。
+  1. `./gradlew downloadGameAssets` — 下载 1.6.4 legacy 布局游戏资产(语言文件/音效/字体)。dev 运行入口 slime-launcher 把资产目录固定解析为系统默认 `%APPDATA%\.minecraft\assets`(既不读工作目录,也无法用 run 的环境变量覆盖,已实测),因此任务直接下载到该目录。缺少则游戏无法切换语言(只有英文)且没有任何声音。
   2. 用 Java 8+ 运行时跑 run 任务,必须在 `runs/main/client/mods/`(server 同理)放入 `legacyjavafixer-1.0.jar`,否则 FML 在新 JVM 上因模组排序问题启动崩溃(1.6.4 Forge 自身缺陷,与本模组无关)。
 - 本项目**没有测试套件**(无 `src/test`,无测试框架依赖)。验证改动主要靠 `./gradlew build` 编译通过,以及必要时手动通过 `runClient`/`runServer` 进行游戏内验证。
 - Mappings 使用 `snapshot 20130918-1.6.3`,并通过 `useDefaultAccessTransformer()` 加载 `src/main/resources/META-INF/accesstransformer.cfg`,用于放开原版 Minecraft 中被 CustomNPCs 直接访问的私有/受保护字段。**新增对原版私有/受保护成员的直接访问时,必须同步在该 AT 文件中补充对应条目,否则编译会因访问权限报错**。

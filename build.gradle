@@ -62,12 +62,14 @@ dependencies {
     implementation minecraft.dependency("net.minecraftforge:forge:${minecraft_version}-${forge_version}")
 }
 
-// 下载 1.6.4 的 legacy 布局游戏资产(语言文件/音效/字体)到 client 运行目录的 assets/。
-// 1.6.4 的非英语语言文件与音效不在客户端 jar 里;运行入口(slime-launcher)不传 --assetsDir,
-// 游戏默认读 <工作目录>/assets,缺少则无法切换语言、没有任何声音。
-// music/records/streaming 体积大且非必需,跳过。
+// 下载 1.6.4 的 legacy 布局游戏资产(语言文件/音效/字体)。
+// 1.6.4 的非英语语言文件与音效不在客户端 jar 里;dev 运行入口(slime-launcher)把资产
+// 目录固定解析为系统默认 .minecraft/assets(既不读工作目录,也无法用环境变量覆盖,已实测),
+// 因此直接下载到该目录。music/records/streaming 体积大且非必需,跳过。
 tasks.register('downloadGameAssets') {
-    def assetsDir = file('runs/main/client/assets')
+    // 与 dev 运行时 slime-launcher 解析的 {assets_root} 一致:APPDATA/.minecraft/assets
+    def appData = System.getenv('APPDATA') ?: "${System.getProperty('user.home')}/.minecraft"
+    def assetsDir = System.getenv('APPDATA') ? file("${appData}/.minecraft/assets") : file("${appData}/assets")
     // 1.6.4 version.json 中 hash 固定的 legacy 资产索引
     def indexUrl = 'https://launchermeta.mojang.com/v1/packages/770572e819335b6c0a053f8378ad88eda189fc14/legacy.json'
     def skipPrefixes = ['music/', 'records/', 'streaming/']
