@@ -12,7 +12,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## 构建与运行
 
-- 构建工具链:ForgeGradle 7(`net.minecraftforge.gradle` 插件)+ Minecraft 1.6.4 / Forge 9.11.1.960,源码按 `-source 1.8 -target 1.8` 编译(2026-07 起从 Java 6 目标升级,玩家运行时需 Java 8+,README 已声明)。
+- 构建工具链:ForgeGradle 7(`net.minecraftforge.gradle` 插件)+ Minecraft 1.6.4 / Forge 9.11.1.960,源码按 `-source 1.7 -target 1.7` 编译。**Java 7 是硬上限**:1.6.4 FML 内置 ASM 4.1 只能解析 class 版本 ≤51,Java 8 字节码(52)会让 FML 注解扫描抛 IllegalArgumentException 并丢弃整个 mod(dev 与生产环境皆然,已实测)。可用语法:diamond、try-with-resources、multi-catch、switch-on-String;**不可用**:lambda、方法引用、接口默认方法;API 也只用 Java 7 及以下(保住 Java 7 运行时玩家)。
 - 构建:
   ```bash
   ./gradlew build
@@ -23,6 +23,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
   ./gradlew runClient
   ./gradlew runServer
   ```
+- **dev 运行环境准备(首次必做)**:
+  1. `./gradlew downloadGameAssets` — 下载 1.6.4 legacy 布局游戏资产(语言文件/音效/字体)到 `runs/main/client/assets/`。运行入口 slime-launcher 不传 `--assetsDir`,1.6.4 客户端默认读工作目录下的 `assets/`。缺少则游戏无法切换语言(只有英文)且没有任何声音。
+  2. 用 Java 8+ 运行时跑 run 任务,必须在 `runs/main/client/mods/`(server 同理)放入 `legacyjavafixer-1.0.jar`,否则 FML 在新 JVM 上因模组排序问题启动崩溃(1.6.4 Forge 自身缺陷,与本模组无关)。
 - 本项目**没有测试套件**(无 `src/test`,无测试框架依赖)。验证改动主要靠 `./gradlew build` 编译通过,以及必要时手动通过 `runClient`/`runServer` 进行游戏内验证。
 - Mappings 使用 `snapshot 20130918-1.6.3`,并通过 `useDefaultAccessTransformer()` 加载 `src/main/resources/META-INF/accesstransformer.cfg`,用于放开原版 Minecraft 中被 CustomNPCs 直接访问的私有/受保护字段。**新增对原版私有/受保护成员的直接访问时,必须同步在该 AT 文件中补充对应条目,否则编译会因访问权限报错**。
 - `mcmod.info` 中的 `version` 字段通过 Gradle `processResources` 任务在构建期用 `project.version` 就地展开,不要手动写死版本号。

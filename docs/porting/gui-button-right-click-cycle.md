@@ -21,7 +21,10 @@
 
 ## 需人工游戏内验证项
 
-前置:`./gradlew runClient`(或安装 `build/libs/CustomNPCs-1.6.4-<hash>.jar`)进入单人世界,创造模式。物品栏(创造页签 Custom NPCs)取 **NPC 法杖(NPC Wand)** 右键地面生成 NPC,再用法杖右键该 NPC 打开编辑界面。
+前置:
+1. 首次运行前执行 `./gradlew downloadGameAssets`(下载语言/音效资产,否则无法切中文、没有点击音)。
+2. Java 8+ 运行时需在 `runs/main/client/mods/` 放 `legacyjavafixer-1.0.jar`(你已放好)。
+3. `./gradlew runClient`(或安装 `build/libs/CustomNPCs-1.6.4-<hash>.jar` 到正式实例)进入单人世界,创造模式。物品栏(创造页签 Custom NPCs)取 **NPC 法杖(NPC Wand)** 右键地面生成 NPC,再用法杖右键该 NPC 打开编辑界面。
 
 ### 1. 基础功能:AI 页四值按钮
 

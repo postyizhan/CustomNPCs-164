@@ -47,3 +47,9 @@ config/*.cfg
 
 # Build artifacts
 *.log
+
+# ForgeGradle 运行环境(存档/日志/下载的游戏资产)与 IDE 启动配置
+runs/
+*.launch
+
+CustomNPC-Plus

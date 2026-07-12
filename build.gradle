@@ -9,8 +9,9 @@ java.toolchain.languageVersion = JavaLanguageVersion.of(8)
 tasks.withType(JavaCompile) {
     options.fork = true
     options.encoding = 'UTF-8'
-    // 2026-07 起编译目标由 Java 6 升级为 Java 8,玩家运行时需 Java 8+
-    options.compilerArgs += ['-source', '1.8', '-target', '1.8']
+    // 编译目标 Java 7:1.6.4 FML 内置 ASM 4.1 最高只能解析 class 版本 51,
+    // Java 8 字节码(52)会让 FML 直接丢弃整个 mod 候选(Unable to read a class file)
+    options.compilerArgs += ['-source', '1.7', '-target', '1.7']
 }
 
 // 版本号由 git 短提交 id 派生,保留 1.6.4 前缀标识目标 MC 版本
@@ -54,6 +55,53 @@ minecraft {
 
 dependencies {
     implementation minecraft.dependency("net.minecraftforge:forge:${minecraft_version}-${forge_version}")
+}
+
+// 下载 1.6.4 的 legacy 布局游戏资产(语言文件/音效/字体)到 client 运行目录的 assets/。
+// 1.6.4 的非英语语言文件与音效不在客户端 jar 里;运行入口(slime-launcher)不传 --assetsDir,
+// 游戏默认读 <工作目录>/assets,缺少则无法切换语言、没有任何声音。
+// music/records/streaming 体积大且非必需,跳过。
+tasks.register('downloadGameAssets') {
+    def assetsDir = file('runs/main/client/assets')
+    // 1.6.4 version.json 中 hash 固定的 legacy 资产索引
+    def indexUrl = 'https://launchermeta.mojang.com/v1/packages/770572e819335b6c0a053f8378ad88eda189fc14/legacy.json'
+    def skipPrefixes = ['music/', 'records/', 'streaming/']
+    outputs.dir(assetsDir)
+    doLast {
+        def index = new groovy.json.JsonSlurper().parse(new URL(indexUrl))
+        def wanted = index.objects.findAll { path, obj ->
+            !skipPrefixes.any { path.startsWith(it) }
+        }
+        def pool = java.util.concurrent.Executors.newFixedThreadPool(8)
+        def downloaded = new java.util.concurrent.atomic.AtomicInteger()
+        def failed = java.util.concurrent.ConcurrentHashMap.newKeySet()
+        try {
+            def futures = wanted.collect { path, obj ->
+                pool.submit({
+                    def target = new File(assetsDir, path)
+                    if (target.isFile() && target.length() == (obj.size as long))
+                        return
+                    target.parentFile.mkdirs()
+                    def hash = obj.hash as String
+                    def url = "https://resources.download.minecraft.net/${hash.substring(0, 2)}/${hash}"
+                    try {
+                        new URL(url).withInputStream { ins -> target.withOutputStream { it << ins } }
+                        downloaded.incrementAndGet()
+                    } catch (Exception e) {
+                        failed.add("${path}: ${e.message}".toString())
+                    }
+                } as Runnable)
+            }
+            futures.each { it.get() }
+        } finally {
+            pool.shutdown()
+        }
+        if (!failed.isEmpty()) {
+            failed.take(5).each { logger.error("下载失败: ${it}") }
+            throw new GradleException("共 ${failed.size()} 个资产下载失败,可重跑本任务续传")
+        }
+        println "游戏资产就绪: 共 ${wanted.size()} 个文件(本次新下载 ${downloaded.get()} 个) → ${assetsDir}"
+    }
 }
 
 processResources {
