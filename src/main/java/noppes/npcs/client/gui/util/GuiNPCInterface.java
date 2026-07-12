@@ -106,9 +106,24 @@ public abstract class GuiNPCInterface extends GuiScreen
 	        }
 	    	mouseEvent(i,j,k);
 	    	super.mouseClicked(i, j, k);
+	    	if(k == 1)
+	    		rightClickButtons(i, j);
     	}
     }
     public void mouseEvent(int i, int j, int k){};
+
+	protected void rightClickButtons(int i, int j){
+		for(int l = 0; l < buttonList.size(); l++){
+			Object o = buttonList.get(l);
+			if(!(o instanceof GuiNpcButton))
+				continue;
+			GuiNpcButton button = (GuiNpcButton)o;
+			if(button.isRightClickable() && button.mousePressed(mc, i, j, true)){
+				mc.sndManager.playSoundFX("random.click", 1.0F, 1.0F);
+				actionPerformed(button);
+			}
+		}
+	}
     
     protected void actionPerformed(GuiButton par1GuiButton) {
 		if(subgui != null)

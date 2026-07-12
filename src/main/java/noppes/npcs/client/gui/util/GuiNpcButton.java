@@ -40,13 +40,27 @@ public class GuiNpcButton extends GuiButton{
     }
     public boolean mousePressed(Minecraft minecraft, int i, int j)
     {
-    	boolean bo = super.mousePressed(minecraft, i, j);
-    	if(bo && display != null){
-    		displayValue = (displayValue+1) % display.length;
-    		this.displayString = StatCollector.translateToLocal(display[displayValue]);
-    	}
-    	return bo;
+		return mousePressed(minecraft, i, j, false);
     }
+	public boolean mousePressed(Minecraft minecraft, int i, int j, boolean reverse)
+	{
+		boolean bo = super.mousePressed(minecraft, i, j);
+		if(bo && display != null){
+			if(reverse){
+				if(displayValue <= 0)
+					displayValue = display.length;
+				displayValue--;
+			}
+			else{
+				displayValue = (displayValue+1) % display.length;
+			}
+			this.displayString = StatCollector.translateToLocal(display[displayValue]);
+		}
+		return bo;
+	}
+	public boolean isRightClickable(){
+		return display != null && display.length > 1;
+	}
     public void setDisplay(int value){
     	this.displayValue = value;
     	this.displayString = StatCollector.translateToLocal(display[value]);
