@@ -13,6 +13,7 @@ import net.minecraft.client.gui.GuiButton;
 import net.minecraft.nbt.NBTTagCompound;
 import noppes.npcs.EntityNPCInterface;
 import noppes.npcs.client.NoppesUtil;
+import noppes.npcs.client.gui.SubGuiColorSelector;
 import noppes.npcs.client.gui.SubGuiNpcFactionPoints;
 import noppes.npcs.client.gui.util.GuiCustomScroll;
 import noppes.npcs.client.gui.util.GuiCustomScrollActionListener;
@@ -23,6 +24,8 @@ import noppes.npcs.client.gui.util.GuiNpcTextField;
 import noppes.npcs.client.gui.util.ITextfieldListener;
 import noppes.npcs.client.gui.util.IGuiData;
 import noppes.npcs.client.gui.util.IScrollData;
+import noppes.npcs.client.gui.util.ISubGuiListener;
+import noppes.npcs.client.gui.util.SubGuiInterface;
 import noppes.npcs.constants.EnumPacketType;
 import noppes.npcs.controllers.Faction;
 
@@ -31,7 +34,7 @@ import noppes.npcs.controllers.Faction;
 //            StatList, StatFileWriter, World, GuiMainMenu, 
 //            GuiAchievements, GuiStats, MathHelper
 
-public class GuiNPCManageFactions extends GuiNPCInterface2 implements IScrollData,GuiCustomScrollActionListener,ITextfieldListener, IGuiData
+public class GuiNPCManageFactions extends GuiNPCInterface2 implements IScrollData,GuiCustomScrollActionListener,ITextfieldListener, IGuiData, ISubGuiListener
 {
 	private GuiCustomScroll scrollFactions;
 	private HashMap<String,Integer> data = new HashMap<String,Integer>();
@@ -69,8 +72,9 @@ public class GuiNPCManageFactions extends GuiNPCInterface2 implements IScrollDat
     	String color = Integer.toHexString(faction.color);
     	while(color.length() < 6)
     		color = "0" + color;
-    	this.addTextField(new GuiNpcTextField(1, this, fontRenderer, guiLeft + 48, guiTop + 26, 165, 20, color));
-    	addLabel(new GuiNpcLabel(1,"gui.color", guiLeft + 8, guiTop + 31, 0x404040));
+        this.addTextField(new GuiNpcTextField(1, this, fontRenderer, guiLeft + 48, guiTop + 26, 135, 20, color));
+        this.addButton(new GuiNpcButton(20, guiLeft + 185, guiTop + 26, 28, 20, "..."));
+        addLabel(new GuiNpcLabel(1,"gui.color", guiLeft + 8, guiTop + 31, 0x404040));
     	getTextField(1).setMaxStringLength(6);
 		getTextField(1).setTextColor(faction.color);
 
@@ -131,6 +135,10 @@ public class GuiNPCManageFactions extends GuiNPCInterface2 implements IScrollDat
         if(guibutton.id == 2)
         {
         	this.setSubGui(new SubGuiNpcFactionPoints(faction));
+        }
+        if(guibutton.id == 20)
+        {
+            setSubGui(new SubGuiColorSelector(faction.color));
         }
         if(guibutton.id == 3)
         {
@@ -195,6 +203,14 @@ public class GuiNPCManageFactions extends GuiNPCInterface2 implements IScrollDat
 			faction.writeNBT(compound);
     	
 			NoppesUtil.sendData(EnumPacketType.FactionSave, compound);
+		}
+	}
+
+	@Override
+	public void subGuiClosed(SubGuiInterface subgui) {
+		if(subgui instanceof SubGuiColorSelector) {
+			faction.color = ((SubGuiColorSelector)subgui).color;
+			initGui();
 		}
 	}
 		
