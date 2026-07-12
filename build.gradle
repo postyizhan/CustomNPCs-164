@@ -14,6 +14,11 @@ tasks.withType(JavaCompile) {
     options.compilerArgs += ['-source', '1.7', '-target', '1.7']
 }
 
+// dev 运行时 FML 把 @Mod 类所在目录(build/classes/java/main)当作 mod 容器与资源包根;
+// Gradle 默认把资源放 build/resources/main,会导致游戏内 mod 贴图紫黑、语言键不翻译。
+// 让 processResources 直接输出到 classes 目录;sourceSets.main.output 去重,jar 打包不受影响。
+sourceSets.main.output.resourcesDir = file('build/classes/java/main')
+
 // 版本号由 git 短提交 id 派生,保留 1.6.4 前缀标识目标 MC 版本
 def gitHash = providers.exec {
     commandLine 'git', 'rev-parse', '--short', 'HEAD'
