@@ -5,6 +5,7 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.TreeSet;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.nbt.CompressedStreamTools;
@@ -87,7 +88,30 @@ public class CloneController {
 	public static ArrayList<NBTTagCompound> getClones(){
 		return loadClones();
 	}
-	public static void addClone(Entity entity, String name, int tab) {
+	public static ArrayList<NBTTagCompound> getClones(String folder){
+		ArrayList<NBTTagCompound> clones = new ArrayList<NBTTagCompound>();
+		for(NBTTagCompound nbt : loadClones()){
+			if(getFolderOf(nbt).equals(folder))
+				clones.add(nbt);
+		}
+		return clones;
+	}
+	public static ArrayList<String> getFolders(){
+		TreeSet<String> folders = new TreeSet<String>();
+		folders.add("Default");
+		for(NBTTagCompound nbt : loadClones()){
+			folders.add(getFolderOf(nbt));
+		}
+		return new ArrayList<String>(folders);
+	}
+	public static String getFolderOf(NBTTagCompound nbt){
+		if(nbt.hasKey("ClonedFolder"))
+			return nbt.getString("ClonedFolder");
+		if(nbt.hasKey("ClonedTab"))
+			return "Tab " + nbt.getInteger("ClonedTab");
+		return "Default";
+	}
+	public static void addClone(Entity entity, String name, String folder) {
 		ArrayList<NBTTagCompound> clones = getClones();
 
 		NBTTagCompound nbttagcompound = new NBTTagCompound();
@@ -95,10 +119,26 @@ public class CloneController {
 		//nbttagcompound.setInteger("EntityId", entity.entityId);
 		nbttagcompound.setLong("ClonedDate", System.currentTimeMillis());
 		nbttagcompound.setString("ClonedName", name);
-		nbttagcompound.setInteger("ClonedTab", tab);
+		nbttagcompound.setString("ClonedFolder", folder);
 		
 		
 		clones.add(nbttagcompound);
+		saveClones(clones);
+	}
+	public static void renameFolder(String old, String neu){
+		ArrayList<NBTTagCompound> clones = getClones();
+		for(NBTTagCompound nbt : clones){
+			if(getFolderOf(nbt).equals(old))
+				nbt.setString("ClonedFolder", neu);
+		}
+		saveClones(clones);
+	}
+	public static void deleteFolder(String folder){
+		ArrayList<NBTTagCompound> clones = getClones();
+		for(NBTTagCompound nbt : clones){
+			if(getFolderOf(nbt).equals(folder))
+				nbt.setString("ClonedFolder", "Default");
+		}
 		saveClones(clones);
 	}
 }

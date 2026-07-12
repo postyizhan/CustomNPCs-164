@@ -18,16 +18,19 @@ import net.minecraft.world.World;
 import noppes.npcs.client.NoppesUtil;
 import noppes.npcs.client.controllers.CloneController;
 import noppes.npcs.client.gui.util.GuiCustomScroll;
-import noppes.npcs.client.gui.util.GuiMenuSideButton;
+import noppes.npcs.client.gui.util.GuiCustomScrollActionListener;
 import noppes.npcs.client.gui.util.GuiMenuTopButton;
 import noppes.npcs.client.gui.util.GuiNPCInterface;
 import noppes.npcs.client.gui.util.GuiNpcButton;
 import noppes.npcs.client.gui.util.GuiNpcTextField;
+import noppes.npcs.client.gui.util.ISubGuiListener;
+import noppes.npcs.client.gui.util.SubGuiInterface;
 import noppes.npcs.constants.EnumPacketType;
 
-public class GuiNpcMobSpawner extends  GuiNPCInterface{
+public class GuiNpcMobSpawner extends GuiNPCInterface implements GuiCustomScrollActionListener, ISubGuiListener{
     
     private GuiCustomScroll scroll;
+    private GuiCustomScroll folderScroll;
     
     private int posX,posY,posZ;
     
@@ -40,7 +43,8 @@ public class GuiNpcMobSpawner extends  GuiNPCInterface{
 
 	private static String search = "";
 	
-	private int activeTab =  1;
+	private String activeFolder = "Default";
+	private boolean renamingFolder = false;
     
 	public GuiNpcMobSpawner(int i, int j, int k) {
 		super();
@@ -82,18 +86,25 @@ public class GuiNpcMobSpawner extends  GuiNPCInterface{
         addButton(new GuiNpcButton(2, guiLeft + 170, guiTop + 100, 82, 20, "spawner.mobspawner"));
         
         if(showingClones){
-        	addSideButton(new GuiMenuSideButton(21,guiLeft - 69, this.guiTop + 2, 70,22, "Tab 1"));
-        	addSideButton(new GuiMenuSideButton(22,guiLeft - 69, this.guiTop + 23, 70,22, "Tab 2"));
-        	addSideButton(new GuiMenuSideButton(23,guiLeft - 69, this.guiTop + 44, 70,22, "Tab 3"));
-        	addSideButton(new GuiMenuSideButton(24,guiLeft - 69, this.guiTop + 65, 70,22, "Tab 4"));
-        	addSideButton(new GuiMenuSideButton(25,guiLeft - 69, this.guiTop + 86, 70,22, "Tab 5"));
-        	addSideButton(new GuiMenuSideButton(26,guiLeft - 69, this.guiTop + 107, 70,22, "Tab 6"));
-        	addSideButton(new GuiMenuSideButton(27,guiLeft - 69, this.guiTop + 128, 70,22, "Tab 7"));
-        	addSideButton(new GuiMenuSideButton(28,guiLeft - 69, this.guiTop + 149, 70,22, "Tab 8"));
-        	addSideButton(new GuiMenuSideButton(29,guiLeft - 69, this.guiTop + 170, 70,22, "Tab 9"));
-        	
-        	getSideButton(20 + activeTab).active = true;
-        	showClones();
+			if(folderScroll == null){
+				folderScroll = new GuiCustomScroll(this,1);
+				folderScroll.setSize(70, 188);
+				folderScroll.guiLeft = guiLeft - 73;
+				folderScroll.guiTop = guiTop + 26;
+			}
+			else
+				folderScroll.clear();
+			folderScroll.setList(CloneController.getFolders());
+			folderScroll.setSelected(activeFolder);
+			addScroll(folderScroll);
+
+			addButton(new GuiNpcButton(5, guiLeft + 170, guiTop + 30, 82, 20, "gui.remove"));
+			addButton(new GuiNpcButton(6, guiLeft + 170, guiTop + 54, 82, 20, "cloner.newfolder"));
+			addButton(new GuiNpcButton(7, guiLeft + 170, guiTop + 78, 82, 20, "cloner.renamefolder"));
+			addButton(new GuiNpcButton(8, guiLeft + 170, guiTop + 124, 82, 20, "cloner.deletefolder"));
+			getButton(7).enabled = !activeFolder.equals("Default");
+			getButton(8).enabled = !activeFolder.equals("Default");
+			showClones();
         }
         else
         	showEntities();
@@ -116,31 +127,33 @@ public class GuiNpcMobSpawner extends  GuiNPCInterface{
         scroll.setList(getSearchList());
 	}
 	private void showClones() {
-        addButton(new GuiNpcButton(5, guiLeft + 170, guiTop + 30, 82, 20, "gui.remove"));
-        
 		cloneData.clear();
         ArrayList<String> list = new ArrayList<String>();
         data = CloneController.getClones();
-        for(NBTTagCompound comp : CloneController.getClones()){
-        	String name = comp.getString("ClonedName");
-        	int i = 1;
-        	while(list.contains(name)){
-        		i++;
+		for(NBTTagCompound comp : data){
+			String name = comp.getString("ClonedName");
+			int i = 1;
+			while(list.contains(name)){
+				i++;
             	name = String.format("%s%s", comp.getString("ClonedName"), i);
-        	}
-        	int tab = 1;
-        	if(comp.hasKey("ClonedTab"))
-        		tab = comp.getInteger("ClonedTab");
-        	if(activeTab == tab){
+			}
+			if(CloneController.getFolderOf(comp).equals(activeFolder)){
             	list.add(name);
         		cloneData.put(name, comp);
         	}
         }
         this.list = list;
+		scroll.selected = -1;
         scroll.setList(getSearchList());
 	}
     public void keyTyped(char c, int i)
     {
+		if(hasSubGui()){
+			String currentSearch = getTextField(1).getText();
+			super.keyTyped(c, i);
+			getTextField(1).setText(currentSearch);
+			return;
+		}
     	super.keyTyped(c, i);
     	
     	if(search.equals(getTextField(1).getText()))
@@ -219,11 +232,51 @@ public class GuiNpcMobSpawner extends  GuiNPCInterface{
         		initGui();
     		}
     	}
-    	if(guibutton.id > 20){
-    		activeTab = guibutton.id - 20;
-    		initGui();
-    	}
+		if(guibutton.id == 6){
+			renamingFolder = false;
+			setSubGui(new SubGuiCloneFolderName(""));
+		}
+		if(guibutton.id == 7 && !activeFolder.equals("Default")){
+			renamingFolder = true;
+			setSubGui(new SubGuiCloneFolderName(activeFolder));
+		}
+		if(guibutton.id == 8 && !activeFolder.equals("Default")){
+			CloneController.deleteFolder(activeFolder);
+			activeFolder = "Default";
+			initGui();
+		}
     }
+	@Override
+	public void customScrollClicked(int i, int j, int k, GuiCustomScroll guiCustomScroll) {
+		if(guiCustomScroll == folderScroll && folderScroll.getSelected() != null){
+			activeFolder = folderScroll.getSelected();
+			showClones();
+			getButton(7).enabled = !activeFolder.equals("Default");
+			getButton(8).enabled = !activeFolder.equals("Default");
+		}
+		else if(guiCustomScroll == scroll){
+			return;
+		}
+	}
+	@Override
+	public void subGuiClosed(SubGuiInterface subgui) {
+		if(subgui instanceof SubGuiCloneFolderName){
+			SubGuiCloneFolderName folderGui = (SubGuiCloneFolderName) subgui;
+			if(folderGui.folderName == null)
+				return;
+			if(renamingFolder)
+				CloneController.renameFolder(activeFolder, folderGui.folderName);
+			activeFolder = folderGui.folderName;
+			ArrayList<String> folders = CloneController.getFolders();
+			if(!folders.contains(activeFolder))
+				folders.add(activeFolder);
+			folderScroll.setList(folders);
+			folderScroll.setSelected(activeFolder);
+			showClones();
+			getButton(7).enabled = !activeFolder.equals("Default");
+			getButton(8).enabled = !activeFolder.equals("Default");
+		}
+	}
     protected NBTTagList newDoubleNBTList(double ... par1ArrayOfDouble)
     {
         NBTTagList nbttaglist = new NBTTagList();
