@@ -126,6 +126,11 @@ remote.freeze=Freeze NPCs
 spawner.entities=Entities
 spawner.clones=Clones
 spawner.mobspawner=MobSpawner
+cloner.folder=Folder
+cloner.default=Default
+cloner.newfolder=New Folder
+cloner.renamefolder=Rename Folder
+cloner.deletefolder=Delete Folder
 spawner.mount=Mount by
 spawner.mountplayer=Player mounts
 
