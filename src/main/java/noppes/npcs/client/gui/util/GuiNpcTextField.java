@@ -38,6 +38,28 @@ public class GuiNpcTextField extends GuiTextField{
 	@Override
     public boolean textboxKeyTyped(char c, int i)
     {
+    	// Allow Ctrl shortcuts to bypass char filter
+    	if (GuiScreen.isCtrlKeyDown()) {
+    		// Ctrl+V (keyCode 47) on numbersOnly fields: filter clipboard
+    		if (i == 47 && numbersOnly) {
+    			String clipboard = GuiScreen.getClipboardString();
+    			if (clipboard != null) {
+    				StringBuilder filtered = new StringBuilder();
+    				for (int idx = 0; idx < clipboard.length(); idx++) {
+    					char ch = clipboard.charAt(idx);
+    					if (Character.isDigit(ch) || (ch == '-' && filtered.length() == 0)) {
+    						filtered.append(ch);
+    					}
+    				}
+    				if (filtered.length() > 0) {
+    					writeText(filtered.toString());
+    				}
+    			}
+    			return true;
+    		}
+    		// Other Ctrl shortcuts (A/C/X etc.): delegate to super
+    		return super.textboxKeyTyped(c, i);
+    	}
     	if(!charAllowed(c,i))
     		return false;
 		return super.textboxKeyTyped(c, i);
