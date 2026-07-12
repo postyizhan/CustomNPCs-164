@@ -9,15 +9,14 @@
 | 多值按钮右键反向循环 | `934b187` | [docs/porting/gui-button-right-click-cycle.md](docs/porting/gui-button-right-click-cycle.md) |
 | 文本框 Ctrl 快捷键与数字框粘贴过滤 | `a8c07d2` | [docs/porting/textfield-ctrl-shortcuts.md](docs/porting/textfield-ctrl-shortcuts.md) |
 | NPC 攻速强制 | 原版已有 | 无需回移：`DataStats.attackSpeed` + `EntityNPCInterface.attackEntityAsMob` 的 `hurtResistantTime` 强制 + `SubGuiNpcMeleeProperties` 输入框在 1.6.4 均已存在 |
+| 颜色选择器 + 阵营取色 | `ed87138` | [docs/porting/color-selector-dialog-visual.md](docs/porting/color-selector-dialog-visual.md)（对话视觉未纳入，见下） |
 
 ## 待办候选池（中小特性，按推荐顺序）
 
 | # | 特性 | 说明 | 规模 |
 |---|---|---|---|
-| 1 | 颜色选择器 + 对话视觉 | `SubGuiColorSelector` 通用取色器；对话文字颜色/立绘图片选项 | S-M |
 | 2 | Trader 库存系统 | 商人库存全局/按玩家两种模式 + 补货计时器（`TraderStock`/`EnumStockReset`） | M |
 | 3 | Cloner 文件夹分类 | 克隆库文件夹/子文件夹组织 + 标签过滤（`CloneFolder`/`Tag`/`TagMap`） | M |
-| 4 | 全屏/可平移 GUI | NPC 编辑器全屏化、可平移缩放（`isPannableGUI` 等基类增强） | S-M |
 | 5 | 战术 AI | 新 AI 行为：跟随/扑击/变身（`EntityAIFollow`/`EntityAILeapAtTargetNpc`/`EntityAITransform`） | M |
 | 6 | 自然生成 GUI | 自然生成选项界面 + 运行时开关 + 消失机制改进 | M |
 | 7 | 坐骑角色 | `RoleMount` 可骑乘 NPC + 骑乘抖动/下马修复 | M |
@@ -28,6 +27,11 @@
 | 12 | 飞行 NPC 寻路 | `EntityNPCFlying` + 3D 寻路器（`ai/pathfinder/` 约 1800 行，自包含） | L |
 | 13 | HUD 任务追踪 | 任务追踪/指南针 HUD（不含能力热键栏） | M-L |
 | 14 | 战斗策略系统 | `EnumCombatPolicy`（Flip/Brute/Stubborn/Tactical）+ 阵营被动保护 | L |
+
+## 已评估暂缓
+
+- **对话视觉（DialogColorData/DialogImage）**：颜色选择器（原候选 #1）已完成并接入 Faction；但对话文字颜色/立绘图片部分 1.6.4 Dialog 无对应字段，牵动 NBT + 网络包 + 渲染，超出小特性范围，留待后续单列。
+- **全屏/可平移 GUI（原候选 #4）**：调查后发现 CNPC+ 的 `isPannableGUI`/全屏不是独立通用能力——`GuiNPCInterface` 因它从 273 行膨胀到 850 行（89 处 pan 引用，侵入式改写全部鼠标事件），且唯一消费方是脚本编辑器、节点图 `GuiDiagram`、Cloner 文件夹浏览器 `GuiDirectory`（`GuiNpcMobSpawnerFullscreen extends GuiDirectory`），这些 1.6.4 都不存在。为无消费方的基类做侵入式改造风险大收益低，跳过。
 
 ## 大型攻坚（已设计未排期）
 
