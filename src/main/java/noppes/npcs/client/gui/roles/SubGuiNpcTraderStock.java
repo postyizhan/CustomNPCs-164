@@ -57,10 +57,31 @@ public class SubGuiNpcTraderStock extends SubGuiInterface implements ITextfieldL
 	@Override
 	public void drawScreen(int mouseX, int mouseY, float partialTicks) {
 		super.drawScreen(mouseX, mouseY, partialTicks);
-		// 在父类绘制后，重新设置 GL 状态并强制绘制输入框
+		// 手动绘制输入框白色背景（确保可见）
 		GL11.glDisable(GL11.GL_LIGHTING);
 		GL11.glDisable(GL11.GL_DEPTH_TEST);
+
+		// customTime 输入框背景
+		if(role.stock.resetType == EnumStockReset.MCCUSTOM || role.stock.resetType == EnumStockReset.RLCUSTOM) {
+			drawRect(guiLeft + 120, guiTop + 53, guiLeft + 251, guiTop + 73, 0xFFFFFFFF);
+		}
+		// 18 个 maxStock 输入框背景
+		for(int i = 0; i < 18; i++) {
+			int x = guiLeft + 5 + i % 3 * 83;
+			int y = guiTop + 88 + i / 3 * 21;
+			drawRect(x + 18, y, x + 76, y + 20, 0xFFFFFFFF);
+		}
+
+		// 重新绘制输入框（用 getTextField 访问）
 		GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
+		GuiNpcTextField customTime = getTextField(10);
+		if(customTime != null)
+			customTime.drawTextBox();
+		for(int i = 0; i < 18; i++) {
+			GuiNpcTextField tf = getTextField(100 + i);
+			if(tf != null)
+				tf.drawTextBox();
+		}
 	}
 
 	@Override
