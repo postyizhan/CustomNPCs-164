@@ -95,6 +95,20 @@ public class GuiNpcDisplay extends GuiNPCInterface2 implements ITextfieldListene
     	this.addTextField(new GuiNpcTextField(11, this, fontRenderer, guiLeft + 120, y, 50, 20, String.format("%.2f", display.hitboxData.getHeightScale())));
     	getTextField(11).setEnabled(display.hitboxData.isHitboxEnabled());
 
+    	y+=23;
+    	addLabel(new GuiNpcLabel(13,"display.tintSystem", guiLeft + 5, y + 5));
+    	this.addButton(new GuiNpcButton(11, guiLeft + 120, y, 50, 20, new String[]{"gui.disabled","gui.enabled"}, display.tintData.isTintEnabled()?1:0));
+
+    	y+=23;
+    	addLabel(new GuiNpcLabel(14,"display.hurtTint", guiLeft + 5, y + 5));
+    	this.addButton(new GuiNpcButton(12, guiLeft + 120, y, 50, 20, new String[]{"gui.disabled","gui.enabled"}, display.tintData.isHurtTintEnabled()?1:0));
+    	String hurtColor = Integer.toHexString(display.tintData.getHurtTint());
+    	while(hurtColor.length() < 6)
+    		hurtColor = "0" + hurtColor;
+    	this.addTextField(new GuiNpcTextField(13, this, fontRenderer, guiLeft + 175, y, 70, 20, hurtColor));
+    	getTextField(13).setTextColor(display.tintData.getHurtTint());
+    	getTextField(13).setEnabled(display.tintData.isTintEnabled());
+
     }
 
 	@Override
@@ -152,6 +166,17 @@ public class GuiNpcDisplay extends GuiNPCInterface2 implements ITextfieldListene
 				textfield.setText(String.format("%.2f", display.hitboxData.getHeightScale()));
 			}
 		}
+		else if(textfield.id == 13){
+			int color = 0;
+			try{
+				color = Integer.parseInt(textfield.getText(),16);
+			}
+			catch(NumberFormatException e){
+				color = 0xff0000;
+			}
+			display.tintData.setHurtTint(color);
+			textfield.setTextColor(display.tintData.getHurtTint());
+		}
 	}
 	protected void actionPerformed(GuiButton guibutton){
 		GuiNpcButton button = (GuiNpcButton) guibutton;
@@ -184,6 +209,13 @@ public class GuiNpcDisplay extends GuiNPCInterface2 implements ITextfieldListene
 		else if(button.id == 10){
 			display.hitboxData.setHitboxEnabled(button.getValue() == 1);
 			initGui();
+		}
+		else if(button.id == 11){
+			display.tintData.setTintEnabled(button.getValue() == 1);
+			initGui();
+		}
+		else if(button.id == 12){
+			display.tintData.setHurtTintEnabled(button.getValue() == 1);
 		}
     }
 

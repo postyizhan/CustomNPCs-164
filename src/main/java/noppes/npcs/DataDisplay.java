@@ -5,6 +5,7 @@ import java.util.Random;
 import net.minecraft.nbt.NBTTagCompound;
 import noppes.npcs.constants.EnumModelType;
 import noppes.npcs.controllers.data.HitboxData;
+import noppes.npcs.controllers.data.TintData;
 
 public class DataDisplay {
 	EntityNPCInterface npc;
@@ -31,6 +32,7 @@ public class DataDisplay {
 	public boolean NoLivingAnimation = false;
 
 	public HitboxData hitboxData = new HitboxData();
+	public TintData tintData = new TintData();
 
 	
 	public DataDisplay(EntityNPCInterface npc){
@@ -80,6 +82,7 @@ public class DataDisplay {
 		nbttagcompound.setBoolean("NoLivingAnimation", NoLivingAnimation);
 
 		hitboxData.writeToNBT(nbttagcompound);
+		tintData.writeToNBT(nbttagcompound);
 
 		return nbttagcompound;
 	}
@@ -105,6 +108,7 @@ public class DataDisplay {
 		NoLivingAnimation = nbttagcompound.getBoolean("NoLivingAnimation");
 
 		hitboxData.readFromNBT(nbttagcompound);
+		tintData.readFromNBT(nbttagcompound);
 	}
 	public boolean showName() {
 		if(npc.isKilled())

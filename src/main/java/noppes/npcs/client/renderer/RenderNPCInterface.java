@@ -149,6 +149,32 @@ public class RenderNPCInterface extends RenderLiving
         float red = (float)(npc.display.skinColor >> 16 & 255) / 255.0F;
         float green = (float)(npc.display.skinColor >> 8 & 255) / 255.0F;
         float blue = (float)(npc.display.skinColor & 255) / 255.0F;
+
+        // 应用色调系统
+        if (npc.display.tintData.isTintEnabled()) {
+            boolean isHurt = npc.hurtTime > 0 || npc.deathTime > 0;
+
+            // 受伤闪烁色调
+            if (isHurt && npc.display.tintData.isHurtTintEnabled()) {
+                int hurtColor = npc.display.tintData.getHurtTint();
+                red = (float)(hurtColor >> 16 & 255) / 255.0F;
+                green = (float)(hurtColor >> 8 & 255) / 255.0F;
+                blue = (float)(hurtColor & 255) / 255.0F;
+            }
+            // 持久色调（优先级低于受伤闪烁）
+            else if (npc.display.tintData.isGeneralTintEnabled()) {
+                int generalColor = npc.display.tintData.getGeneralTint();
+                float alpha = npc.display.tintData.getGeneralAlpha() / 255.0F;
+                float gr = (float)(generalColor >> 16 & 255) / 255.0F;
+                float gg = (float)(generalColor >> 8 & 255) / 255.0F;
+                float gb = (float)(generalColor & 255) / 255.0F;
+                // 混合原色和色调色
+                red = red * (1 - alpha) + gr * alpha;
+                green = green * (1 - alpha) + gg * alpha;
+                blue = blue * (1 - alpha) + gb * alpha;
+            }
+        }
+
     	GL11.glColor3f(red, green, blue);
         GL11.glScalef((npc.scaleX / 5) * npc.display.modelSize, (npc.scaleY / 5) * npc.display.modelSize, (npc.scaleZ / 5) * npc.display.modelSize);
     }
