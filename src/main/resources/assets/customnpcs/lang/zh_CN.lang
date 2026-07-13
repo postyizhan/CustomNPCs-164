@@ -226,6 +226,8 @@ role.bank=银行
 role.transporter=传送者
 role.mailman=邮差
 role.mount=坐骑
+role.mount.jumpStrength=跳跃强度
+role.mount.allowSprint=允许疾跑
 role.marketname=关联市场名称
 role.companion=伙伴
 

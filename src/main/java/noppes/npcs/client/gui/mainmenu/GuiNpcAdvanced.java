@@ -17,6 +17,7 @@ import noppes.npcs.client.gui.roles.GuiNpcBoss;
 import noppes.npcs.client.gui.roles.GuiNpcConversation;
 import noppes.npcs.client.gui.roles.GuiNpcGuard;
 import noppes.npcs.client.gui.roles.GuiNpcHealer;
+import noppes.npcs.client.gui.roles.GuiNpcRoleMount;
 import noppes.npcs.client.gui.roles.GuiNpcSpawner;
 import noppes.npcs.client.gui.util.GuiNPCInterface2;
 import noppes.npcs.client.gui.util.GuiNpcButton;
@@ -77,6 +78,9 @@ public class GuiNpcAdvanced extends GuiNPCInterface2 implements IGuiData
 			case Transporter:
 				save();
 				NoppesUtil.requestOpenGUI(EnumGuiType.SetupTransporter);
+				break;
+			case Mount:
+				NoppesUtil.openGUI(player, new GuiNpcRoleMount(npc));
 				break;
 			}
 		}
