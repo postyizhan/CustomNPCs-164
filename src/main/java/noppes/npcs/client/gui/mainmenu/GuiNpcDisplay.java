@@ -81,41 +81,46 @@ public class GuiNpcDisplay extends GuiNPCInterface2 implements ITextfieldListene
     	addLabel(new GuiNpcLabel(7,"display.visible", guiLeft + 5, y + 5));
     	this.addButton(new GuiNpcButton(7, guiLeft + 120, y, 50, 20, new String[]{"gui.yes","gui.no","gui.partly"}, display.visible));
 
-    	y+=23;
-    	addLabel(new GuiNpcLabel(10,"display.hitbox", guiLeft + 5, y + 5));
-    	this.addButton(new GuiNpcButton(10, guiLeft + 120, y, 50, 20, new String[]{"gui.disabled","gui.enabled"}, display.hitboxData.isHitboxEnabled()?1:0));
+    	// 右侧列：碰撞箱缩放、色调系统、皮肤覆盖层
+    	int yRight = guiTop + 4;
 
-    	y+=23;
-    	addLabel(new GuiNpcLabel(11,"display.hitboxWidth", guiLeft + 5, y + 5));
-    	this.addTextField(new GuiNpcTextField(10, this, fontRenderer, guiLeft + 120, y, 50, 20, String.format("%.2f", display.hitboxData.getWidthScale())));
+    	// 碰撞箱缩放
+    	addLabel(new GuiNpcLabel(10,"display.hitbox", guiLeft + 200, yRight + 5));
+    	this.addButton(new GuiNpcButton(10, guiLeft + 290, yRight, 50, 20, new String[]{"gui.disabled","gui.enabled"}, display.hitboxData.isHitboxEnabled()?1:0));
+
+    	yRight+=23;
+    	addLabel(new GuiNpcLabel(11,"display.hitboxWidth", guiLeft + 200, yRight + 5));
+    	this.addTextField(new GuiNpcTextField(10, this, fontRenderer, guiLeft + 290, yRight, 50, 20, String.format("%.2f", display.hitboxData.getWidthScale())));
     	getTextField(10).setEnabled(display.hitboxData.isHitboxEnabled());
 
-    	y+=23;
-    	addLabel(new GuiNpcLabel(12,"display.hitboxHeight", guiLeft + 5, y + 5));
-    	this.addTextField(new GuiNpcTextField(11, this, fontRenderer, guiLeft + 120, y, 50, 20, String.format("%.2f", display.hitboxData.getHeightScale())));
+    	yRight+=23;
+    	addLabel(new GuiNpcLabel(12,"display.hitboxHeight", guiLeft + 200, yRight + 5));
+    	this.addTextField(new GuiNpcTextField(11, this, fontRenderer, guiLeft + 290, yRight, 50, 20, String.format("%.2f", display.hitboxData.getHeightScale())));
     	getTextField(11).setEnabled(display.hitboxData.isHitboxEnabled());
 
-    	y+=23;
-    	addLabel(new GuiNpcLabel(13,"display.tintSystem", guiLeft + 5, y + 5));
-    	this.addButton(new GuiNpcButton(11, guiLeft + 120, y, 50, 20, new String[]{"gui.disabled","gui.enabled"}, display.tintData.isTintEnabled()?1:0));
+    	yRight+=23;
+    	// 色调系统
+    	addLabel(new GuiNpcLabel(13,"display.tintSystem", guiLeft + 200, yRight + 5));
+    	this.addButton(new GuiNpcButton(11, guiLeft + 290, yRight, 50, 20, new String[]{"gui.disabled","gui.enabled"}, display.tintData.isTintEnabled()?1:0));
 
-    	y+=23;
-    	addLabel(new GuiNpcLabel(14,"display.hurtTint", guiLeft + 5, y + 5));
-    	this.addButton(new GuiNpcButton(12, guiLeft + 120, y, 50, 20, new String[]{"gui.disabled","gui.enabled"}, display.tintData.isHurtTintEnabled()?1:0));
+    	yRight+=23;
+    	addLabel(new GuiNpcLabel(14,"display.hurtTint", guiLeft + 200, yRight + 5));
+    	this.addButton(new GuiNpcButton(12, guiLeft + 270, yRight, 35, 20, new String[]{"gui.no","gui.yes"}, display.tintData.isHurtTintEnabled()?1:0));
     	String hurtColor = Integer.toHexString(display.tintData.getHurtTint());
     	while(hurtColor.length() < 6)
     		hurtColor = "0" + hurtColor;
-    	this.addTextField(new GuiNpcTextField(13, this, fontRenderer, guiLeft + 175, y, 70, 20, hurtColor));
+    	this.addTextField(new GuiNpcTextField(13, this, fontRenderer, guiLeft + 307, yRight, 40, 20, hurtColor));
     	getTextField(13).setTextColor(display.tintData.getHurtTint());
     	getTextField(13).setEnabled(display.tintData.isTintEnabled());
 
-    	y+=23;
-    	addLabel(new GuiNpcLabel(15,"display.skinOverlay", guiLeft + 5, y + 5));
-    	this.addButton(new GuiNpcButton(13, guiLeft + 120, y, 50, 20, new String[]{"gui.disabled","gui.enabled"}, display.skinOverlays.isEnabled()?1:0));
+    	yRight+=23;
+    	// 皮肤覆盖层
+    	addLabel(new GuiNpcLabel(15,"display.skinOverlay", guiLeft + 200, yRight + 5));
+    	this.addButton(new GuiNpcButton(13, guiLeft + 290, yRight, 50, 20, new String[]{"gui.disabled","gui.enabled"}, display.skinOverlays.isEnabled()?1:0));
 
-    	y+=23;
-    	addLabel(new GuiNpcLabel(16,"display.overlayTexture", guiLeft + 5, y + 5));
-    	this.addTextField(new GuiNpcTextField(14, this, fontRenderer, guiLeft + 120, y, 150, 20, display.skinOverlays.getOverlay().getTexture()));
+    	yRight+=23;
+    	addLabel(new GuiNpcLabel(16,"display.overlayPath", guiLeft + 200, yRight + 5));
+    	this.addTextField(new GuiNpcTextField(14, this, fontRenderer, guiLeft + 200, yRight + 15, 145, 20, display.skinOverlays.getOverlay().getTexture()));
     	getTextField(14).setEnabled(display.skinOverlays.isEnabled());
 
     }
