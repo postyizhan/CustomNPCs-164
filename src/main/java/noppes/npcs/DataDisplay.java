@@ -6,6 +6,7 @@ import net.minecraft.nbt.NBTTagCompound;
 import noppes.npcs.constants.EnumModelType;
 import noppes.npcs.controllers.data.HitboxData;
 import noppes.npcs.controllers.data.TintData;
+import noppes.npcs.controllers.data.DataSkinOverlays;
 
 public class DataDisplay {
 	EntityNPCInterface npc;
@@ -33,6 +34,7 @@ public class DataDisplay {
 
 	public HitboxData hitboxData = new HitboxData();
 	public TintData tintData = new TintData();
+	public DataSkinOverlays skinOverlays = new DataSkinOverlays();
 
 	
 	public DataDisplay(EntityNPCInterface npc){
@@ -83,6 +85,7 @@ public class DataDisplay {
 
 		hitboxData.writeToNBT(nbttagcompound);
 		tintData.writeToNBT(nbttagcompound);
+		skinOverlays.writeToNBT(nbttagcompound);
 
 		return nbttagcompound;
 	}
@@ -109,6 +112,7 @@ public class DataDisplay {
 
 		hitboxData.readFromNBT(nbttagcompound);
 		tintData.readFromNBT(nbttagcompound);
+		skinOverlays.readFromNBT(nbttagcompound);
 	}
 	public boolean showName() {
 		if(npc.isKilled())
