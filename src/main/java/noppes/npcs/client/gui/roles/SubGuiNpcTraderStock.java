@@ -81,12 +81,19 @@ public class SubGuiNpcTraderStock extends SubGuiInterface implements ITextfieldL
 
 	@Override
 	public void unFocused(GuiNpcTextField textfield) {
-		if(textfield.id == 10)
-			role.stock.customResetTime = textfield.getInteger();
+		if(textfield.id == 10) {
+			if(!textfield.isEmpty())
+				role.stock.customResetTime = textfield.getInteger();
+		}
 		else if(textfield.id >= 100 && textfield.id < 118) {
-			role.stock.maxStock[textfield.id - 100] = textfield.getInteger();
-			if(textfield.getInteger() < 0)
-				textfield.setText("");
+			int slot = textfield.id - 100;
+			if(textfield.isEmpty()) {
+				role.stock.maxStock[slot] = -1;
+			} else {
+				role.stock.maxStock[slot] = textfield.getInteger();
+				if(role.stock.maxStock[slot] < 0)
+					textfield.setText("");
+			}
 		}
 	}
 
