@@ -225,6 +225,7 @@ role.follower=Follower
 role.bank=Bank
 role.transporter=Transporter
 role.mailman=Mailman
+role.mount=Mount
 role.marketname=Linked Marketname
 role.companion=Companion
 
