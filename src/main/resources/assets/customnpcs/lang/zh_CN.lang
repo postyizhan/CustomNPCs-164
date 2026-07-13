@@ -179,6 +179,8 @@ display.tint=着色
 display.hitbox=碰撞箱缩放
 display.hitboxWidth=宽度缩放
 display.hitboxHeight=高度缩放
+display.tintSystem=色调系统
+display.hurtTint=受伤闪烁
 
 inv.minExp=最低经验
 inv.maxExp=最高经验
