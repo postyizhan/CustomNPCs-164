@@ -181,6 +181,8 @@ display.hitboxWidth=宽度缩放
 display.hitboxHeight=高度缩放
 display.tintSystem=色调系统
 display.hurtTint=受伤闪烁
+display.skinOverlay=皮肤覆盖层
+display.overlayTexture=覆盖层贴图
 
 inv.minExp=最低经验
 inv.maxExp=最高经验

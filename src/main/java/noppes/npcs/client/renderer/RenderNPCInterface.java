@@ -302,8 +302,40 @@ public class RenderNPCInterface extends RenderLiving
             GL11.glPopMatrix();
             GL11.glEnable(GL11.GL_LIGHTING);
             GL11.glColor4f(1.0F, 1.0F, 1.0F, f1);
- 	        
 
+
+            GL11.glDepthFunc(GL11.GL_LEQUAL);
+            GL11.glDisable(GL11.GL_BLEND);
+         }
+
+    	 // 渲染皮肤覆盖层
+    	 if (npc.display.skinOverlays.isEnabled() && !npc.display.skinOverlays.getOverlay().isEmpty())
+         {
+            GL11.glDepthFunc(GL11.GL_LEQUAL);
+        	ResourceLocation overlayTexture = new ResourceLocation(npc.display.skinOverlays.getOverlay().getTexture());
+        	bindTexture(overlayTexture);
+            GL11.glEnable(GL11.GL_BLEND);
+            GL11.glBlendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA);
+            if (npc.isInvisible())
+            {
+                GL11.glDepthMask(false);
+            }
+            else
+            {
+                GL11.glDepthMask(true);
+            }
+            // 应用覆盖层颜色和透明度
+            int color = npc.display.skinOverlays.getOverlay().getColor();
+            float alpha = npc.display.skinOverlays.getOverlay().getAlpha();
+            float red = (float)(color >> 16 & 255) / 255.0F;
+            float green = (float)(color >> 8 & 255) / 255.0F;
+            float blue = (float)(color & 255) / 255.0F;
+            GL11.glColor4f(red, green, blue, alpha);
+            GL11.glPushMatrix();
+            GL11.glScalef(1.002f, 1.002f, 1.002f);
+            mainModel.render(entityliving, par2, par3, par4, par5, par6, par7);
+            GL11.glPopMatrix();
+            GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
             GL11.glDepthFunc(GL11.GL_LEQUAL);
             GL11.glDisable(GL11.GL_BLEND);
          }

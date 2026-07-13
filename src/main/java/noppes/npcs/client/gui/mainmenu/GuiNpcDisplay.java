@@ -109,6 +109,15 @@ public class GuiNpcDisplay extends GuiNPCInterface2 implements ITextfieldListene
     	getTextField(13).setTextColor(display.tintData.getHurtTint());
     	getTextField(13).setEnabled(display.tintData.isTintEnabled());
 
+    	y+=23;
+    	addLabel(new GuiNpcLabel(15,"display.skinOverlay", guiLeft + 5, y + 5));
+    	this.addButton(new GuiNpcButton(13, guiLeft + 120, y, 50, 20, new String[]{"gui.disabled","gui.enabled"}, display.skinOverlays.isEnabled()?1:0));
+
+    	y+=23;
+    	addLabel(new GuiNpcLabel(16,"display.overlayTexture", guiLeft + 5, y + 5));
+    	this.addTextField(new GuiNpcTextField(14, this, fontRenderer, guiLeft + 120, y, 150, 20, display.skinOverlays.getOverlay().getTexture()));
+    	getTextField(14).setEnabled(display.skinOverlays.isEnabled());
+
     }
 
 	@Override
@@ -177,6 +186,9 @@ public class GuiNpcDisplay extends GuiNPCInterface2 implements ITextfieldListene
 			display.tintData.setHurtTint(color);
 			textfield.setTextColor(display.tintData.getHurtTint());
 		}
+		else if(textfield.id == 14){
+			display.skinOverlays.getOverlay().setTexture(textfield.getText());
+		}
 	}
 	protected void actionPerformed(GuiButton guibutton){
 		GuiNpcButton button = (GuiNpcButton) guibutton;
@@ -216,6 +228,10 @@ public class GuiNpcDisplay extends GuiNPCInterface2 implements ITextfieldListene
 		}
 		else if(button.id == 12){
 			display.tintData.setHurtTintEnabled(button.getValue() == 1);
+		}
+		else if(button.id == 13){
+			display.skinOverlays.setEnabled(button.getValue() == 1);
+			initGui();
 		}
     }
 

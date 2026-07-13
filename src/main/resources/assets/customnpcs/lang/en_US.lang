@@ -181,6 +181,8 @@ display.hitboxWidth=Width Scale
 display.hitboxHeight=Height Scale
 display.tintSystem=Tint System
 display.hurtTint=Hurt Tint
+display.skinOverlay=Skin Overlay
+display.overlayTexture=Overlay Texture
 
 inv.minExp=Min Exp
 inv.maxExp=Max Exp
