@@ -225,6 +225,7 @@ role.follower=随从
 role.bank=银行
 role.transporter=传送者
 role.mailman=邮差
+role.mount=坐骑
 role.marketname=关联市场名称
 role.companion=伙伴
 

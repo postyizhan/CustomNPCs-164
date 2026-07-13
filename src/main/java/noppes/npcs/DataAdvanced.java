@@ -15,6 +15,7 @@ import noppes.npcs.roles.JobItemGiver;
 import noppes.npcs.roles.JobSpawner;
 import noppes.npcs.roles.RoleBank;
 import noppes.npcs.roles.RoleFollower;
+import noppes.npcs.roles.RoleMount;
 import noppes.npcs.roles.RolePostman;
 import noppes.npcs.roles.RoleTrader;
 import noppes.npcs.roles.RoleTransporter;
@@ -129,6 +130,8 @@ public class DataAdvanced {
 			npc.roleInterface = new RoleTransporter(npc);
 		else if (role == EnumRoleType.Postman && !(npc.roleInterface instanceof RolePostman))
 			npc.roleInterface = new RolePostman(npc);
+		else if (role == EnumRoleType.Mount && !(npc.roleInterface instanceof RoleMount))
+			npc.roleInterface = new RoleMount(npc);
 	}
 
 	public void setJob(int i) {
