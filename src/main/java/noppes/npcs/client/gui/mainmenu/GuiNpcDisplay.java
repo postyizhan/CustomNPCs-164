@@ -80,7 +80,21 @@ public class GuiNpcDisplay extends GuiNPCInterface2 implements ITextfieldListene
     	y+=23;
     	addLabel(new GuiNpcLabel(7,"display.visible", guiLeft + 5, y + 5));
     	this.addButton(new GuiNpcButton(7, guiLeft + 120, y, 50, 20, new String[]{"gui.yes","gui.no","gui.partly"}, display.visible));
-    
+
+    	y+=23;
+    	addLabel(new GuiNpcLabel(10,"display.hitbox", guiLeft + 5, y + 5));
+    	this.addButton(new GuiNpcButton(10, guiLeft + 120, y, 50, 20, new String[]{"gui.disabled","gui.enabled"}, display.hitboxData.isHitboxEnabled()?1:0));
+
+    	y+=23;
+    	addLabel(new GuiNpcLabel(11,"display.hitboxWidth", guiLeft + 5, y + 5));
+    	this.addTextField(new GuiNpcTextField(10, this, fontRenderer, guiLeft + 120, y, 50, 20, String.format("%.2f", display.hitboxData.getWidthScale())));
+    	getTextField(10).setEnabled(display.hitboxData.isHitboxEnabled());
+
+    	y+=23;
+    	addLabel(new GuiNpcLabel(12,"display.hitboxHeight", guiLeft + 5, y + 5));
+    	this.addTextField(new GuiNpcTextField(11, this, fontRenderer, guiLeft + 120, y, 50, 20, String.format("%.2f", display.hitboxData.getHeightScale())));
+    	getTextField(11).setEnabled(display.hitboxData.isHitboxEnabled());
+
     }
 
 	@Override
@@ -119,8 +133,24 @@ public class GuiNpcDisplay extends GuiNPCInterface2 implements ITextfieldListene
 		else if(textfield.id == 9){
 			display.glowTexture = textfield.getText();
 		}
+		else if(textfield.id == 10){
+			try {
+				float scale = Float.parseFloat(textfield.getText());
+				display.hitboxData.setWidthScale(scale);
+			} catch(NumberFormatException e) {
+				textfield.setText(String.format("%.2f", display.hitboxData.getWidthScale()));
+			}
+		}
 		else if(textfield.id == 11){
 			display.title = textfield.getText();
+		}
+		else if(textfield.id == 12){
+			try {
+				float scale = Float.parseFloat(textfield.getText());
+				display.hitboxData.setHeightScale(scale);
+			} catch(NumberFormatException e) {
+				textfield.setText(String.format("%.2f", display.hitboxData.getHeightScale()));
+			}
 		}
 	}
 	protected void actionPerformed(GuiButton guibutton){
@@ -150,6 +180,10 @@ public class GuiNpcDisplay extends GuiNPCInterface2 implements ITextfieldListene
 		}
 		else if(button.id == 9){
 			NoppesUtil.openGUI(player, new GuiNpcTextureOverlays(npc, this));
+		}
+		else if(button.id == 10){
+			display.hitboxData.setHitboxEnabled(button.getValue() == 1);
+			initGui();
 		}
     }
 

@@ -1,0 +1,6 @@
+已按规格完成：
+
+- 新增颜色选择器：[SubGuiColorSelector.java](D:/code/CustomNPCs-164/src/main/java/noppes/npcs/client/gui/SubGuiColorSelector.java:19)
+- Faction 通过 `ISubGuiListener` 回读颜色：[GuiNPCManageFactions.java](D:/code/CustomNPCs-164/src/main/java/noppes/npcs/client/gui/global/GuiNPCManageFactions.java:37)
+- 完整离线 Gradle `build` 成功；最终代码另以 JDK 8、`-source/-target 1.7` 编译通过。直接联网构建受沙箱网络策略阻止。
+- `git diff --stat` 摘要：`2 files changed, 159 insertions(+), 3 deletions(-)`（选择器 140 行，Faction 22 行）。贴图及其他文件未改。

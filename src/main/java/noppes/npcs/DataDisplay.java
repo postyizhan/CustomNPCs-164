@@ -4,10 +4,11 @@ import java.util.Random;
 
 import net.minecraft.nbt.NBTTagCompound;
 import noppes.npcs.constants.EnumModelType;
+import noppes.npcs.controllers.data.HitboxData;
 
 public class DataDisplay {
 	EntityNPCInterface npc;
-	
+
 	public String name;
 	public String title = "";
 
@@ -17,17 +18,19 @@ public class DataDisplay {
 	public String texture = "customnpcs:textures/entity/humanmale/Steve.png";;
 	public String cloakTexture = "";
 	public String glowTexture = "";
-	
+
 	public int visible = 0;
 
 	public EnumModelType modelType = EnumModelType.HumanMale;
-	
+
 	public int modelSize = 5;
 
 	public int showName = 0;
 	public int skinColor = 0xFFFFFF;
-	
+
 	public boolean NoLivingAnimation = false;
+
+	public HitboxData hitboxData = new HitboxData();
 
 	
 	public DataDisplay(EntityNPCInterface npc){
@@ -66,7 +69,7 @@ public class DataDisplay {
 		nbttagcompound.setString("CloakTexture", cloakTexture);
 		nbttagcompound.setString("GlowTexture", glowTexture);
 		nbttagcompound.setByte("UsingSkinUrl", skinType);
-		
+
 		nbttagcompound.setInteger("ModelType", modelType.ordinal());
 		nbttagcompound.setInteger("Size", modelSize);
 
@@ -75,6 +78,8 @@ public class DataDisplay {
 		nbttagcompound.setInteger("NpcVisible", visible);
 
 		nbttagcompound.setBoolean("NoLivingAnimation", NoLivingAnimation);
+
+		hitboxData.writeToNBT(nbttagcompound);
 
 		return nbttagcompound;
 	}
@@ -87,17 +92,19 @@ public class DataDisplay {
 		cloakTexture = nbttagcompound.getString("CloakTexture");
 		glowTexture = nbttagcompound.getString("GlowTexture");
 		skinType = nbttagcompound.getByte("UsingSkinUrl");
-		
+
 		modelType = EnumModelType.values()[nbttagcompound
 				.getInteger("ModelType") % EnumModelType.values().length];
-		
+
 		modelSize = nbttagcompound.getInteger("Size");
 
 		showName = nbttagcompound.getInteger("ShowName");
 		skinColor = nbttagcompound.getInteger("SkinColor");
 		visible = nbttagcompound.getInteger("NpcVisible");
-		
+
 		NoLivingAnimation = nbttagcompound.getBoolean("NoLivingAnimation");
+
+		hitboxData.readFromNBT(nbttagcompound);
 	}
 	public boolean showName() {
 		if(npc.isKilled())
