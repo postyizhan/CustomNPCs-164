@@ -61,6 +61,13 @@
 - **动画贴图**（mixin 实现 `MixinItemRenderer`/`MixinItemStack`，1.6.4 无法照搬）
 - **MixinEntityTrackerEntry 隐身修复**（修的是 1.7.10 特有的 netty 竞态，1.6.4 无此 bug）
 
+## 新增待办（用户需求）
+
+### L 级（Low Priority，低优先级）
+
+- [ ] **#20** 铁砧功能回移：回移 1.7.10+ 铁砧合成 GUI，支持物品重命名、附魔合并（需 `GuiRepair` 类 + `ContainerRepair` + 铁砧方块交互逻辑）
+- [ ] **#21** 高版本贴图回移：回移 1.8-1.12 的所有新增/更新贴图（方块/物品/实体/GUI），更新 `assets/` 资源包结构到最新格式
+
 ## 技术决策记录（ADR）
 
 ### ① 编译目标锁定 Java 7（硬上限，勿再尝试升 8）

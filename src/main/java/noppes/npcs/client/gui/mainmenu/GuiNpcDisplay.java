@@ -9,15 +9,18 @@ import noppes.npcs.client.gui.GuiNPCTextures;
 import noppes.npcs.client.gui.GuiNpcModelSelection;
 import noppes.npcs.client.gui.GuiNpcTextureCloaks;
 import noppes.npcs.client.gui.GuiNpcTextureOverlays;
+import noppes.npcs.client.gui.SubGuiColorSelector;
 import noppes.npcs.client.gui.util.GuiNPCInterface2;
 import noppes.npcs.client.gui.util.GuiNpcButton;
 import noppes.npcs.client.gui.util.GuiNpcLabel;
 import noppes.npcs.client.gui.util.GuiNpcTextField;
 import noppes.npcs.client.gui.util.ITextfieldListener;
 import noppes.npcs.client.gui.util.IGuiData;
+import noppes.npcs.client.gui.util.ISubGuiListener;
+import noppes.npcs.client.gui.util.SubGuiInterface;
 import noppes.npcs.constants.EnumPacketType;
 
-public class GuiNpcDisplay extends GuiNPCInterface2 implements ITextfieldListener, IGuiData{
+public class GuiNpcDisplay extends GuiNPCInterface2 implements ITextfieldListener, IGuiData, ISubGuiListener{
 
 	private DataDisplay display;
 	
@@ -112,6 +115,8 @@ public class GuiNpcDisplay extends GuiNPCInterface2 implements ITextfieldListene
     	this.addTextField(new GuiNpcTextField(13, this, fontRenderer, guiLeft + 307, yRight, 40, 20, hurtColor));
     	getTextField(13).setTextColor(display.tintData.getHurtTint());
     	getTextField(13).setEnabled(display.tintData.isTintEnabled());
+    	this.addButton(new GuiNpcButton(14, guiLeft + 349, yRight, 14, 20, "X"));
+    	getButton(14).enabled = display.tintData.isTintEnabled();
 
     	yRight+=23;
     	// 皮肤覆盖层
@@ -238,7 +243,20 @@ public class GuiNpcDisplay extends GuiNPCInterface2 implements ITextfieldListene
 			display.skinOverlays.setEnabled(button.getValue() == 1);
 			initGui();
 		}
+		else if(button.id == 14){
+			NoppesUtil.openGUI(player, new SubGuiColorSelector(display.tintData.getHurtTint()));
+		}
     }
+
+	@Override
+	public void subGuiClosed(SubGuiInterface subgui) {
+		if(subgui instanceof SubGuiColorSelector){
+			SubGuiColorSelector colorSelector = (SubGuiColorSelector) subgui;
+			display.tintData.setHurtTint(colorSelector.color);
+			getTextField(13).setText(Integer.toHexString(colorSelector.color));
+			getTextField(13).setTextColor(colorSelector.color);
+		}
+	}
 
 	@Override
 	public void save() {
