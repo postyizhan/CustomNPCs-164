@@ -13,11 +13,11 @@
 | Cloner 克隆库命名文件夹分类 | `bd0c5a9` | [docs/porting/cloner-folders.md](docs/porting/cloner-folders.md) |
 | Trader 库存系统（阶段一） | `fbdbb7f` | [docs/porting/trader-stock.md](docs/porting/trader-stock.md)（全局库存+补货，按玩家库存留阶段二；配置界面输入框已知问题见文档） |
 | 全键值汉化 | `0311e25` | zh_CN.lang 完整汉化（942行），游戏内切换语言即可验证 |
-| 碰撞箱缩放（服务端） | `092963f` | Display 界面配置碰撞箱宽高缩放（0.1-10.0倍），服务端碰撞箱立即生效 |
-| 色调系统 | `c191d65` | Display 界面配置受伤闪烁颜色（默认红色），渲染器应用色调到 GL 颜色 |
-| 皮肤覆盖层（单层） | `91809ea` | Display 界面配置覆盖层贴图路径+颜色+透明度，渲染器叠加绘制 |
-| 坐骑角色 | `1520a17` | RoleMount 右键骑乘/下马，基础骑乘交互已实现 |
-| 战术AI | `59d73f5` | EntityAIFollow/EntityAILeapAtTargetNpc/EntityAITransform 三个AI行为类 |
+| 碰撞箱缩放（服务端） | `092963f` | [docs/porting/hitbox-scale.md](docs/porting/hitbox-scale.md) |
+| 色调系统 | `c191d65` | [docs/porting/tint-system.md](docs/porting/tint-system.md) |
+| 皮肤覆盖层（单层） | `91809ea` | [docs/porting/skin-overlays.md](docs/porting/skin-overlays.md) |
+| 坐骑角色 | `1520a17` | [docs/porting/role-mount.md](docs/porting/role-mount.md) |
+| 战术AI | `59d73f5` | [docs/porting/tactical-ai.md](docs/porting/tactical-ai.md) |
 
 ## 待办候选池（中小特性，按推荐顺序）
 
