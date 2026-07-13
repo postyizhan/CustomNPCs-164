@@ -81,7 +81,7 @@ public class GuiNpcMobSpawnerAdd extends GuiNPCInterface implements ISubGuiListe
 			SubGuiCloneFolderName folderGui = (SubGuiCloneFolderName) subgui;
 			if(folderGui.folderName != null){
 				activeFolder = folderGui.folderName;
-				getButton(2).setDisplayText(activeFolder);
+				initGui(); // 重建界面，folders 数组会包含新文件夹
 			}
 		}
 	}

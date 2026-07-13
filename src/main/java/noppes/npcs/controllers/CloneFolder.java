@@ -43,11 +43,7 @@ public class CloneFolder {
         if (name.startsWith("___")) {
             return false;
         }
-        try {
-            Integer.parseInt(name);
-            return false;
-        } catch (NumberFormatException ignored) {
-        }
+        // 移除纯数字限制：允许用户创建数字文件夹名（与旧 Tab N 共存）
         for (char c : name.toCharArray()) {
             if (c == '/' || c == '\\' || c == ':' || c == '*' || c == '?' || c == '"' || c == '<' || c == '>' || c == '|') {
                 return false;
