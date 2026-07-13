@@ -94,6 +94,7 @@ import noppes.npcs.roles.JobBoss;
 import noppes.npcs.roles.JobInterface;
 import noppes.npcs.roles.RoleFollower;
 import noppes.npcs.roles.RoleInterface;
+import noppes.npcs.roles.RoleMount;
 
 import com.google.common.io.ByteArrayDataInput;
 import com.google.common.io.ByteArrayDataOutput;
@@ -280,19 +281,49 @@ public class EntityNPCInterface extends EntityCreature implements IEntityAdditio
         // 骑乘移动控制：监听骑乘玩家的输入并应用到 NPC
         if (this.riddenByEntity instanceof EntityPlayer && this.roleInterface != null && this.advanced.role == EnumRoleType.Mount) {
             EntityPlayer rider = (EntityPlayer) this.riddenByEntity;
+            RoleMount roleMount = (RoleMount) this.roleInterface;
+
+            // 同步 NPC 朝向到玩家朝向
+            this.rotationYaw = rider.rotationYaw;
+            this.rotationPitch = rider.rotationPitch * 0.5F;
+            this.setRotation(this.rotationYaw, this.rotationPitch);
+            this.rotationYawHead = this.renderYawOffset = this.rotationYaw;
 
             // 应用玩家的移动输入到 NPC
-            float strafe = rider.moveStrafing;
-            float forward = rider.moveForward;
+            float strafe = rider.moveStrafing * 0.5F;  // 左右移动
+            float forward = rider.moveForward;          // 前后移动
 
             if (forward != 0.0F || strafe != 0.0F) {
-                float speed = 0.35F;  // 移动速度
-                float yaw = rider.rotationYaw;
+                float speed = 0.35F;  // 基础移动速度
 
-                // 计算移动方向
-                this.motionX += (double)(MathHelper.sin(-yaw * 0.017453292F - (float)Math.PI) * forward * speed);
-                this.motionZ += (double)(MathHelper.cos(-yaw * 0.017453292F - (float)Math.PI) * forward * speed);
+                // 如果允许疾跑且玩家正在疾跑，提高速度
+                if (roleMount.isAllowSprint() && rider.isSprinting()) {
+                    speed *= 1.5F;
+                }
+
+                float yaw = this.rotationYaw;
+                float radians = yaw * 0.017453292F;  // 转换为弧度
+
+                // 计算移动方向向量（修复前后反转问题）
+                double moveX = (double)(MathHelper.sin(radians) * forward * speed);
+                double moveZ = (double)(MathHelper.cos(radians) * forward * speed);
+
+                // 添加左右平移
+                moveX += (double)(MathHelper.sin((radians + 1.5707964F)) * strafe * speed);
+                moveZ += (double)(MathHelper.cos((radians + 1.5707964F)) * strafe * speed);
+
+                // 应用移动
+                this.motionX = -moveX;
+                this.motionZ = moveZ;
+            } else {
+                // 没有输入时停止移动
+                this.motionX = 0.0D;
+                this.motionZ = 0.0D;
             }
+
+            // 处理跳跃（移除，因为 1.6.4 无法直接访问玩家的跳跃状态）
+            // 玩家可以通过 RoleMount.getJumpStrength() 配置跳跃强度
+            // 但需要在客户端通过其他机制触发（例如按键事件）
         }
     }
     
