@@ -1,5 +1,7 @@
 package noppes.npcs.client.gui.roles;
 
+import org.lwjgl.opengl.GL11;
+
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.nbt.NBTTagCompound;
 import noppes.npcs.client.NoppesUtil;
@@ -58,6 +60,15 @@ public class SubGuiNpcTraderStock extends SubGuiInterface implements ITextfieldL
 
 		addButton(new GuiNpcButton(2, guiLeft + 5, guiTop + 232, 120, 20, "stock.resetnow"));
 		addButton(new GuiNpcButton(66, guiLeft + 131, guiTop + 232, 120, 20, "gui.done"));
+	}
+
+	@Override
+	public void drawScreen(int mouseX, int mouseY, float partialTicks) {
+		super.drawScreen(mouseX, mouseY, partialTicks);
+		// 在父类绘制后，重新设置 GL 状态并强制绘制输入框
+		GL11.glDisable(GL11.GL_LIGHTING);
+		GL11.glDisable(GL11.GL_DEPTH_TEST);
+		GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
 	}
 
 	@Override
