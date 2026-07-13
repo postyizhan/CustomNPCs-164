@@ -38,11 +38,7 @@ public class SubGuiNpcTraderStock extends SubGuiInterface implements ITextfieldL
 
 		if(role.stock.resetType == EnumStockReset.MCCUSTOM || role.stock.resetType == EnumStockReset.RLCUSTOM) {
 			addLabel(new GuiNpcLabel(2, "stock.customtime", guiLeft + 5, guiTop + 58));
-			GuiNpcTextField customTime = new GuiNpcTextField(10, this, fontRenderer, guiLeft + 120, guiTop + 53, 131, 20, role.stock.customResetTime + "");
-			customTime.setMinMaxDefault(0, Integer.MAX_VALUE, 0);
-			customTime.setTextColor(14737632); // 浅灰色（默认 Minecraft 输入框颜色）
-			customTime.setEnableBackgroundDrawing(true); // 确保背景绘制
-			addTextField(customTime);
+			addTextField(new GuiNpcTextField(10, this, fontRenderer, guiLeft + 120, guiTop + 53, 131, 20, role.stock.customResetTime + ""));
 		}
 
 		addLabel(new GuiNpcLabel(3, "stock.maxstock", guiLeft + 5, guiTop + 77));
@@ -51,11 +47,7 @@ public class SubGuiNpcTraderStock extends SubGuiInterface implements ITextfieldL
 			int y = guiTop + 88 + i / 3 * 21;
 			addLabel(new GuiNpcLabel(10 + i, (i + 1) + ":", x, y + 6));
 			String value = role.stock.maxStock[i] < 0 ? "" : role.stock.maxStock[i] + "";
-			GuiNpcTextField maxStock = new GuiNpcTextField(100 + i, this, fontRenderer, x + 18, y, 58, 20, value);
-			maxStock.setMinMaxDefault(-1, Integer.MAX_VALUE, -1);
-			maxStock.setTextColor(14737632); // 浅灰色（默认 Minecraft 输入框颜色）
-			maxStock.setEnableBackgroundDrawing(true); // 确保背景绘制
-			addTextField(maxStock);
+			addTextField(new GuiNpcTextField(100 + i, this, fontRenderer, x + 18, y, 58, 20, value));
 		}
 
 		addButton(new GuiNpcButton(2, guiLeft + 5, guiTop + 232, 120, 20, "stock.resetnow"));
