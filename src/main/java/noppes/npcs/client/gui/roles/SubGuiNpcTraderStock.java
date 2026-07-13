@@ -39,6 +39,7 @@ public class SubGuiNpcTraderStock extends SubGuiInterface implements ITextfieldL
 			GuiNpcTextField customTime = new GuiNpcTextField(10, this, fontRenderer, guiLeft + 120, guiTop + 53, 131, 20, role.stock.customResetTime + "");
 			customTime.numbersOnly = true;
 			customTime.setMinMaxDefault(0, Integer.MAX_VALUE, 0);
+			customTime.setTextColor(0xFFFFFF); // 确保文字可见
 			addTextField(customTime);
 		}
 
@@ -51,6 +52,7 @@ public class SubGuiNpcTraderStock extends SubGuiInterface implements ITextfieldL
 			GuiNpcTextField maxStock = new GuiNpcTextField(100 + i, this, fontRenderer, x + 18, y, 58, 20, value);
 			maxStock.numbersOnly = true;
 			maxStock.setMinMaxDefault(-1, Integer.MAX_VALUE, -1);
+			maxStock.setTextColor(0xFFFFFF); // 确保文字可见
 			addTextField(maxStock);
 		}
 
