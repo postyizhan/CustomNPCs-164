@@ -37,9 +37,9 @@ public class SubGuiNpcTraderStock extends SubGuiInterface implements ITextfieldL
 		if(role.stock.resetType == EnumStockReset.MCCUSTOM || role.stock.resetType == EnumStockReset.RLCUSTOM) {
 			addLabel(new GuiNpcLabel(2, "stock.customtime", guiLeft + 5, guiTop + 58));
 			GuiNpcTextField customTime = new GuiNpcTextField(10, this, fontRenderer, guiLeft + 120, guiTop + 53, 131, 20, role.stock.customResetTime + "");
-			customTime.numbersOnly = true;
+			// numbersOnly 暂时移除，依赖 unFocused 的 getInteger() 解析保护
 			customTime.setMinMaxDefault(0, Integer.MAX_VALUE, 0);
-			customTime.setTextColor(0xFFFFFF); // 确保文字可见
+			customTime.setTextColor(0xFFFFFF);
 			addTextField(customTime);
 		}
 
@@ -50,9 +50,9 @@ public class SubGuiNpcTraderStock extends SubGuiInterface implements ITextfieldL
 			addLabel(new GuiNpcLabel(10 + i, (i + 1) + ":", x, y + 6));
 			String value = role.stock.maxStock[i] < 0 ? "" : role.stock.maxStock[i] + "";
 			GuiNpcTextField maxStock = new GuiNpcTextField(100 + i, this, fontRenderer, x + 18, y, 58, 20, value);
-			maxStock.numbersOnly = true;
+			// numbersOnly 暂时移除，依赖 unFocused 的 getInteger() 解析保护
 			maxStock.setMinMaxDefault(-1, Integer.MAX_VALUE, -1);
-			maxStock.setTextColor(0xFFFFFF); // 确保文字可见
+			maxStock.setTextColor(0xFFFFFF);
 			addTextField(maxStock);
 		}
 
