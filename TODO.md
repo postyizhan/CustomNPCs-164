@@ -17,6 +17,7 @@
 | 色调系统 | `c191d65` | Display 界面配置受伤闪烁颜色（默认红色），渲染器应用色调到 GL 颜色 |
 | 皮肤覆盖层（单层） | `91809ea` | Display 界面配置覆盖层贴图路径+颜色+透明度，渲染器叠加绘制 |
 | 坐骑角色 | `1520a17` | RoleMount 右键骑乘/下马，基础骑乘交互已实现 |
+| 战术AI | `59d73f5` | EntityAIFollow/EntityAILeapAtTargetNpc/EntityAITransform 三个AI行为类 |
 
 ## 待办候选池（中小特性，按推荐顺序）
 
