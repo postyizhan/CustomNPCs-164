@@ -176,6 +176,9 @@ display.visible=可见
 display.bossbar=首领生命条
 display.url=URL
 display.tint=着色
+display.hitbox=碰撞箱缩放
+display.hitboxWidth=宽度缩放
+display.hitboxHeight=高度缩放
 
 inv.minExp=最低经验
 inv.maxExp=最高经验

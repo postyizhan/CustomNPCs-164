@@ -1,0 +1,21 @@
+已按规格完成 Cloner 命名文件夹回移，涉及 [CloneController.java](D:/code/CustomNPCs-164/src/main/java/noppes/npcs/client/controllers/CloneController.java:91)、两个 GUI、新模型/子窗及英文语言键。未修改网络层或禁改文件。
+
+验证：
+
+- Java 7 定向编译通过。
+- `./gradlew build --offline`：`BUILD SUCCESSFUL`；普通构建仅因沙箱禁止下载 Forge manifest 受阻。
+- `git diff --check` 通过。
+
+`git diff --stat`（含未跟踪的新文件补充）：
+
+```text
+CloneController.java        |  44 +++++++-
+GuiNpcMobSpawner.java       | 115 +++++++++++++++------
+GuiNpcMobSpawnerAdd.java    |  57 ++++++++--
+en_US.lang                  |   7 +-
+CloneFolder.java            |  61 ++++++++++++++++++++++ (new)
+SubGuiCloneFolderName.java  |  47 ++++++++++++++++++++++ (new)
+6 files changed, 288 insertions(+), 43 deletions(-)
+```
+
+原有未跟踪的 `.claude/` 保持未改动。

@@ -787,7 +787,7 @@ public class EntityNPCInterface extends EntityCreature implements IEntityAdditio
 	}
 
 	public void updateHitbox() {
-		
+
 		if(currentAnimation == EnumAnimation.LYING){
 			width = height = 0.2f;
 		}
@@ -801,6 +801,12 @@ public class EntityNPCInterface extends EntityCreature implements IEntityAdditio
 		}
 		width = (width / 5f) * display.modelSize;
 		height = (height / 5f) * display.modelSize;
+
+		// 应用碰撞箱缩放
+		if (display.hitboxData.isHitboxEnabled()) {
+			width = width * display.hitboxData.getWidthScale();
+			height = height * display.hitboxData.getHeightScale();
+		}
 	}
 
 	public void dropPlayerItemWithRandomChoice(ItemStack itemstack, boolean flag) {

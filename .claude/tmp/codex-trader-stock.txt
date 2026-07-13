@@ -1,0 +1,13 @@
+阶段一已完成，`.\gradlew.bat build` 验证成功（`BUILD SUCCESSFUL`）。既有 `TODO.md` 和 `.claude/` 未改动。
+
+`git diff --stat`：
+
+```text
+9 files changed, 432 insertions(+), 1 deletion(-)
+```
+
+确认：
+
+1. `TraderStock` 使用 `hasKey` 守卫，未 bump `ModRev`。
+2. `TraderStockSave` 仅追加于 `CHATBUBBLE` 后。
+3. 未实现 `perPlayer` GUI/剩余量显示，未改 Market、coins、`CustomNPC-Plus/` 或 `accesstransformer.cfg`。

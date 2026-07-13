@@ -176,6 +176,9 @@ display.visible=Visible
 display.bossbar=BossBar
 display.url=Url
 display.tint=Tint
+display.hitbox=Hitbox Scale
+display.hitboxWidth=Width Scale
+display.hitboxHeight=Height Scale
 
 inv.minExp=Min Exp
 inv.maxExp=Max Exp
