@@ -27,6 +27,7 @@
 | 12 | 飞行 NPC 寻路 | `EntityNPCFlying` + 3D 寻路器（`ai/pathfinder/` 约 1800 行，自包含） | L |
 | 13 | HUD 任务追踪 | 任务追踪/指南针 HUD（不含能力热键栏） | M-L |
 | 14 | 战斗策略系统 | `EnumCombatPolicy`（Flip/Brute/Stubborn/Tactical）+ 阵营被动保护 | L |
+| 15 | 全键值汉化 | 补全 `zh_CN.lang`：GUI 按钮/标签/物品/实体名等所有未汉化键值；清理重复键；对齐 en_US 结构 | S-M |
 
 ## 已评估暂缓
 
