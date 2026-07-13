@@ -11,7 +11,8 @@
 | NPC 攻速强制 | 原版已有 | 无需回移：`DataStats.attackSpeed` + `EntityNPCInterface.attackEntityAsMob` 的 `hurtResistantTime` 强制 + `SubGuiNpcMeleeProperties` 输入框在 1.6.4 均已存在 |
 | 颜色选择器 + 阵营取色 | `ed87138` | [docs/porting/color-selector-dialog-visual.md](docs/porting/color-selector-dialog-visual.md)（对话视觉未纳入，见下） |
 | Cloner 克隆库命名文件夹分类 | `bd0c5a9` | [docs/porting/cloner-folders.md](docs/porting/cloner-folders.md) |
-| Trader 库存系统（阶段一） | `fbdbb7f` | [docs/porting/trader-stock.md](docs/porting/trader-stock.md)（全局库存+补货，按玩家库存留阶段二） |
+| Trader 库存系统（阶段一） | `fbdbb7f` | [docs/porting/trader-stock.md](docs/porting/trader-stock.md)（全局库存+补货，按玩家库存留阶段二；配置界面输入框已知问题见文档） |
+| 全键值汉化 | `0311e25` | zh_CN.lang 完整汉化（942行），游戏内切换语言即可验证 |
 
 ## 待办候选池（中小特性，按推荐顺序）
 
@@ -27,7 +28,6 @@
 | 12 | 飞行 NPC 寻路 | `EntityNPCFlying` + 3D 寻路器（`ai/pathfinder/` 约 1800 行，自包含） | L |
 | 13 | HUD 任务追踪 | 任务追踪/指南针 HUD（不含能力热键栏） | M-L |
 | 14 | 战斗策略系统 | `EnumCombatPolicy`（Flip/Brute/Stubborn/Tactical）+ 阵营被动保护 | L |
-| 15 | 全键值汉化 | 补全 `zh_CN.lang`：GUI 按钮/标签/物品/实体名等所有未汉化键值；清理重复键；对齐 en_US 结构 | S-M |
 
 ## 已评估暂缓
 
