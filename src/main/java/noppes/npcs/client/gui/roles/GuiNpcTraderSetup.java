@@ -4,13 +4,16 @@
 
 package noppes.npcs.client.gui.roles;
 
+import net.minecraft.client.gui.GuiButton;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.ResourceLocation;
 import noppes.npcs.EntityNPCInterface;
 import noppes.npcs.client.NoppesUtil;
 import noppes.npcs.client.gui.util.GuiContainerNPCInterface2;
+import noppes.npcs.client.gui.util.GuiNpcButton;
 import noppes.npcs.constants.EnumPacketType;
 import noppes.npcs.containers.ContainerNPCTraderSetup;
+import noppes.npcs.roles.RoleTrader;
 
 import org.lwjgl.opengl.GL11;
 
@@ -22,19 +25,27 @@ public class GuiNpcTraderSetup extends GuiContainerNPCInterface2
 {
 	
 	private static final ResourceLocation field_110422_t = new ResourceLocation("customnpcs","textures/gui/npctradersetup2.png");
+	private RoleTrader role;
 
     public GuiNpcTraderSetup(EntityNPCInterface npc,ContainerNPCTraderSetup container)
     {
         super(npc, container);
         ySize = 180;
+		role = (RoleTrader)npc.roleInterface;
     }
     public void initGui()
     {
     	super.initGui();
         buttonList.clear();
         setBackground("npctradersetup.png");
+		addButton(new GuiNpcButton(2, guiLeft + 306, guiTop + 158, 88, 20, "stock.options"));
 
     }
+	@Override
+	public void buttonEvent(GuiButton guibutton) {
+		if(guibutton.id == 2)
+			setSubGui(new SubGuiNpcTraderStock(role));
+	}
     protected void drawGuiContainerForegroundLayer(int par1, int par2)
     {
         super.drawGuiContainerForegroundLayer(par1, par2);

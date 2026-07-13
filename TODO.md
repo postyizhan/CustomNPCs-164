@@ -10,13 +10,13 @@
 | 文本框 Ctrl 快捷键与数字框粘贴过滤 | `a8c07d2` | [docs/porting/textfield-ctrl-shortcuts.md](docs/porting/textfield-ctrl-shortcuts.md) |
 | NPC 攻速强制 | 原版已有 | 无需回移：`DataStats.attackSpeed` + `EntityNPCInterface.attackEntityAsMob` 的 `hurtResistantTime` 强制 + `SubGuiNpcMeleeProperties` 输入框在 1.6.4 均已存在 |
 | 颜色选择器 + 阵营取色 | `ed87138` | [docs/porting/color-selector-dialog-visual.md](docs/porting/color-selector-dialog-visual.md)（对话视觉未纳入，见下） |
+| Cloner 克隆库命名文件夹分类 | `bd0c5a9` | [docs/porting/cloner-folders.md](docs/porting/cloner-folders.md) |
 
 ## 待办候选池（中小特性，按推荐顺序）
 
 | # | 特性 | 说明 | 规模 |
 |---|---|---|---|
-| 2 | Trader 库存系统 | 商人库存全局/按玩家两种模式 + 补货计时器（`TraderStock`/`EnumStockReset`） | M |
-| 3 | Cloner 文件夹分类 | 克隆库文件夹/子文件夹组织 + 标签过滤（`CloneFolder`/`Tag`/`TagMap`） | M |
+| 2 | Trader 库存系统 | 商人库存全局/按玩家两种模式 + 补货计时器（`TraderStock`/`EnumStockReset`）。**阶段一（全局库存+补货）进行中** | M |
 | 5 | 战术 AI | 新 AI 行为：跟随/扑击/变身（`EntityAIFollow`/`EntityAILeapAtTargetNpc`/`EntityAITransform`） | M |
 | 6 | 自然生成 GUI | 自然生成选项界面 + 运行时开关 + 消失机制改进 | M |
 | 7 | 坐骑角色 | `RoleMount` 可骑乘 NPC + 骑乘抖动/下马修复 | M |

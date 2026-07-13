@@ -91,10 +91,14 @@ public class ContainerNPCTrader extends Container
         ItemStack item = slot.getStack();
         if(!canGivePlayer(item, entityplayer))
         	return null;
+		if(role.stock.enableStock && !role.stock.hasStock(i-1, entityplayer.username, 1))
+			return null;
         if(!canBuy(role.inventoryCurrency.items.get(i-1),entityplayer))
         	return null;
         ItemStack soldItem = item.copy();
         givePlayer(soldItem, entityplayer);
+		if(role.stock.enableStock)
+			role.stock.consumeStock(i-1, entityplayer.username, 1);
         return soldItem;
     	
     }

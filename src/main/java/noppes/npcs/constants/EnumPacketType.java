@@ -40,7 +40,7 @@ public enum EnumPacketType {
 	MainmenuInvSave("",true),
 	MainmenuInvGet("",true),
 	MainmenuAdvancedGet("",true),
-	MainmenuAdvancedSave("",true), RemoteTpToNpc, DialogGet, DialogCategoryGet, QuestGet, PlayMusic, QuestCategoryGet, PlaySound, WaypointSave, SaveTileEntity, GuiError, GuiClose, Message, MerchantAdd, MerchantUpdate, GetTileEntity, OpenBook, CHATBUBBLE;
+	MainmenuAdvancedSave("",true), RemoteTpToNpc, DialogGet, DialogCategoryGet, QuestGet, PlayMusic, QuestCategoryGet, PlaySound, WaypointSave, SaveTileEntity, GuiError, GuiClose, Message, MerchantAdd, MerchantUpdate, GetTileEntity, OpenBook, CHATBUBBLE, TraderStockSave("",true);
 
 	public String permission;
 	public boolean needsNpc = false;

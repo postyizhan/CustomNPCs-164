@@ -37,6 +37,7 @@ import noppes.npcs.controllers.RecipeController;
 import noppes.npcs.controllers.TransportController;
 import noppes.npcs.controllers.TransportLocation;
 import noppes.npcs.permissions.CustomNpcsPermissions;
+import noppes.npcs.roles.RoleTrader;
 import noppes.npcs.roles.RoleTransporter;
 import cpw.mods.fml.common.network.IPacketHandler;
 import cpw.mods.fml.common.network.Player;
@@ -466,6 +467,12 @@ public class PacketHandlerServer implements IPacketHandler{
 				return;
 			MerchantRecipeList list = MerchantRecipeList.readRecipiesFromStream(dis);
 			((EntityVillager)entity).setRecipes(list);
+		}
+		else if(type == EnumPacketType.TraderStockSave){
+			NBTTagCompound compound = CompressedStreamTools.read(dis);
+			((RoleTrader)npc.roleInterface).stock.readFromNBT(compound);
+			npc.reset();
+			NoppesUtilServer.sendDataToAll(npc, EnumPacketType.UpdateNpc, npc.copy());
 		}
 		
 	}

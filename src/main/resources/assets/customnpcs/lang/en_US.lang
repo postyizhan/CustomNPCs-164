@@ -926,3 +926,17 @@ companion.owner=Owner
 companion.strength=Strength
 companion.talent=Talent
 companion.level=Level
+
+stock.options=Stock Options
+stock.enable=Enable Stock
+stock.resettype=Reset Type
+stock.customtime=Custom Reset Time
+stock.maxstock=Max Stock (-1 = Unlimited)
+stock.resetnow=Restock Now
+stock.reset.never=Never
+stock.reset.mcdaily=MC Daily
+stock.reset.mcweekly=MC Weekly
+stock.reset.mccustom=MC Custom
+stock.reset.rldaily=RL Daily
+stock.reset.rlweekly=RL Weekly
+stock.reset.rlcustom=RL Custom
