@@ -264,12 +264,13 @@ public class GuiNpcMobSpawner extends GuiNPCInterface implements GuiCustomScroll
 			SubGuiCloneFolderName folderGui = (SubGuiCloneFolderName) subgui;
 			if(folderGui.folderName == null)
 				return;
-			if(renamingFolder)
+			if(renamingFolder){
 				CloneController.renameFolder(activeFolder, folderGui.folderName);
+			} else {
+				CloneController.registerFolder(folderGui.folderName); // 新建文件夹立即注册
+			}
 			activeFolder = folderGui.folderName;
 			ArrayList<String> folders = CloneController.getFolders();
-			if(!folders.contains(activeFolder))
-				folders.add(activeFolder);
 			folderScroll.setList(folders);
 			folderScroll.setSelected(activeFolder);
 			showClones();

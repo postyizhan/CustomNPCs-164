@@ -16,6 +16,65 @@ import noppes.npcs.CustomNpcs;
 public class CloneController {
 	public static Entity toClone = null;
 
+	// 文件夹注册表持久化（解决空文件夹不显示问题）
+	private static TreeSet<String> registeredFolders = null;
+
+	private static TreeSet<String> loadRegisteredFolders(){
+		if(registeredFolders != null)
+			return registeredFolders;
+		registeredFolders = new TreeSet<String>();
+		registeredFolders.add("Default");
+		try {
+			File file = new File(CustomNpcs.Dir, "clonefolders.dat");
+			if(file.exists()){
+				NBTTagCompound compound = CompressedStreamTools.readCompressed(new FileInputStream(file));
+				NBTTagList list = compound.getTagList("Folders");
+				if(list != null){
+					for(int i = 0; i < list.tagCount(); i++){
+						NBTTagCompound tag = (NBTTagCompound)list.tagAt(i);
+						registeredFolders.add(tag.getString("Name"));
+					}
+				}
+			}
+		} catch (Exception e) {
+			System.err.println("Failed to load clone folders: " + e.getMessage());
+		}
+		return registeredFolders;
+	}
+
+	private static void saveRegisteredFolders(){
+		try {
+			File file = new File(CustomNpcs.Dir, "clonefolders.dat");
+			NBTTagCompound compound = new NBTTagCompound();
+			NBTTagList list = new NBTTagList();
+			for(String folder : loadRegisteredFolders()){
+				if(!folder.equals("Default")){
+					NBTTagCompound tag = new NBTTagCompound();
+					tag.setString("Name", folder);
+					list.appendTag(tag);
+				}
+			}
+			compound.setTag("Folders", list);
+			CompressedStreamTools.writeCompressed(compound, new FileOutputStream(file));
+		} catch (Exception e) {
+			System.err.println("Failed to save clone folders: " + e.getMessage());
+		}
+	}
+
+	public static void registerFolder(String folder){
+		if(folder != null && !folder.isEmpty()){
+			loadRegisteredFolders().add(folder);
+			saveRegisteredFolders();
+		}
+	}
+
+	public static void unregisterFolder(String folder){
+		if(!folder.equals("Default")){
+			loadRegisteredFolders().remove(folder);
+			saveRegisteredFolders();
+		}
+	}
+
 	private static ArrayList<NBTTagCompound> loadClones(){
 		try {
 	        File file = new File(CustomNpcs.Dir, "clonednpcs.dat");
@@ -97,10 +156,14 @@ public class CloneController {
 		return clones;
 	}
 	public static ArrayList<String> getFolders(){
-		TreeSet<String> folders = new TreeSet<String>();
-		folders.add("Default");
+		TreeSet<String> folders = new TreeSet<String>(loadRegisteredFolders());
+		// 也包含从 clone 反推的文件夹（兼容旧存档）
 		for(NBTTagCompound nbt : loadClones()){
-			folders.add(getFolderOf(nbt));
+			String folder = getFolderOf(nbt);
+			if(!folders.contains(folder)){
+				folders.add(folder);
+				registerFolder(folder); // 自动注册旧文件夹
+			}
 		}
 		return new ArrayList<String>(folders);
 	}
@@ -120,10 +183,11 @@ public class CloneController {
 		nbttagcompound.setLong("ClonedDate", System.currentTimeMillis());
 		nbttagcompound.setString("ClonedName", name);
 		nbttagcompound.setString("ClonedFolder", folder);
-		
-		
+
+
 		clones.add(nbttagcompound);
 		saveClones(clones);
+		registerFolder(folder); // 确保文件夹被注册
 	}
 	public static void renameFolder(String old, String neu){
 		ArrayList<NBTTagCompound> clones = getClones();
@@ -132,6 +196,8 @@ public class CloneController {
 				nbt.setString("ClonedFolder", neu);
 		}
 		saveClones(clones);
+		unregisterFolder(old);
+		registerFolder(neu);
 	}
 	public static void deleteFolder(String folder){
 		ArrayList<NBTTagCompound> clones = getClones();
@@ -140,5 +206,6 @@ public class CloneController {
 				nbt.setString("ClonedFolder", "Default");
 		}
 		saveClones(clones);
+		unregisterFolder(folder);
 	}
 }
