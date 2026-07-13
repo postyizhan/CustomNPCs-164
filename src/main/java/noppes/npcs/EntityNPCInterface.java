@@ -265,7 +265,7 @@ public class EntityNPCInterface extends EntityCreature implements IEntityAdditio
         }
 		
         super.onLivingUpdate();
-        
+
         if (worldObj.isRemote){
         	if(!display.cloakTexture.isEmpty())
         		cloakUpdate();
@@ -275,6 +275,24 @@ public class EntityNPCInterface extends EntityCreature implements IEntityAdditio
 			}
 			if(advanced.job == EnumJobType.Bard)
 				((JobBard)jobInterface).onLivingUpdate();
+        }
+
+        // 骑乘移动控制：监听骑乘玩家的输入并应用到 NPC
+        if (this.riddenByEntity instanceof EntityPlayer && this.roleInterface != null && this.advanced.role == EnumRoleType.Mount) {
+            EntityPlayer rider = (EntityPlayer) this.riddenByEntity;
+
+            // 应用玩家的移动输入到 NPC
+            float strafe = rider.moveStrafing;
+            float forward = rider.moveForward;
+
+            if (forward != 0.0F || strafe != 0.0F) {
+                float speed = 0.35F;  // 移动速度
+                float yaw = rider.rotationYaw;
+
+                // 计算移动方向
+                this.motionX += (double)(MathHelper.sin(-yaw * 0.017453292F - (float)Math.PI) * forward * speed);
+                this.motionZ += (double)(MathHelper.cos(-yaw * 0.017453292F - (float)Math.PI) * forward * speed);
+            }
         }
     }
     
