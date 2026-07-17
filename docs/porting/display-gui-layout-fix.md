@@ -1,165 +1,143 @@
-# Display GUI 右列布局修复
+# Display GUI 布局修复测试说明
 
-> 修复时间：2026-07-13  
-> 问题报告：用户反馈 Display 界面右列布局混乱
+## 特性来源与问题背景
 
----
+Display 页面此前将碰撞箱缩放、受伤色调和皮肤覆盖层控件作为“右列”添加到原页面，但 `GuiNPCInterface2` 的内容区宽度只有 420，而原有名称、纹理、披风等控件已经延伸到 `guiLeft + 363`。新增区域从 `guiLeft + 200` 开始，导致标签、文本框和按钮发生真实的矩形交叠。
 
-## 🐛 问题描述
+由于通用 GUI 按“标签、文本框、按钮”的顺序绘制，截图中多数新增标签会被原有文本框和按钮遮住；部分重叠按钮还存在点击命中冲突。该问题不是 GUI Scale 或背景纹理导致的。
 
-用户提供截图显示 Display 界面右列控件布局混乱：
-- **碰撞箱缩放**：标签和输入框位置不对齐
-- **色调系统**：控件水平位置不一致
-- **覆盖层路径**：输入框位置错误，与标签重叠
+本修复按 1.6.4 GUI 习惯重新组织界面，没有直接回移 CustomNPC-Plus 的嵌套设置窗口实现。Display 主页面保留原有控件，碰撞箱、色调和皮肤覆盖层设置移入同一 Display GUI 的高级设置页。
 
----
+## 改动文件
 
-## 🔍 问题分析
+| 文件 | 改动 |
+|---|---|
+| `src/main/java/noppes/npcs/client/gui/mainmenu/GuiNpcDisplay.java` | 将新增设置移入高级页；保留唯一控件 ID；修复碰撞箱高度字段事件映射；使用一级 SubGui 打开颜色选择器；统一六位 RGB 显示 |
+| `docs/porting/display-gui-layout-fix.md` | 记录修复范围、测试步骤和验证边界 |
 
-### 原始代码问题
-```java
-// 问题：X 坐标硬编码且不一致
-addLabel(new GuiNpcLabel(10,"display.hitbox", guiLeft + 200, yRight + 5));
-addButton(new GuiNpcButton(10, guiLeft + 290, yRight, ...));  // +290
+本修复不修改网络消息、NBT 数据结构、渲染逻辑、通用 GUI 基类或 `CustomNPC-Plus/` 参考目录。
 
-addLabel(new GuiNpcLabel(14,"display.hurtTint", guiLeft + 200, yRight + 5));
-addButton(new GuiNpcButton(12, guiLeft + 270, yRight, ...));  // +270 (不一致！)
-addTextField(new GuiNpcTextField(13, ..., guiLeft + 307, ...));  // +307
-addButton(new GuiNpcButton(14, guiLeft + 349, yRight, ...));  // +349
+## 前置条件
 
-// 问题：覆盖层路径位置错误
-addLabel(new GuiNpcLabel(16,"display.overlayPath", guiLeft + 200, yRight + 5));
-addTextField(new GuiNpcTextField(14, ..., guiLeft + 200, yRight + 15, ...));  
-// yRight+15 导致输入框和上一行控件重叠
-```
+1. 启动 Minecraft 1.6.4 开发客户端并进入世界。
+2. 准备一个可编辑的 CustomNPC。
+3. 使用 NPC Wand 打开 NPC 编辑器。
+4. 进入 `Display` 页面。
+5. 推荐先使用截图复现环境：窗口约 922×532、GUI Scale 2。
 
-### 根本原因
-1. **缺乏统一坐标系统**：每个控件单独计算 X 坐标
-2. **硬编码偏移量**：200/270/290/307/349 混乱使用
-3. **Y 坐标计算错误**：覆盖层路径用 yRight+15 而非 yRight+23
+## 测试步骤与预期结果
 
----
+### 1. Display 主页面布局
 
-## ✅ 修复方案
+1. 打开 `Display` 页面。
+2. 检查 Name、Title、Model、Size、Texture、Cape、Overlay、Living Animation、Tint、Visible。
+3. 棐查 Living Animation 同一行右侧的 `Settings` / `设置` 按钮。
 
-### 1. 引入统一坐标变量
-```java
-int xRight = guiLeft + 200;  // 右列起始 X 坐标
+预期结果：
 
-// 所有控件基于 xRight 偏移
-addLabel(new GuiNpcLabel(10,"display.hitbox", xRight, yRight + 5));
-addButton(new GuiNpcButton(10, xRight + 90, yRight, ...));
-```
+- 所有标签完整可见。
+- 文本框和按钮之间没有重叠。
+- 点击任意控件只触发对应操作。
+- 页面不再显示漂浮的 `1.00`、`Disabled` 或 `Select` 控件。
 
-### 2. 标准化水平间距
-| 控件类型 | X 坐标 | 说明 |
-|---------|--------|------|
-| 标签 | xRight | 右列起始位置 |
-| 主按钮/输入框 | xRight + 90 | 标签后 90px |
-| Yes/No 按钮（窄） | xRight + 70 | 特殊情况（受伤染色） |
-| 颜色输入框 | xRight + 107 | Yes/No 按钮后 |
-| X 按钮 | xRight + 149 | 颜色框后 |
+### 2. 高级设置页导航
 
-### 3. 修正覆盖层路径布局
-```java
-// 修复前：yRight + 15（错误，与上一行重叠）
-addTextField(new GuiNpcTextField(14, ..., guiLeft + 200, yRight + 15, ...));
+1. 点击 `Settings` / `设置`。
+2. 检查 Hitbox Scale、Width Scale、Height Scale、Tint System、Hurt Tint、Skin Overlay、Overlay Path。
+3. 点击右上角 `Done` / `完成`。
 
-// 修复后：yRight + 23（正确，独立一行）
-addTextField(new GuiNpcTextField(14, ..., xRight, yRight + 23, ...));
-```
+预期结果：
 
----
+- 高级设置以单列显示，所有控件位于 GUI 背景范围内。
+- 标签、字段和按钮没有重叠。
+- `Done` 返回原 Display 主页面，不关闭整个 NPC 编辑器。
 
-## 📝 完整修复代码
+### 3. 标题与碰撞箱字段 ID 回归
 
-```java
-// 右侧列：碰撞箱缩放、色调系统、皮肤覆盖层
-int yRight = guiTop + 4;
-int xRight = guiLeft + 200;  // 右列起始 X 坐标
+1. 在主页面修改 NPC Title。
+2. 进入高级设置页并启用 Hitbox Scale。
+3. 将 Width Scale 和 Height Scale 分别修改为不同值，例如 `1.50` 和 `2.25`。
+4. 输入后直接点击 `Done`，保存并重新打开 NPC。
 
-// 碰撞箱缩放（3行）
-addLabel(new GuiNpcLabel(10,"display.hitbox", xRight, yRight + 5));
-this.addButton(new GuiNpcButton(10, xRight + 90, yRight, 50, 20, ...));
-yRight += 23;
+预期结果：
 
-addLabel(new GuiNpcLabel(11,"display.hitboxWidth", xRight, yRight + 5));
-this.addTextField(new GuiNpcTextField(10, ..., xRight + 90, yRight, ...));
-yRight += 23;
+- Title 保持输入的标题。
+- Width Scale 为 `1.50`。
+- Height Scale 为 `2.25`。
+- 修改 Height Scale 不会覆盖 Title。
 
-addLabel(new GuiNpcLabel(12,"display.hitboxHeight", xRight, yRight + 5));
-this.addTextField(new GuiNpcTextField(11, ..., xRight + 90, yRight, ...));
-yRight += 23;
+### 4. 碰撞箱范围处理
 
-// 色调系统（2行）
-addLabel(new GuiNpcLabel(13,"display.tintSystem", xRight, yRight + 5));
-this.addButton(new GuiNpcButton(11, xRight + 90, yRight, ...));
-yRight += 23;
+1. 在 Width Scale 输入小于 `0.1` 的值。
+2. 移开焦点。
+3. 在 Height Scale 输入大于 `10.0` 的值。
+4. 移开焦点。
+5. 输入非数字内容并移开焦点。
+6. 分别输入 `NaN`、`Infinity` 和 `-Infinity` 并移开焦点。
 
-addLabel(new GuiNpcLabel(14,"display.hurtTint", xRight, yRight + 5));
-this.addButton(new GuiNpcButton(12, xRight + 70, yRight, 35, 20, ...));  // Yes/No
-this.addTextField(new GuiNpcTextField(13, ..., xRight + 107, yRight, ...));  // 颜色
-this.addButton(new GuiNpcButton(14, xRight + 149, yRight, 14, 20, "X"));  // X按钮
-yRight += 23;
+预期结果：
 
-// 皮肤覆盖层（2行）
-addLabel(new GuiNpcLabel(15,"display.skinOverlay", xRight, yRight + 5));
-this.addButton(new GuiNpcButton(13, xRight + 90, yRight, ...));
-yRight += 23;
+- 宽度回显为数据层限制后的 `0.10`。
+- 高度回显为数据层限制后的 `10.00`。
+- 非数字及非有限浮点值恢复为当前有效值，不会写入 NPC 数据。
+- GUI 不崩溃。
 
-addLabel(new GuiNpcLabel(16,"display.overlayPath", xRight, yRight + 5));
-this.addTextField(new GuiNpcTextField(14, ..., xRight, yRight + 23, 145, 20, ...));  // 独立一行
-```
+### 5. 受伤色调与颜色选择器
 
----
+1. 启用 Tint System。
+2. 启用 Hurt Tint。
+3. 在颜色字段输入六位十六进制颜色。
+4. 点击颜色编辑按钮，选择带前导零的颜色，例如接近 `0000ff`。
+5. 在颜色选择器中点击 `Done`。
 
-## 🎯 验证步骤
+预期结果：
 
-### 测试右列对齐
-1. 启动客户端，打开 NPC 编辑界面
-2. 切换到"显示"（Display）页面
-3. 检查右列控件：
-   - ✅ 所有标签左对齐（xRight）
-   - ✅ 碰撞箱缩放的两个输入框对齐（xRight+90）
-   - ✅ 色调系统按钮对齐（xRight+90）
-   - ✅ 受伤染色行：Yes/No 按钮、颜色框、X 按钮位置正确
-   - ✅ 皮肤覆盖层按钮对齐（xRight+90）
-   - ✅ 覆盖层路径输入框独立一行，不与其他控件重叠
+- 颜色选择器作为 Display 的子界面打开。
+- 完成选择后返回高级设置页，不关闭 NPC 编辑器。
+- 颜色字段始终显示六位十六进制值，例如 `0000ff`，不会缩短为 `ff`。
+- 颜色字段文字颜色同步更新。
 
-### 测试功能完整性
-1. 启用/禁用碰撞箱缩放
-2. 修改宽度和高度缩放值
-3. 启用色调系统和受伤染色
-4. 点击颜色框打开调色板
-5. 启用皮肤覆盖层并输入路径
-6. **预期结果**：所有功能正常工作，布局清晰
+### 6. 皮肤覆盖层
 
----
+1. 启用 Skin Overlay。
+2. 在 Overlay Path 输入有效资源路径。
+3. 直接点击 `Done`，保存并重新打开 NPC。
 
-## 📊 改动统计
+预期结果：
 
-- **修改文件**：1 个（GuiNpcDisplay.java）
-- **代码行数**：+17 行，-16 行
-- **新增变量**：xRight（统一坐标系统）
+- 启用时路径字段可编辑，禁用时不可编辑。
+- 保存后路径和启用状态保持。
+- 有效覆盖层贴图正常渲染。
 
----
+## 回归检查点
 
-## 🎉 修复效果
+- Name 显示模式切换正常。
+- Model 编辑和 Size 输入正常。
+- Texture 类型切换、玩家皮肤、URL 和纹理选择正常。
+- Cape 与原 Glow Overlay 选择正常。
+- Living Animation、基础 Skin Tint、Visible 正常。
+- 高级设置各开关调用 `initGui()` 后仍停留在高级页。
+- 顶部菜单切换、保存和重新打开 NPC 正常。
+- 英文与简体中文标签均不会伸入控件区域。
+- GUI Scale 1、2、3/Auto 下页面均未越出屏幕或背景。
 
-- ✅ 右列控件水平对齐一致
-- ✅ 标签和控件间距标准化
-- ✅ 覆盖层路径输入框位置正确
-- ✅ 整体布局清晰美观
-- ✅ 所有功能保持正常
+## Agent 已验证项
 
----
+- Java 7 兼容语法静态检查。
+- 控件 ID 与 `actionPerformed()` / `unFocused()` 映射核对。
+- 两个页面的控件矩形静态检查。
+- `git diff --check`。
+- `./gradlew build` 编译。
 
-## 🔗 相关提交
+## 人工游戏内验证结果
 
-- `be86875` - fix(gui): 修复 Display 界面右列布局混乱
-- `53567bf` - Merge fix/display-gui-layout
+维护者已于 2026-07-18 确认本次 Display GUI 修复可用，主页面与高级设置页可以正常操作。
 
----
+以下功能仍应在相关资源或配置变化时作为回归检查点：
 
-**修复状态**：已完成  
-**需人工验证**：游戏内测试界面布局
+- 其他 GUI Scale 与中英文环境的实际视觉效果。
+- Hitbox 实际碰撞范围。
+- Hurt Tint 实际受伤闪烁颜色。
+- Skin Overlay 实际贴图渲染。
+
+**测试状态**：已通过本次游戏内验收。
