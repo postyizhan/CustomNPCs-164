@@ -226,6 +226,8 @@ role.bank=Bank
 role.transporter=Transporter
 role.mailman=Mailman
 role.mount=Mount
+role.mount.jumpStrength=Jump Strength
+role.mount.allowSprint=Allow Sprint
 role.marketname=Linked Marketname
 role.companion=Companion
 
