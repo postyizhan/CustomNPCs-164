@@ -17,18 +17,18 @@
 | 色调系统 | `c191d65` | [docs/porting/tint-system.md](docs/porting/tint-system.md) |
 | 皮肤覆盖层（单层） | `91809ea` | [docs/porting/skin-overlays.md](docs/porting/skin-overlays.md) |
 | 坐骑角色 | `1520a17` | [docs/porting/role-mount.md](docs/porting/role-mount.md) |
+| Mount 配置界面与骑乘移动控制 | `eb692bd` / `4ee1c87` | [docs/porting/mount-gui.md](docs/porting/mount-gui.md) / [docs/porting/mount-movement-fix.md](docs/porting/mount-movement-fix.md) |
 | 战术AI | `59d73f5` | [docs/porting/tactical-ai.md](docs/porting/tactical-ai.md) |
+| 自然生成数据层与持久化（阶段一） | `391a35c` / `64e1806` | [docs/porting/spawning-data-layer.md](docs/porting/spawning-data-layer.md) |
+| Display GUI 主页面/高级设置页布局修复 | 本次提交 | [docs/porting/display-gui-layout-fix.md](docs/porting/display-gui-layout-fix.md) |
 
 ## 待办候选池（中小特性，按推荐顺序）
 
 | # | 特性 | 说明 | 规模 |
 |---|---|---|---|
-| 5 | 战术 AI | 新 AI 行为：跟随/扑击/变身（`EntityAIFollow`/`EntityAILeapAtTargetNpc`/`EntityAITransform`） | M |
-| 6 | 自然生成 GUI | 自然生成选项界面 + 运行时开关 + 消失机制改进 | M |
-| 7 | 坐骑角色 | `RoleMount` 可骑乘 NPC + 骑乘抖动/下马修复 | M |
-| 8 | 碰撞箱缩放 | `HitboxData` 宽高缩放——先做服务端碰撞箱，视觉缩放走自有渲染器另做 | M |
-| 9 | 皮肤覆盖层 | 多层贴图叠加 + 着色/透明度（`SkinOverlay`/`DataSkinOverlays`） | M |
-| 10 | 色调系统 | 受伤闪烁颜色 + 持久色调（`TintData`，渲染 hook 改自有 `RenderCustomNpc`） | M |
+| 6 | 自然生成后续阶段 | 在已完成数据层基础上实现 GUI、网络同步与运行时生成/消失机制 | M-L |
+| 9 | 皮肤覆盖层扩展 | 在已完成单层覆盖基础上增加多层贴图、逐层着色与透明度 | M |
+| 10 | 色调系统扩展 | 在已完成受伤色调基础上增加持久色调的 GUI 配置 | M |
 | 11 | 动画系统 | 帧动画（`Animation`/`Frame`/`FramePart`），数据层自包含、渲染层接自有模型 | L |
 | 12 | 飞行 NPC 寻路 | `EntityNPCFlying` + 3D 寻路器（`ai/pathfinder/` 约 1800 行，自包含） | L |
 | 13 | HUD 任务追踪 | 任务追踪/指南针 HUD（不含能力热键栏） | M-L |
