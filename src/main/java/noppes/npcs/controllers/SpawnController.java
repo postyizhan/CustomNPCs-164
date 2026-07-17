@@ -97,7 +97,12 @@ public class SpawnController {
 				File oldFile = new File(saveDir, "spawns.dat_old");
 				File file = new File(saveDir, "spawns.dat");
 
-				CompressedStreamTools.writeCompressed(compound, new FileOutputStream(newFile));
+				FileOutputStream stream = new FileOutputStream(newFile);
+				try {
+					CompressedStreamTools.writeCompressed(compound, stream);
+				} finally {
+					stream.close();
+				}
 
 				if(oldFile.exists())
 					oldFile.delete();
