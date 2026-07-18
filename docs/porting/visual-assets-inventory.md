@@ -99,6 +99,16 @@ python tools/visual_assets_item_consumers.py --check
 
 两个闭集 icon override 反映实际图标语义：`ItemKunaiReversed` 归并 `items/npcKunai.png`（因此 `npcReverseKunai` 不成为实际输出路径）；`ItemDaggerReversed` 归并其正向 dagger 构造参数对应纹理。共享行使用 `shared-icon`/`icon-override` 标记。11 个 sidecar 使用 `not-applicable-sidecar`；有 sidecar 或非方形 PNG 的基础图使用 `animated-strip;manual-review`，不表示已支持动画。
 
+## Models/Blocks 消费者审计（M0 子步骤）
+
+[visual-assets-model-block-consumers.csv](visual-assets-model-block-consumers.csv) 人工逐行转录自锁定清单与 `models/` / `blocks/` 只读消费者调查，保持 **111 个大小写精确键（83 models + 28 blocks）**，一条 inventory 路径恰好一行。`models/Candle.png` 与 `models/candle.png` 因而仍是两个独立键，不做大小写折叠。该矩阵不是 Java parser 的生成结果；一次性标准库校验只检查 header、集合、计数、排序、枚举、状态与证据源文件，不推断消费者或改写分类。
+
+字段分为三层：`difference_status` 原样继承 inventory 的字节差异事实；`consumer_evidence` 只描述大小写精确 literal、已人工审定的有限动态闭集、未抽取、当前不可达或不适用 sidecar；`classification` 是 M0 人工证据分类。`consumers` 使用稳定的 `Class|member/object|source:line|render-path` 记录，多消费者以分号分隔。`registration`、`condition`、世界/物品栏渲染和 `metadata_evidence` 分开保存，避免仅凭同名对象、registry name 或 renderer 类存在就推断路径可达。`manual_flags` 与保守 note 表示仍需模型、UV、tint、metadata 或运行时人工复核。
+
+唯一编码为 `static-closed-set` 的动态族是已经逐行核验的 blood base/`+2`/`+3` 与 `placeholder_0..15`；除此之外的动态构造不扩展规则，只保留 `manual-review`。关键例外也逐行保留：`models/CarpentryBench.png` 本 exact path 无消费者而实际 TESR 使用 `textures/misc/CarpentryBench.png`；Candle 大小写碰撞；同名 campfire/candle block 不消费同名 blocks PNG；`npcBorder` 当前不可达；mailbox 的 type/metadata 与重复 handler 注册风险；lamp/candle registry 名互换风险；flame sidecar、#22 Short Lamp、#23 额外木种以及脚本系统均在本切片排除。
+
+即使某行是 `identical/no-op` 或已有静态消费者，也只表示 hash/消费证据，不是视觉、运行时或许可批准。许可与逐素材 provenance 仍为 blocker；本子步骤没有资源复制白名单，也没有复制、重命名或产品资源修改动作。
+
 ## 验证边界
 
 ### Agent 已验证
