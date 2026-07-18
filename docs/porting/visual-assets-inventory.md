@@ -126,3 +126,13 @@ python tools/visual_assets_item_consumers.py --check
 - 每个候选的分类与白名单批准；当前 CSV 的 hash 状态不是分类替代品。
 - 第三方素材来源、许可兼容性与最终 attribution/NOTICE 方案。
 - 后续实际采用资源时的游戏内物品/方块/GUI、专用服务器、旧存档和 F3+T 验证。
+
+## GUI 消费者与布局证据审计（M0 子步骤）
+
+[visual-assets-gui-consumers.csv](visual-assets-gui-consumers.csv) 是对 inventory 全部 **103 个大小写精确 GUI 路径**的人工证据矩阵：26 `identical`、5 `different`、3 `current-only`、69 `upstream-only`；当前侧共 34 个 PNG。矩阵逐行记录当前 1.6.4 的 exact-path 消费者、源码行、逻辑尺寸表达、绘制 UV、控件以及 Container 槽位证据。`wheel1.png` 至 `wheel6.png` 保持六个独立且有顺序语义的闭集行；`menubg.png`、`followersetup.png` 与 `slot.png` 明确保留共享消费者证据。
+
+这些字段只证明**代码布局耦合**，不代表资源采用或批准。尤其 `anvil.png`、`npcinv.png`、`slot.png` 的上游内容不同且直接绑定固定 UV/Container 槽位，是布局阻断项；`npctrader.png`、`npctradersetup.png`、`npctradersetup2.png` 是 current-only atlas，不按 `trader.png`、`tradersetup.png`、`inventorymenu.png` 等相似名称建立映射。`color.png` 还记录了显示 120×120 区域而按局部鼠标坐标乘 4 读取像素的选色语义，不能按 PNG 尺寸或缩放外观推断兼容。
+
+69 个 upstream-only exact path 均没有当前 exact-path 消费证据。ability、auction、script、companion/inventory shell、animation/talent 等缺失或既定排除系统标为 `missing-system`；与当前已有其他 atlas 布局相冲突的相似命名路径保守标为 `excluded`；其余只标为 `orphan-candidate` 并保留 `manual-review`，不把静态未命中提升为最终孤儿结论。`icons.png` 无生产 Java literal，`logo.png` 仅有注释引用；vanilla-domain 的 villager、generic chest 与 book GUI 不属于这 103 个 customnpcs 路径，也未纳入矩阵。
+
+本审计没有复制、重命名或修改任何资源，也没有形成资源复制白名单。`identical/no-op` 只表示现有双方字节相同而无需资源变更；许可和逐素材 provenance 仍然阻塞，GUI 像素、控件和槽位对齐仍须人工游戏内验证。
