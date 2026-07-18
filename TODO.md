@@ -92,7 +92,7 @@
 - [ ] **M0：来源、许可和消费方清单冻结（S）**
   - [x] 新建 `docs/porting/visual-assets-inventory.md`，锁定上游完整 commit，并用可复现 CSV 记录双方存在性、hash、PNG 尺寸/色彩类型及差异状态。
   - [ ] 将资源人工分类为 `identical/no-op`、`visual-compatible`、`model-bound`、`layout-bound`、`missing-system/excluded`、`orphan`（已定义分类与白名单方法，尚未逐候选定案）。
-  - [ ] 显式识别同名但内容变化的资源、路径大小写、动画 `.png.mcmeta`、无消费方资源及禁做系统资源（hash/sidecar/明确排除项已盘点；完整消费者与大小写人工审查未完成）。
+  - [ ] 显式识别同名但内容变化的资源、路径大小写、动画 `.png.mcmeta`、无消费方资源及禁做系统资源（items 已完成受控静态注册模式审计：250 个 different 基础 PNG 中 245 个有静态证据、5 个 none-extracted，11 个 sidecar 已标记；动态消费者、其他类别与人工结论仍未完成）。
   - [ ] 完成许可兼容、第三方素材来源和署名方案（已记录上游许可事实与未决门禁，尚未关闭）；M0 未完成前不得开始批量复制。
 
 - [ ] **M1：既有物品静态贴图（S-M，按类别分批）**

@@ -77,12 +77,35 @@ python tools/visual_assets_inventory.py --check
 
 因此许可 M0 **尚未完成**。批量复制前仍须由维护者/人工完成：逐候选确认原创或第三方来源与授权链；判断上游 copyleft 条款与本项目 PolyForm Noncommercial 的组合是否兼容；确定发布 jar、仓库与发布页中的 KAMKEEL/Noppes attribution、改动声明、上游链接及可能的逐素材 NOTICE 文本；必要时取得权利人明确许可。自动脚本和本文件不提供法律意见，也不把“未发现额外许可文件”包装成许可通过。
 
+## Items 静态消费者审计（M0 子步骤）
+
+运行：
+
+```bash
+python tools/visual_assets_item_consumers.py
+python tools/visual_assets_item_consumers.py --check
+```
+
+标准库脚本以本页的资源并集清单和 `CustomItems.java` 为输入，生成
+[visual-assets-item-consumers.csv](visual-assets-item-consumers.csv)。输出仍保持 inventory 的 358 个 items exact-key 行；它不复制产品资源，也不写许可、最终处置、批准、视觉兼容、orphan 或白名单结论。
+
+这里必须区分三层语义：
+
+1. **inventory 层**：358 行是双方 items 路径并集，包含 11 个 `.png.mcmeta` sidecar；`different=250` 只陈述双方同路径字节不同。
+2. **consumer-evidence 层**：受控、statement-aware 的 Java 静态模式在这 250 个 different 基础 PNG 中找到 245 个 literal 消费证据，另有固定 5 个 `none-extracted`：`npcDemonicIngot.png`、`npcLeafBlade.png`、`npcMithrilIngot.png`、`npcSoulstoneEmpty.png`、`npcSoulstoneFilled.png`。245 是“路径有静态消费证据”的数量，**不是复制数、批准数或最终候选数**。
+3. **人工结论层**：动态路径、subtype、渲染行为、许可与分类仍须人工关闭；脚本遇到未知 namespace 或动态 `setTextureName` 只报告 manual review，不据此发明路径。
+
+唯一主自动模式要求同一个去注释后的 Java statement 同时出现 `new Item<Class>` 与 literal `.setTextureName("customnpcs:<name>")`；注释被剔除但字符串中的 `//` 不受破坏，跨行 statement 聚合到分号，并排除 Block、ItemBlock、ItemPlaceholder、ItemNpcColored 和注释构造。证据记录 class、unlocalized name、statement 起始行及 `always`/`extra-items-enabled` 条件。
+
+两个闭集 icon override 反映实际图标语义：`ItemKunaiReversed` 归并 `items/npcKunai.png`（因此 `npcReverseKunai` 不成为实际输出路径）；`ItemDaggerReversed` 归并其正向 dagger 构造参数对应纹理。共享行使用 `shared-icon`/`icon-override` 标记。11 个 sidecar 使用 `not-applicable-sidecar`；有 sidecar 或非方形 PNG 的基础图使用 `animated-strip;manual-review`，不表示已支持动画。
+
 ## 验证边界
 
 ### Agent 已验证
 
 - 默认生成与 `--check` 可在锁定且 clean 的上游 commit 上稳定复现 CSV；重复生成字节一致。
 - 持久标准库 unittest 使用临时目录，覆盖 exact-path case-only 双树、identical/different/current-only/upstream-only、tracked/untracked dirty 上游拒绝、PNG IHDR 长度/类型/CRC/非零尺寸校验、`.png.mcmeta` 和普通非 PNG 文件。
+- Items 消费者测试覆盖注释/字符串中的 `//`、跨行 statement、exact case、Block 与占位类排除、条件、共享路径稳定排序、kunai/dagger 两个 override、sidecar/非方形标记、未知 namespace/动态纹理安全报告、LF CSV、`--check` missing/stale/current 及上述仓库冻结基线。
 - `python -m py_compile tools/visual_assets_inventory.py tools/test_visual_assets_inventory.py` 通过。
 - `git diff --check` 通过。
 - 未运行 Gradle：本切片仅改文档与标准库盘点工具，未改 Java 产品代码或资源，Gradle 构建不会增加针对这些输出的有效验证。

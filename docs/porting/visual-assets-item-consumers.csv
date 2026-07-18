@@ -1,0 +1,359 @@
+relative_path,consumer_evidence,consumers,conditions,flags,evidence_note
+items/npcAirElement.png,static-extracted,ItemNpcInterface|npcAirElement|CustomItems.java:732|extra-items-enabled,extra-items-enabled,animated-strip;manual-review,literal customnpcs texture registration in a parsed Java statement
+items/npcAirElement.png.mcmeta,not-applicable-sidecar,,,animated-strip;manual-review,animation metadata is outside the static item audit
+items/npcAmethyst.png,static-extracted,ItemNpcInterface|npcAmethyst|CustomItems.java:744|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcAncientCoin.png,static-extracted,ItemNpcInterface|npcAncientCoin|CustomItems.java:364|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcAncientScroll.png,static-extracted,ItemNpcInterface|npcAncientScroll|CustomItems.java:753|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcArcaneSpell.png,static-extracted,ItemNpcInterface|npcArcaneSpell|CustomItems.java:415|extra-items-enabled,extra-items-enabled,animated-strip;manual-review,literal customnpcs texture registration in a parsed Java statement
+items/npcArcaneSpell.png.mcmeta,not-applicable-sidecar,,,animated-strip;manual-review,animation metadata is outside the static item audit
+items/npcArtifact.png,static-extracted,ItemNpcInterface|npcArtifact|CustomItems.java:754|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcAssassinBoots.png,static-extracted,ItemNpcArmor|npcAssassinBoots|CustomItems.java:670|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcAssassinChest.png,static-extracted,ItemNpcArmor|npcAssassinChest|CustomItems.java:668|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcAssassinHead.png,static-extracted,ItemNpcArmor|npcAssassinHead|CustomItems.java:667|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcAssassinLeggings.png,static-extracted,ItemNpcArmor|npcAssassinLeggings|CustomItems.java:669|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcBag.png,static-extracted,ItemNpcInterface|npcBag|CustomItems.java:721|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcBanditMask.png,static-extracted,ItemNpcArmor|npcBanditMask|CustomItems.java:727|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcBanjo.png,static-extracted,ItemBanjo|npcBanjo|CustomItems.java:282|always,always,,literal customnpcs texture registration in a parsed Java statement
+items/npcBaseballBat.png,static-extracted,ItemNpcWeaponInterface|npcBaseballBat|CustomItems.java:438|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcBatton.png,static-extracted,ItemNpcWeaponInterface|npcBatton|CustomItems.java:456|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcBearClaw.png,static-extracted,ItemClaw|npcBearClaw|CustomItems.java:567|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcBlackBullet.png,static-extracted,ItemBullet|npcBlackBullet|CustomItems.java:388|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcBlueprint.png,static-extracted,ItemNpcInterface|npcBlueprint|CustomItems.java:738|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcBoStaff.png,static-extracted,ItemGlaive|npcBoStaff|CustomItems.java:448|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcBrokenArrow.png,static-extracted,ItemNpcInterface|npcBrokenArrow|CustomItems.java:728|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcBrokenBottle.png,static-extracted,ItemNpcWeaponInterface|npcBrokenBottle|CustomItems.java:444|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcBrokenOrb.png,static-extracted,ItemOrb|npcBrokenOrb|CustomItems.java:424|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcBronzeBattleAxe.png,static-extracted,ItemBattleAxe|npcBronzeBattleAxe|CustomItems.java:516|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcBronzeBroadsword.png,static-extracted,ItemBroadSword|npcBronzeBroadsword|CustomItems.java:609|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcBronzeBullet.png,static-extracted,ItemBullet|npcBronzeBullet|CustomItems.java:382|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcBronzeDagger.png,static-extracted,ItemDagger|npcBronzeDagger|CustomItems.java:554|extra-items-enabled;ItemDaggerReversed|npcBronzeReversedDagger|CustomItems.java:555|extra-items-enabled,extra-items-enabled,icon-override;shared-icon,literal customnpcs texture registration in a parsed Java statement
+items/npcBronzeGlaive.png,static-extracted,ItemGlaive|npcBronzeGlaive|CustomItems.java:598|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcBronzeGun.png,static-extracted,ItemGun|npcBronzeGun|CustomItems.java:381|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcBronzeHalberd.png,static-extracted,ItemSpear|npcBronzeHalberd|CustomItems.java:505|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcBronzeIngot.png,static-extracted,ItemNpcInterface|npcBronzeIngot|CustomItems.java:750|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcBronzeMace.png,static-extracted,ItemNpcWeaponInterface|npcBronzeMace|CustomItems.java:538|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcBronzeScythe.png,static-extracted,ItemScythe|npcBronzeScythe|CustomItems.java:588|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcBronzeShield.png,static-extracted,ItemShield|npcBronzeShield|CustomItems.java:470|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcBronzeSkirt.png,static-extracted,ItemSkirt|npcBronzeSkirt|CustomItems.java:714|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcBronzeSpear.png,static-extracted,ItemSpear|npcBronzeSpear|CustomItems.java:494|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcBronzeStaff.png,static-extracted,ItemStaff|npcBronzeStaff|CustomItems.java:575|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcBronzeSword.png,static-extracted,ItemNpcWeaponInterface|npcBronzeSword|CustomItems.java:408|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcBronzeTrident.png,static-extracted,ItemSpear|npcBronzeTrident|CustomItems.java:401|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcBronzeWarhammer.png,static-extracted,ItemWarhammer|npcBronzeWarhammer|CustomItems.java:527|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcBrushHair.png,none-extracted,,,,no consumer matched the controlled static registration pattern
+items/npcBrushHandle.png,none-extracted,,,,no consumer matched the controlled static registration pattern
+items/npcCarKey.png,static-extracted,ItemNpcInterface|npcCarKey|CustomItems.java:734|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcChainSkirt.png,static-extracted,ItemSkirt|npcChainSkirt|CustomItems.java:708|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcChickenSword.png,static-extracted,ItemNpcInterface|npcChickenSword|CustomItems.java:435|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcClarinet.png,static-extracted,ItemMusicClarinet|npcClarinet|CustomItems.java:289|always,always,,literal customnpcs texture registration in a parsed Java statement
+items/npcCleaver.png,static-extracted,ItemNpcWeaponInterface|npcCleaver|CustomItems.java:440|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcCoinBronze.png,static-extracted,ItemNpcInterface|npcCoinBronze|CustomItems.java:359|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcCoinDiamond.png,static-extracted,ItemNpcInterface|npcCoinDiamond|CustomItems.java:362|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcCoinEmerald.png,static-extracted,ItemNpcInterface|npcCoinEmerald|CustomItems.java:363|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcCoinGold.png,static-extracted,ItemNpcInterface|npcCoinGold|CustomItems.java:361|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcCoinIron.png,static-extracted,ItemNpcInterface|npcCoinIron|CustomItems.java:360|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcCoinStone.png,static-extracted,ItemNpcInterface|npcCoinStone|CustomItems.java:358|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcCoinWooden.png,static-extracted,ItemNpcInterface|npcCoinWooden|CustomItems.java:357|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcCombatKnife.png,none-extracted,,,,no consumer matched the controlled static registration pattern
+items/npcCombatKnive.png,static-extracted,ItemDagger|npcCombatKnive|CustomItems.java:445|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcCommissarBottom.png,static-extracted,ItemNpcArmor|npcCommissarBottom|CustomItems.java:695|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcCommissarChest.png,static-extracted,ItemNpcArmor|npcCommissarChest|CustomItems.java:693|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcCommissarHead.png,static-extracted,ItemNpcArmor|npcCommissarHead|CustomItems.java:692|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcCommissarLegs.png,static-extracted,ItemNpcArmor|npcCommissarLegs|CustomItems.java:694|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcCowleatherBoots.png,static-extracted,ItemNpcArmor|npcCowleatherBoots|CustomItems.java:622|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcCowleatherChest.png,static-extracted,ItemNpcArmor|npcCowleatherChest|CustomItems.java:620|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcCowleatherHead.png,static-extracted,ItemNpcArmor|npcCowleatherHead|CustomItems.java:619|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcCowleatherLegs.png,static-extracted,ItemNpcArmor|npcCowleatherLegs|CustomItems.java:621|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcCrossBolt.png,static-extracted,ItemBullet|npcCrossBolt|CustomItems.java:454|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcCrossbow.png,static-extracted,ItemCrossbow|npcCrossbow|CustomItems.java:453|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcCrowbar.png,static-extracted,ItemNpcWeaponInterface|npcCrowbar|CustomItems.java:459|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcCrown.png,static-extracted,ItemNpcArmor|npcCrown|CustomItems.java:701|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcCrown2.png,static-extracted,ItemNpcArmor|npcCrown2|CustomItems.java:700|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcCryscentShield.png,static-extracted,ItemShield|npcCryscentShield|CustomItems.java:485|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcCrystal.png,static-extracted,ItemNpcInterface|npcCrystal|CustomItems.java:723|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcCursedTrident.png,static-extracted,ItemSpear|npcCursedTrident|CustomItems.java:403|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcDarkSpell.png,static-extracted,ItemNpcInterface|npcDarkSpell|CustomItems.java:419|extra-items-enabled,extra-items-enabled,animated-strip;manual-review,literal customnpcs texture registration in a parsed Java statement
+items/npcDarkSpell.png.mcmeta,not-applicable-sidecar,,,animated-strip;manual-review,animation metadata is outside the static item audit
+items/npcDemonicBattleAxe.png,static-extracted,ItemBattleAxe|npcDemonicBattleAxe|CustomItems.java:520|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcDemonicBoots.png,none-extracted,,,,no consumer matched the controlled static registration pattern
+items/npcDemonicBroadsword.png,static-extracted,ItemBroadSword|npcDemonicBroadsword|CustomItems.java:612|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcDemonicChest.png,none-extracted,,,,no consumer matched the controlled static registration pattern
+items/npcDemonicDagger.png,static-extracted,ItemDagger|npcDemonicDagger|CustomItems.java:562|extra-items-enabled;ItemDaggerReversed|npcDemonicReversedDagger|CustomItems.java:563|extra-items-enabled,extra-items-enabled,icon-override;shared-icon,literal customnpcs texture registration in a parsed Java statement
+items/npcDemonicGlaive.png,static-extracted,ItemGlaive|npcDemonicGlaive|CustomItems.java:602|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcDemonicHalberd.png,static-extracted,ItemSpear|npcDemonicHalberd|CustomItems.java:509|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcDemonicHead.png,none-extracted,,,,no consumer matched the controlled static registration pattern
+items/npcDemonicIngot.png,none-extracted,,,,no consumer matched the controlled static registration pattern
+items/npcDemonicIngotnew.png,none-extracted,,,,no consumer matched the controlled static registration pattern
+items/npcDemonicLegs.png,none-extracted,,,,no consumer matched the controlled static registration pattern
+items/npcDemonicMace.png,static-extracted,ItemNpcWeaponInterface|npcDemonicMace|CustomItems.java:542|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcDemonicScythe.png,static-extracted,ItemScythe|npcDemonicScythe|CustomItems.java:591|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcDemonicShield.png,static-extracted,ItemRotatedShield|npcDemonicShield|CustomItems.java:473|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcDemonicSkirt.png,static-extracted,ItemSkirt|npcDemonicSkirt|CustomItems.java:715|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcDemonicSpear.png,static-extracted,ItemSpear|npcDemonicSpear|CustomItems.java:498|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcDemonicStaff.png,static-extracted,ItemStaff|npcDemonicStaff|CustomItems.java:580|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcDemonicSword.png,static-extracted,ItemNpcWeaponInterface|npcDemonicSword|CustomItems.java:410|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcDemonicTrident.png,static-extracted,ItemSpear|npcDemonicTrident|CustomItems.java:406|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcDemonicWarhammer.png,static-extracted,ItemWarhammer|npcDemonicWarhammer|CustomItems.java:531|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcDiamondBattleAxe.png,static-extracted,ItemBattleAxe|npcDiamondBattleAxe|CustomItems.java:515|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcDiamondBroadsword.png,static-extracted,ItemBroadSword|npcDiamondBroadsword|CustomItems.java:608|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcDiamondBullet.png,static-extracted,ItemBullet|npcDiamondBullet|CustomItems.java:379|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcDiamondDagger.png,static-extracted,ItemDagger|npcDiamondDagger|CustomItems.java:552|extra-items-enabled;ItemDaggerReversed|npcDiamondReversedDagger|CustomItems.java:553|extra-items-enabled,extra-items-enabled,icon-override;shared-icon,literal customnpcs texture registration in a parsed Java statement
+items/npcDiamondGlaive.png,static-extracted,ItemGlaive|npcDiamondGlaive|CustomItems.java:597|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcDiamondGun.png,static-extracted,ItemGun|npcDiamondGun|CustomItems.java:378|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcDiamondHalberd.png,static-extracted,ItemSpear|npcDiamondHalberd|CustomItems.java:504|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcDiamondMace.png,static-extracted,ItemNpcWeaponInterface|npcDiamondMace|CustomItems.java:537|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcDiamondScythe.png,static-extracted,ItemScythe|npcDiamondScythe|CustomItems.java:586|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcDiamondShield.png,none-extracted,,,,no consumer matched the controlled static registration pattern
+items/npcDiamondSkirt.png,static-extracted,ItemSkirt|npcDiamondSkirt|CustomItems.java:712|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcDiamondSpear.png,static-extracted,ItemSpear|npcDiamondSpear|CustomItems.java:493|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcDiamondStaff.png,static-extracted,ItemStaff|npcDiamondStaff|CustomItems.java:574|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcDiamondTrident.png,static-extracted,ItemSpear|npcDiamondTrident|CustomItems.java:400|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcDiamondWarhammer.png,static-extracted,ItemWarhammer|npcDiamondWarhammer|CustomItems.java:526|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcDiaShield.png,static-extracted,ItemShield|npcDiaShield|CustomItems.java:469|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcEarthElement.png,static-extracted,ItemNpcInterface|npcEarthElement|CustomItems.java:729|extra-items-enabled,extra-items-enabled,animated-strip;manual-review,literal customnpcs texture registration in a parsed Java statement
+items/npcEarthElement.png.mcmeta,not-applicable-sidecar,,,animated-strip;manual-review,animation metadata is outside the static item audit
+items/npcElementalStaff.png,static-extracted,ItemElementalStaff|npcElementalStaff|CustomItems.java:577|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcEmeraldBattleAxe.png,static-extracted,ItemBattleAxe|npcEmeraldBattleAxe|CustomItems.java:517|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcEmeraldBroadsword.png,static-extracted,ItemBroadSword|npcEmeraldBroadsword|CustomItems.java:610|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcEmeraldBullet.png,static-extracted,ItemBullet|npcEmeraldBullet|CustomItems.java:385|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcEmeraldDagger.png,static-extracted,ItemDagger|npcEmeraldDagger|CustomItems.java:556|extra-items-enabled;ItemDaggerReversed|npcEmeraldReversedDagger|CustomItems.java:557|extra-items-enabled,extra-items-enabled,icon-override;shared-icon,literal customnpcs texture registration in a parsed Java statement
+items/npcEmeraldGlaive.png,static-extracted,ItemGlaive|npcEmeraldGlaive|CustomItems.java:599|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcEmeraldGun.png,static-extracted,ItemGun|npcEmeraldGun|CustomItems.java:384|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcEmeraldHalberd.png,static-extracted,ItemSpear|npcEmeraldHalberd|CustomItems.java:506|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcEmeraldMace.png,static-extracted,ItemNpcWeaponInterface|npcEmeraldMace|CustomItems.java:539|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcEmeraldScythe.png,static-extracted,ItemScythe|npcEmeraldScythe|CustomItems.java:587|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcEmeraldShield.png,static-extracted,ItemShield|npcEmeraldShield|CustomItems.java:482|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcEmeraldSkirt.png,static-extracted,ItemSkirt|npcEmeraldSkirt|CustomItems.java:713|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcEmeraldSpear.png,static-extracted,ItemSpear|npcEmeraldSpear|CustomItems.java:495|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcEmeraldStaff.png,static-extracted,ItemStaff|npcEmeraldStaff|CustomItems.java:576|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcEmeraldSword.png,static-extracted,ItemNpcWeaponInterface|npcEmeraldSword|CustomItems.java:409|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcEmeraldTrident.png,static-extracted,ItemSpear|npcEmeraldTrident|CustomItems.java:402|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcEmeraldWarhammer.png,static-extracted,ItemWarhammer|npcEmeraldWarhammer|CustomItems.java:528|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcExcalibur.png,static-extracted,ItemExcalibur|npcExcalibur|CustomItems.java:463|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcFireElement.png,static-extracted,ItemNpcInterface|npcFireElement|CustomItems.java:731|extra-items-enabled,extra-items-enabled,animated-strip;manual-review,literal customnpcs texture registration in a parsed Java statement
+items/npcFireElement.png.mcmeta,not-applicable-sidecar,,,animated-strip;manual-review,animation metadata is outside the static item audit
+items/npcFireSpell.png,static-extracted,ItemNpcInterface|npcFireSpell|CustomItems.java:418|extra-items-enabled,extra-items-enabled,animated-strip;manual-review,literal customnpcs texture registration in a parsed Java statement
+items/npcFireSpell.png.mcmeta,not-applicable-sidecar,,,animated-strip;manual-review,animation metadata is outside the static item audit
+items/npcFrenchHorn.png,static-extracted,ItemMusic|npcFrenchHorn|CustomItems.java:287|always,always,,literal customnpcs texture registration in a parsed Java statement
+items/npcFrostBattleAxe.png,static-extracted,ItemBattleAxe|npcFrostBattleAxe|CustomItems.java:518|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcFrostBroadsword.png,static-extracted,ItemBroadSword|npcFrostBroadsword|CustomItems.java:611|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcFrostDagger.png,static-extracted,ItemDagger|npcFrostDagger|CustomItems.java:558|extra-items-enabled;ItemDaggerReversed|npcFrostReversedDagger|CustomItems.java:559|extra-items-enabled,extra-items-enabled,icon-override;shared-icon,literal customnpcs texture registration in a parsed Java statement
+items/npcFrostGlaive.png,static-extracted,ItemGlaive|npcFrostGlaive|CustomItems.java:600|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcFrostHalberd.png,static-extracted,ItemSpear|npcFrostHalberd|CustomItems.java:507|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcFrostMace.png,static-extracted,ItemNpcWeaponInterface|npcFrostMace|CustomItems.java:540|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcFrostScythe.png,static-extracted,ItemScythe|npcFrostScythe|CustomItems.java:589|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcFrostShield.png,static-extracted,ItemRotatedShield|npcFrostShield|CustomItems.java:471|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcFrostSpear.png,static-extracted,ItemSpear|npcFrostSpear|CustomItems.java:496|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcFrostStaff.png,static-extracted,ItemStaff|npcFrostStaff|CustomItems.java:578|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcFrostSword.png,static-extracted,ItemNpcWeaponInterface|npcFrostSword|CustomItems.java:411|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcFrostTrident.png,static-extracted,ItemSpear|npcFrostTrident|CustomItems.java:404|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcFrostWarhammer.png,static-extracted,ItemWarhammer|npcFrostWarhammer|CustomItems.java:529|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcFullBronzeBoots.png,static-extracted,ItemNpcArmor|npcFullBronzeBoots|CustomItems.java:647|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcFullBronzeChest.png,static-extracted,ItemNpcArmor|npcFullBronzeChest|CustomItems.java:645|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcFullBronzeHead.png,static-extracted,ItemNpcArmor|npcFullBronzeHead|CustomItems.java:644|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcFullBronzeLeggings.png,static-extracted,ItemNpcArmor|npcFullBronzeLeggings|CustomItems.java:646|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcFullBronzeShield.png,static-extracted,ItemRotatedShield|npcFullBronzeShield|CustomItems.java:480|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcFullDemonicShield.png,none-extracted,,,,no consumer matched the controlled static registration pattern
+items/npcFullDiamondChest.png,static-extracted,ItemNpcArmor|npcFullDiamondChest|CustomItems.java:642|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcFullDiamondHead.png,static-extracted,ItemNpcArmor|npcFullDiamondHead|CustomItems.java:641|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcFullDiamondShield.png,none-extracted,,,,no consumer matched the controlled static registration pattern
+items/npcFullDiaShield.png,static-extracted,ItemRotatedShield|npcFullDiaShield|CustomItems.java:479|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcFullEmeraldBoots.png,static-extracted,ItemNpcArmor|npcFullEmeraldBoots|CustomItems.java:652|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcFullEmeraldChest.png,static-extracted,ItemNpcArmor|npcFullEmeraldChest|CustomItems.java:650|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcFullEmeraldHead.png,static-extracted,ItemNpcArmor|npcFullEmeraldHead|CustomItems.java:649|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcFullEmeraldLeggings.png,static-extracted,ItemNpcArmor|npcFullEmeraldLeggings|CustomItems.java:651|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcFullEmeraldShield.png,static-extracted,ItemRotatedShield|npcFullEmeraldShield|CustomItems.java:481|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcFullFrostShield.png,none-extracted,,,,no consumer matched the controlled static registration pattern
+items/npcFullGoldChest.png,static-extracted,ItemNpcArmor|npcFullGoldChest|CustomItems.java:639|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcFullGoldenShield.png,static-extracted,ItemRotatedShield|npcFullGoldenShield|CustomItems.java:478|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcFullGoldHead.png,static-extracted,ItemNpcArmor|npcFullGoldHead|CustomItems.java:638|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcFullIronChest.png,static-extracted,ItemNpcArmor|npcFullIronChest|CustomItems.java:636|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcFullIronHead.png,static-extracted,ItemNpcArmor|npcFullIronHead|CustomItems.java:635|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcFullIronShield.png,static-extracted,ItemRotatedShield|npcFullIronShield|CustomItems.java:477|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcFullLeatherChest.png,static-extracted,ItemNpcArmor|npcFullLeatherChest|CustomItems.java:633|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcFullLeatherHead.png,static-extracted,ItemNpcArmor|npcFullLeatherHead|CustomItems.java:632|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcFullMithrilShield.png,none-extracted,,,,no consumer matched the controlled static registration pattern
+items/npcFullStoneShield.png,static-extracted,ItemRotatedShield|npcFullStoneShield|CustomItems.java:476|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcFullWoodenBoots.png,static-extracted,ItemNpcArmor|npcFullWoodenBoots|CustomItems.java:657|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcFullWoodenChest.png,static-extracted,ItemNpcArmor|npcFullWoodenChest|CustomItems.java:655|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcFullWoodenHead.png,static-extracted,ItemNpcArmor|npcFullWoodenHead|CustomItems.java:654|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcFullWoodenLeggings.png,static-extracted,ItemNpcArmor|npcFullWoodenLeggings|CustomItems.java:656|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcFullWoodenShield.png,static-extracted,ItemRotatedShield|npcFullWoodenShield|CustomItems.java:475|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcGiantShuriken.png,static-extracted,ItemThrowingWeapon|npcGiantShuriken|CustomItems.java:429|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcGoldenBattleAxe.png,static-extracted,ItemBattleAxe|npcGoldenBattleAxe|CustomItems.java:514|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcGoldenBroadsword.png,static-extracted,ItemBroadSword|npcGoldenBroadsword|CustomItems.java:607|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcGoldenBullet.png,static-extracted,ItemBullet|npcGoldenBullet|CustomItems.java:376|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcGoldenDagger.png,static-extracted,ItemDagger|npcGoldenDagger|CustomItems.java:550|extra-items-enabled;ItemDaggerReversed|npcGoldenReversedDagger|CustomItems.java:551|extra-items-enabled,extra-items-enabled,icon-override;shared-icon,literal customnpcs texture registration in a parsed Java statement
+items/npcGoldenGlaive.png,static-extracted,ItemGlaive|npcGoldenGlaive|CustomItems.java:596|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcGoldenGun.png,none-extracted,,,,no consumer matched the controlled static registration pattern
+items/npcGoldenHalberd.png,static-extracted,ItemSpear|npcGoldenHalberd|CustomItems.java:503|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcGoldenMace.png,static-extracted,ItemNpcWeaponInterface|npcGoldenMace|CustomItems.java:536|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcGoldenScythe.png,static-extracted,ItemScythe|npcGoldenScythe|CustomItems.java:585|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcGoldenShield.png,static-extracted,ItemShield|npcGoldenShield|CustomItems.java:468|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcGoldenSpear.png,static-extracted,ItemSpear|npcGoldenSpear|CustomItems.java:492|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcGoldenStaff.png,static-extracted,ItemStaff|npcGoldenStaff|CustomItems.java:573|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcGoldenTrident.png,none-extracted,,,,no consumer matched the controlled static registration pattern
+items/npcGoldenWarhammer.png,static-extracted,ItemWarhammer|npcGoldenWarhammer|CustomItems.java:525|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcGoldGun.png,static-extracted,ItemGun|npcGoldGun|CustomItems.java:375|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcGoldSkirt.png,static-extracted,ItemSkirt|npcGoldSkirt|CustomItems.java:710|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcGoldTrident.png,static-extracted,ItemSpear|npcGoldTrident|CustomItems.java:399|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcGolfClub.png,static-extracted,ItemSpear|npcGolfClub|CustomItems.java:433|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcGuitar.png,static-extracted,ItemBanjo|npcGuitar|CustomItems.java:286|always,always,,literal customnpcs texture registration in a parsed Java statement
+items/npcGunChainsaw.png,static-extracted,ItemGunChainsaw|npcGunChainsaw|CustomItems.java:457|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcHammer.png,static-extracted,ItemNpcWeaponInterface|npcHammer|CustomItems.java:437|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcHandCuffs.png,static-extracted,ItemNpcInterface|npcHandCuffs|CustomItems.java:436|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcHarp.png,static-extracted,ItemViolin|npcHarp|CustomItems.java:285|always,always,,literal customnpcs texture registration in a parsed Java statement
+items/npcHeart.png,static-extracted,ItemNpcInterface|npcHeart|CustomItems.java:760|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcHeaterShield.png,static-extracted,ItemShield|npcHeaterShield|CustomItems.java:484|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcHockeyStick.png,static-extracted,ItemSpear|npcHockeyStick|CustomItems.java:442|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcHolySpell.png,static-extracted,ItemNpcInterface|npcHolySpell|CustomItems.java:420|extra-items-enabled,extra-items-enabled,animated-strip;manual-review,literal customnpcs texture registration in a parsed Java statement
+items/npcHolySpell.png.mcmeta,not-applicable-sidecar,,,animated-strip;manual-review,animation metadata is outside the static item audit
+items/npcIceSpell.png,static-extracted,ItemNpcInterface|npcIceSpell|CustomItems.java:417|extra-items-enabled,extra-items-enabled,animated-strip;manual-review,literal customnpcs texture registration in a parsed Java statement
+items/npcIceSpell.png.mcmeta,not-applicable-sidecar,,,animated-strip;manual-review,animation metadata is outside the static item audit
+items/npcInfantryHelmet.png,static-extracted,ItemNpcArmor|npcInfantryHelmet|CustomItems.java:697|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcIronBattleAxe.png,static-extracted,ItemBattleAxe|npcIronBattleAxe|CustomItems.java:513|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcIronBroadsword.png,static-extracted,ItemBroadSword|npcIronBroadsword|CustomItems.java:606|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcIronBullet.png,static-extracted,ItemBullet|npcIronBullet|CustomItems.java:373|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcIronDagger.png,static-extracted,ItemDagger|npcIronDagger|CustomItems.java:548|extra-items-enabled;ItemDaggerReversed|npcIronReversedDagger|CustomItems.java:549|extra-items-enabled,extra-items-enabled,icon-override;shared-icon,literal customnpcs texture registration in a parsed Java statement
+items/npcIronGlaive.png,static-extracted,ItemGlaive|npcIronGlaive|CustomItems.java:595|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcIronGun.png,static-extracted,ItemGun|npcIronGun|CustomItems.java:372|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcIronHalberd.png,static-extracted,ItemSpear|npcIronHalberd|CustomItems.java:502|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcIronMace.png,static-extracted,ItemNpcWeaponInterface|npcIronMace|CustomItems.java:535|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcIronScythe.png,static-extracted,ItemScythe|npcIronScythe|CustomItems.java:584|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcIronShield.png,static-extracted,ItemShield|npcIronShield|CustomItems.java:467|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcIronSkirt.png,static-extracted,ItemSkirt|npcIronSkirt|CustomItems.java:711|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcIronSpear.png,static-extracted,ItemSpear|npcIronSpear|CustomItems.java:491|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcIronStaff.png,static-extracted,ItemStaff|npcIronStaff|CustomItems.java:572|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcIronTrident.png,static-extracted,ItemSpear|npcIronTrident|CustomItems.java:398|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcIronWarhammer.png,static-extracted,ItemWarhammer|npcIronWarhammer|CustomItems.java:524|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcKatana.png,static-extracted,ItemNpcWeaponInterface|npcKatana|CustomItems.java:430|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcKatar.png,static-extracted,ItemClaw|npcKatar|CustomItems.java:568|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcKey.png,static-extracted,ItemNpcInterface|npcKey|CustomItems.java:735|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcKey2.png,static-extracted,ItemNpcInterface|npcKey2|CustomItems.java:736|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcKukri.png,static-extracted,ItemDagger|npcKukri|CustomItems.java:431|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcKunai.png,static-extracted,ItemKunai|npcKunai|CustomItems.java:426|extra-items-enabled;ItemKunaiReversed|npcReverseKunai|CustomItems.java:427|extra-items-enabled,extra-items-enabled,icon-override;shared-icon,literal customnpcs texture registration in a parsed Java statement
+items/npcLeadPipe.png,static-extracted,ItemNpcWeaponInterface|npcLeadPipe|CustomItems.java:439|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcLeafBlade.png,none-extracted,,,,no consumer matched the controlled static registration pattern
+items/npcLeatherSkirt.png,static-extracted,ItemSkirt|npcLeatherSkirt|CustomItems.java:709|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcLetter.png,static-extracted,ItemNpcInterface|npcLetter|CustomItems.java:718|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcLighter.png,static-extracted,ItemFlintAndSteel|npcLighter|CustomItems.java:446|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcLightningSpell.png,static-extracted,ItemNpcInterface|npcLightningSpell|CustomItems.java:416|extra-items-enabled,extra-items-enabled,animated-strip;manual-review,literal customnpcs texture registration in a parsed Java statement
+items/npcLightningSpell.png.mcmeta,not-applicable-sidecar,,,animated-strip;manual-review,animation metadata is outside the static item audit
+items/npcLocket.png,static-extracted,ItemNpcInterface|npcLocket|CustomItems.java:755|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcMachineGun.png,static-extracted,ItemMachineGun|npcMachineGun|CustomItems.java:387|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcMacuahuitl.png,static-extracted,ItemNpcWeaponInterface|npcMacuahuitl|CustomItems.java:447|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcMagicWand.png,static-extracted,ItemWand|npcMagicWand|CustomItems.java:434|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcMana.png,static-extracted,ItemNpcInterface|npcMana|CustomItems.java:423|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcMithrilBattleAxe.png,static-extracted,ItemBattleAxe|npcMithrilBattleAxe|CustomItems.java:519|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcMithrilBoots.png,none-extracted,,,,no consumer matched the controlled static registration pattern
+items/npcMithrilBroadsword.png,static-extracted,ItemBroadSword|npcMithrilBroadsword|CustomItems.java:613|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcMithrilChest.png,none-extracted,,,,no consumer matched the controlled static registration pattern
+items/npcMithrilDagger.png,static-extracted,ItemDagger|npcMithrilDagger|CustomItems.java:560|extra-items-enabled;ItemDaggerReversed|npcMithrilReversedDagger|CustomItems.java:561|extra-items-enabled,extra-items-enabled,icon-override;shared-icon,literal customnpcs texture registration in a parsed Java statement
+items/npcMithrilGlaive.png,static-extracted,ItemGlaive|npcMithrilGlaive|CustomItems.java:601|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcMithrilHalberd.png,static-extracted,ItemSpear|npcMithrilHalberd|CustomItems.java:508|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcMithrilHead.png,none-extracted,,,,no consumer matched the controlled static registration pattern
+items/npcMithrilIngot.png,none-extracted,,,,no consumer matched the controlled static registration pattern
+items/npcMithrilLegs.png,none-extracted,,,,no consumer matched the controlled static registration pattern
+items/npcMithrilMace.png,static-extracted,ItemNpcWeaponInterface|npcMithrilMace|CustomItems.java:541|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcMithrilScythe.png,static-extracted,ItemScythe|npcMithrilScythe|CustomItems.java:590|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcMithrilShield.png,static-extracted,ItemRotatedShield|npcMithrilShield|CustomItems.java:472|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcMithrilSkirt.png,static-extracted,ItemSkirt|npcMithrilSkirt|CustomItems.java:716|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcMithrilSpear.png,static-extracted,ItemSpear|npcMithrilSpear|CustomItems.java:497|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcMithrilStaff.png,static-extracted,ItemStaff|npcMithrilStaff|CustomItems.java:579|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcMithrilSword.png,static-extracted,ItemNpcWeaponInterface|npcMithrilSword|CustomItems.java:412|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcMithrilTrident.png,static-extracted,ItemSpear|npcMithrilTrident|CustomItems.java:405|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcMithrilWarhammer.png,static-extracted,ItemWarhammer|npcMithrilWarhammer|CustomItems.java:530|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcMoney.png,static-extracted,ItemNpcInterface|npcMoney|CustomItems.java:761|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcMusket.png,static-extracted,ItemMusket|npcMusket|CustomItems.java:451|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcNanorumBoots.png,static-extracted,ItemNpcArmor|npcNanorumBoots|CustomItems.java:627|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcNanorumChest.png,static-extracted,ItemNpcArmor|npcNanorumChest|CustomItems.java:625|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcNanorumHead.png,static-extracted,ItemNpcArmor|npcNanorumHead|CustomItems.java:624|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcNanorumLegs.png,static-extracted,ItemNpcArmor|npcNanorumLegs|CustomItems.java:626|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcNatureSpell.png,static-extracted,ItemNpcInterface|npcNatureSpell|CustomItems.java:414|extra-items-enabled,extra-items-enabled,animated-strip;manual-review,literal customnpcs texture registration in a parsed Java statement
+items/npcNatureSpell.png.mcmeta,not-applicable-sidecar,,,animated-strip;manual-review,animation metadata is outside the static item audit
+items/npcNecklace.png,static-extracted,ItemNpcInterface|npcNecklace|CustomItems.java:762|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcNinjaChest.png,static-extracted,ItemNpcArmor|npcNinjaChest|CustomItems.java:705|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcNinjaClaw.png,static-extracted,ItemClaw|npcNinjaClaw|CustomItems.java:565|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcNinjaHead.png,static-extracted,ItemNpcArmor|npcNinjaHead|CustomItems.java:704|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcNinjaPants.png,static-extracted,ItemNpcArmor|npcNinjaPants|CustomItems.java:706|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcOcarina.png,static-extracted,ItemMusicOracina|npcOcarina|CustomItems.java:288|always,always,,literal customnpcs texture registration in a parsed Java statement
+items/npcOfficerChest.png,static-extracted,ItemNpcArmor|npcOfficerChest|CustomItems.java:698|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcOrb.png,static-extracted,ItemOrb|npcOrb|CustomItems.java:422|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcPaperCrown.png,static-extracted,ItemNpcArmorColorable|npcPaperCrown|CustomItems.java:702|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcPendant.png,static-extracted,ItemNpcInterface|npcPendant|CustomItems.java:737|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcPhone.png,static-extracted,ItemNpcInterface|npcPhone|CustomItems.java:725|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcPipeWrench.png,static-extracted,ItemNpcWeaponInterface|npcPipeWrench|CustomItems.java:460|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcPlans.png,static-extracted,ItemNpcInterface|npcPlans|CustomItems.java:719|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcRapier.png,static-extracted,ItemNpcWeaponInterface|npcRapier|CustomItems.java:458|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcRing.png,static-extracted,ItemNpcInterface|npcRing|CustomItems.java:739|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcRuby.png,static-extracted,ItemNpcInterface|npcRuby|CustomItems.java:743|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcSaber.png,static-extracted,ItemNpcWeaponInterface|npcSaber|CustomItems.java:441|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcSaiBlade.png,static-extracted,ItemDagger|npcSaiBlade|CustomItems.java:449|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcSaphire.png,static-extracted,ItemNpcInterface|npcSaphire|CustomItems.java:742|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcSatchel.png,static-extracted,ItemNpcInterface|npcSatchel|CustomItems.java:720|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcScutumShield.png,static-extracted,ItemShield|npcScutumShield|CustomItems.java:486|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcSeveredEar.png,static-extracted,ItemNpcInterface|npcSeveredEar|CustomItems.java:724|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcShuriken.png,static-extracted,ItemThrowingShuriken|npcShuriken|CustomItems.java:428|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcSilk.png,static-extracted,ItemNpcInterface|npcSilk|CustomItems.java:756|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcSkull.png,static-extracted,ItemNpcInterface|npcSkull|CustomItems.java:740|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcSledgeHammer.png,static-extracted,ItemSpear|npcSledgeHammer|CustomItems.java:443|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcSlingshot.png,static-extracted,ItemSlingshot|npcSlingshot|CustomItems.java:450|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcSoldierBottom.png,static-extracted,ItemNpcArmor|npcSoldierBottom|CustomItems.java:675|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcSoldierChest.png,static-extracted,ItemNpcArmor|npcSoldierChest|CustomItems.java:673|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcSoldierHead.png,static-extracted,ItemNpcArmor|npcSoldierHead|CustomItems.java:672|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcSoldierLegs.png,static-extracted,ItemNpcArmor|npcSoldierLegs|CustomItems.java:674|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcSoulstoneEmpty.png,none-extracted,,,,no consumer matched the controlled static registration pattern
+items/npcSoulstoneFilled.png,none-extracted,,,,no consumer matched the controlled static registration pattern
+items/npcStatuette.png,static-extracted,ItemNpcInterface|npcStatuette|CustomItems.java:757|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcSteelClaw.png,static-extracted,ItemClaw|npcSteelClaw|CustomItems.java:566|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcStoneBattleAxe.png,static-extracted,ItemBattleAxe|npcStoneBattleAxe|CustomItems.java:512|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcStoneBroadsword.png,static-extracted,ItemBroadSword|npcStoneBroadsword|CustomItems.java:605|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcStoneBullet.png,static-extracted,ItemBullet|npcStoneBullet|CustomItems.java:370|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcStoneDagger.png,static-extracted,ItemDagger|npcStoneDagger|CustomItems.java:546|extra-items-enabled;ItemDaggerReversed|npcStoneReversedDagger|CustomItems.java:547|extra-items-enabled,extra-items-enabled,icon-override;shared-icon,literal customnpcs texture registration in a parsed Java statement
+items/npcStoneGlaive.png,static-extracted,ItemGlaive|npcStoneGlaive|CustomItems.java:594|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcStoneGun.png,static-extracted,ItemGun|npcStoneGun|CustomItems.java:369|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcStoneHalberd.png,static-extracted,ItemSpear|npcStoneHalberd|CustomItems.java:501|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcStoneMace.png,static-extracted,ItemNpcWeaponInterface|npcStoneMace|CustomItems.java:534|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcStoneScythe.png,static-extracted,ItemScythe|npcStoneScythe|CustomItems.java:583|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcStoneShield.png,static-extracted,ItemShield|npcStoneShield|CustomItems.java:466|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcStoneSpear.png,static-extracted,ItemSpear|npcStoneSpear|CustomItems.java:490|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcStoneStaff.png,static-extracted,ItemStaff|npcStoneStaff|CustomItems.java:571|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcStoneTrident.png,static-extracted,ItemSpear|npcStoneTrident|CustomItems.java:397|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcStoneWarhammer.png,static-extracted,ItemWarhammer|npcStoneWarhammer|CustomItems.java:523|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcSwissArmyKnife.png,static-extracted,ItemDagger|npcSwissArmyKnife|CustomItems.java:461|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcTablet.png,static-extracted,ItemNpcInterface|npcTablet|CustomItems.java:758|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcTacticalChest.png,static-extracted,ItemNpcArmor|npcTacticalChest|CustomItems.java:630|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcTacticalHead.png,static-extracted,ItemNpcArmor|npcTacticalHead|CustomItems.java:629|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcToolHammer.png,none-extracted,,,,no consumer matched the controlled static registration pattern
+items/npcToolMagicBook.png,none-extracted,,,,no consumer matched the controlled static registration pattern
+items/npcTowerShield.png,static-extracted,ItemRotatedShield|npcTowerShield|CustomItems.java:487|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcTuxedoBottom.png,static-extracted,ItemNpcArmor|npcTuxedoBottom|CustomItems.java:661|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcTuxedoChest.png,static-extracted,ItemNpcArmor|npcTuxedoChest|CustomItems.java:659|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcTuxedoPants.png,static-extracted,ItemNpcArmor|npcTuxedoPants|CustomItems.java:660|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcUsbStick.png,static-extracted,ItemNpcInterface|npcUsbStick|CustomItems.java:763|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcViolin.png,static-extracted,ItemViolin|npcViolin|CustomItems.java:283|always,always,,literal customnpcs texture registration in a parsed Java statement
+items/npcViolinBow.png,static-extracted,ItemNpcInterface|npcViolinBow|CustomItems.java:284|always,always,,literal customnpcs texture registration in a parsed Java statement
+items/npcWaterElement.png,static-extracted,ItemNpcInterface|npcWaterElement|CustomItems.java:730|extra-items-enabled,extra-items-enabled,animated-strip;manual-review,literal customnpcs texture registration in a parsed Java statement
+items/npcWaterElement.png.mcmeta,not-applicable-sidecar,,,animated-strip;manual-review,animation metadata is outside the static item audit
+items/npcWizardChest.png,static-extracted,ItemNpcArmor|npcWizardChest|CustomItems.java:664|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcWizardHead.png,static-extracted,ItemNpcArmor|npcWizardHead|CustomItems.java:663|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcWizardPants.png,static-extracted,ItemNpcArmor|npcWizardPants|CustomItems.java:665|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcWoodenBattleAxe.png,static-extracted,ItemBattleAxe|npcWoodenBattleAxe|CustomItems.java:511|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcWoodenBroadsword.png,static-extracted,ItemBroadSword|npcWoodenBroadsword|CustomItems.java:604|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcWoodenBullet.png,static-extracted,ItemBullet|npcWoodenBullet|CustomItems.java:367|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcWoodenDagger.png,static-extracted,ItemDagger|npcWoodenDagger|CustomItems.java:544|extra-items-enabled;ItemDaggerReversed|npcWoodenReversedDagger|CustomItems.java:545|extra-items-enabled,extra-items-enabled,icon-override;shared-icon,literal customnpcs texture registration in a parsed Java statement
+items/npcWoodenGlaive.png,static-extracted,ItemGlaive|npcWoodenGlaive|CustomItems.java:593|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcWoodenGun.png,static-extracted,ItemGun|npcWoodenGun|CustomItems.java:366|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcWoodenHalberd.png,static-extracted,ItemSpear|npcWoodenHalberd|CustomItems.java:500|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcWoodenMace.png,static-extracted,ItemNpcWeaponInterface|npcWoodenMace|CustomItems.java:533|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcWoodenScythe.png,static-extracted,ItemScythe|npcWoodenScythe|CustomItems.java:582|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcWoodenShield.png,static-extracted,ItemShield|npcWoodenShield|CustomItems.java:465|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcWoodenSpear.png,static-extracted,ItemSpear|npcWoodenSpear|CustomItems.java:489|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcWoodenStaff.png,static-extracted,ItemStaff|npcWoodenStaff|CustomItems.java:570|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcWoodenTrident.png,static-extracted,ItemSpear|npcWoodenTrident|CustomItems.java:396|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcWoodenWarhammer.png,static-extracted,ItemWarhammer|npcWoodenWarhammer|CustomItems.java:522|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcWrench.png,static-extracted,ItemNpcWeaponInterface|npcWrench|CustomItems.java:462|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcX407Boots.png,static-extracted,ItemNpcArmor|npcX407Boots|CustomItems.java:680|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcX407Chest.png,static-extracted,ItemNpcArmor|npcX407Chest|CustomItems.java:678|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcX407Head.png,static-extracted,ItemNpcArmor|npcX407Head|CustomItems.java:677|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
+items/npcX407Legs.png,static-extracted,ItemNpcArmor|npcX407Legs|CustomItems.java:679|extra-items-enabled,extra-items-enabled,,literal customnpcs texture registration in a parsed Java statement
